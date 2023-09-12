@@ -4,7 +4,9 @@
   "description": "Non linear text processing system",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-frontend": "browserify index.js -o bundle.js",
+    "build-and-publish": "browserify index.js -o bundle.js ;  "
   },
   "repository": {
     "type": "git",
