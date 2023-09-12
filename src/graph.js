@@ -157,11 +157,11 @@ const printEdges = (graphData)=>{
 }
 
 
-const fs = require("fs/promises");
+// const fs = require("fs/promises");
 const generateGraphPreview = async (graphs,options)=>{
-  const saveSomethingInSomefile = async(fileContent,filePath) =>{
-      await fs.writeFile(filePath, fileContent);
-  }
+  // const saveSomethingInSomefile = async(fileContent,filePath) =>{
+  //     await fs.writeFile(filePath, fileContent);
+  // }
   const generateHTMLBodyForGraphs = (inputGraphs) =>{
     let graphHtml = ""
     inputGraphs.map((graph,index)=>{
@@ -206,8 +206,8 @@ const generateGraphPreview = async (graphs,options)=>{
       const htmlTemplate = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script><title>Graphs</title></head>
       <body><style>.graph {width: 90%; height: 80vh; border: 1px solid #80808036;}</style>${graphHtml}</body></html>`
-      await saveSomethingInSomefile(htmlTemplate,options.outputPath)
-      return {"message": "Saved"}
+      //await saveSomethingInSomefile(htmlTemplate,options.outputPath)
+      return {"message": "Saved",htmlTemplate: htmlTemplate}
     },
     'htmlParts':async ()=>{
       let graphHtml =  generateHTMLBodyForGraphs(graphs)
