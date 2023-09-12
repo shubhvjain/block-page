@@ -1,0 +1,18 @@
+/* Light mode */
+:root {
+  --body-bg: #FFFFFF;
+  --body-color: #000000;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+      --body-bg: #424242;
+      --body-color: #FFFFFF;
+  }
+}
+
+body {
+  background: var(--body-bg);
+  color: var(--body-color);
+}

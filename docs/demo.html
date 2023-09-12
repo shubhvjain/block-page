@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Block page browser demo latest version</title>
+    <!-- <script src="https://unpkg.com/block-page/bundle.js"></script> -->
+    <script src="../bundle.js"></script>
+    <link rel="stylesheet" href="./theme.css" />
+  </head>
+  <body>
+    <textarea id="inputTextArea" rows="8" cols="50"></textarea><br />
+    <button id="generateButton">Generate Document Object</button><br />
+    <details> <summary>Samples</summary> 
+      <div id="buttonContainer"></div> <!-- Container for additional buttons -->
+    </details>
+    <pre id="outputResult"></pre>
+
+    <script>
+      function saveToLocalStorage() {
+        const inputText = document.getElementById("inputTextArea").value;
+        localStorage.setItem("textAreaContent", inputText);
+      }
+
+      // Function to load content from local storage
+      function loadFromLocalStorage() {
+        const savedContent = localStorage.getItem("textAreaContent");
+        if (savedContent) {
+          document.getElementById("inputTextArea").value = savedContent;
+        }
+      }
+
+
+      const additionalContent = [
+            { title: "Sample 1", content: "This is the content of Item 1." },
+            { title: "Sample 2", content: "This is the content of Item 2." }
+        ];
+
+        // Create buttons for each item in the array
+        const buttonContainer = document.getElementById('buttonContainer');
+        additionalContent.forEach(item => {
+            const button = document.createElement('button');
+            button.textContent = item.title;
+
+            // Add an event listener to set the content to the textarea when clicked
+            button.addEventListener('click', () => {
+                document.getElementById('inputTextArea').value = item.content;
+                //saveToLocalStorage(); // Save the updated content to local storage
+            });
+
+            buttonContainer.appendChild(button);
+        });
+
+
+      // Load content from local storage when the page loads
+      loadFromLocalStorage();
+
+      // Attach event listener to the textarea to save content when it changes
+      document
+        .getElementById("inputTextArea")
+        .addEventListener("input", saveToLocalStorage);
+      document
+        .getElementById("generateButton")
+        .addEventListener("click", generate);
+      function generate() {
+        const inputText = document.getElementById("inputTextArea").value;
+        const generatedResult = generateDocumentObject(inputText);
+        document.getElementById("outputResult").textContent = JSON.stringify(
+          generatedResult,
+          null,
+          2
+        );
+      }
+      function generateDocumentObject(inputText) {
+        docObj = blockPage.encode(inputText);
+        return docObj;
+      }
+    </script>
+  </body>
+</html>
