@@ -1,0 +1,22 @@
+{
+  "name": "block-page",
+  "version": "1.0.0",
+  "description": "Non linear text processing system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhvjain/block-page.git"
+  },
+  "keywords": [
+    "text-processing"
+  ],
+  "author": "Shubh Vardhan Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shubhvjain/block-page/issues"
+  },
+  "homepage": "https://github.com/shubhvjain/block-page#readme"
+}
