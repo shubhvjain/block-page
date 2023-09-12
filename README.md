@@ -8,6 +8,10 @@ See the project [page](https://shubhvjain.github.io/block-page/) to know more an
 
 NPM : `npm install block-page`
 
+Browser : `<script src="https://unpkg.com/block-page/bundle.js"></script>`
+
+(adds global variable : `blockPage`)
+
 # Usage 
 
 3 main functionalities :

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-frontend": "browserify index.js -o bundle.js",
+    "build-frontend": "browserify index.js --standalone blockPage > bundle.js",
     "build-docs":"marked -i docs/index.md -o docs/index.html"
     
   },
