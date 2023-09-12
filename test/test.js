@@ -1,15 +1,27 @@
-const b = require("block-page");
+const { decode,encode } = require("block-page");
 const u = require("./utils");
 
 encodeAllTestFiles = async () => {
   testFiles = ["file1"];
   for (let index = 0; index < testFiles.length; index++) {
     const element = testFiles[index];
-    file = await u.readTextFile("./files/" + element+".txt");
+    file = await u.readFile("./files/" + element+".txt");
     console.log(file);
-    obj = b.encode(file);
-    await u.saveJSON(obj, "./output/" + element+".json");
+    obj = encode(file);
+    await u.saveFile(obj, "./output/" + element+".json",true);
+  }
+};
+
+decodeAllGeneratedFiles = async () => {
+  testFiles = ["file1"];
+  for (let index = 0; index < testFiles.length; index++) {
+    const element = testFiles[index];
+    file = await u.readFile("./output/" + element+".json",true);
+    console.log(file);
+    obj = decode(file);
+    await u.saveFile(obj, "./files/" + element+"_decoded.txt");
   }
 };
 
 encodeAllTestFiles();
+decodeAllGeneratedFiles();

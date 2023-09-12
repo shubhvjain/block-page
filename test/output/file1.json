@@ -3,22 +3,23 @@
   "blocks": [
     "main",
     "point-1",
-    "point-2"
+    "point-2",
+    "point-2-1"
   ],
   "data": {
     "main": {
       "blockId": "main",
-      "text": " This is the title\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n\n",
+      "text": " This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n\n",
       "source": {
         "raw": [
-          ".[main] This is the title\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
+          ".[main] This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
         ],
-        "first": ".[main] This is the title\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]",
+        "first": ".[main] This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]",
         "second": ""
       },
       "dataType": "default",
       "value": {
-        "title": " This is the title",
+        "title": " This is the title of the document",
         "noLines": 6,
         "type": "default"
       },
@@ -99,9 +100,9 @@
       "text": " this is the title fo the second point \n",
       "source": {
         "raw": [
-          ".[point 2] this is the title fo the second point \n"
+          ".[point 2] this is the title fo the second point \n~[part,point 2-1]"
         ],
-        "first": ".[point 2] this is the title fo the second point \n",
+        "first": ".[point 2] this is the title fo the second point \n~[part,point 2-1]",
         "second": ""
       },
       "dataType": "default",
@@ -115,6 +116,50 @@
           "raw": ".[point 2]",
           "text": "point 2",
           "blockId": "point-2",
+          "processed": false,
+          "dataType": "default",
+          "found": true,
+          "type": "declaration"
+        },
+        {
+          "type": "edge",
+          "raw": "~[part,point 2-1]",
+          "text": "part,point 2-1",
+          "v1": "*",
+          "v2": "point-2-1",
+          "label": "part",
+          "found": true,
+          "processed": false
+        }
+      ],
+      "process": [
+        "initialized",
+        "block id declared",
+        "edge-annotation: part,point 2-1 processed",
+        "datatype processed"
+      ]
+    },
+    "point-2-1": {
+      "blockId": "point-2-1",
+      "text": " This is a sub point \n- list item 1\n- list item 2",
+      "source": {
+        "raw": [
+          ".[point 2-1] This is a sub point \n- list item 1\n- list item 2"
+        ],
+        "first": ".[point 2-1] This is a sub point \n- list item 1\n- list item 2",
+        "second": ""
+      },
+      "dataType": "default",
+      "value": {
+        "title": " This is a sub point ",
+        "noLines": 3,
+        "type": "default"
+      },
+      "annotations": [
+        {
+          "raw": ".[point 2-1]",
+          "text": "point 2-1",
+          "blockId": "point-2-1",
           "processed": false,
           "dataType": "default",
           "found": true,
@@ -143,6 +188,11 @@
         },
         "point-2": {
           "label": "point-2",
+          "weight": "",
+          "temp": {}
+        },
+        "point-2-1": {
+          "label": "point-2-1",
           "weight": "",
           "temp": {}
         }
@@ -179,6 +229,11 @@
           "label": "point-2",
           "weight": "",
           "temp": {}
+        },
+        "point-2-1": {
+          "label": "point-2-1",
+          "weight": "",
+          "temp": {}
         }
       },
       "edges": [
@@ -192,6 +247,13 @@
         {
           "v1": "main",
           "v2": "point-2",
+          "weight": "",
+          "label": "part",
+          "temp": {}
+        },
+        {
+          "v1": "point-2",
+          "v2": "point-2-1",
           "weight": "",
           "label": "part",
           "temp": {}
@@ -246,6 +308,17 @@
             "f": 6,
             "degree": 0
           }
+        },
+        "point-2-1": {
+          "label": "point-2-1 (d=7,f=8)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 7,
+            "f": 8,
+            "degree": 0
+          }
         }
       },
       "edges": [],
@@ -298,6 +371,17 @@
             "f": 6,
             "degree": 0
           }
+        },
+        "point-2-1": {
+          "label": "point-2-1 (d=7,f=8)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 7,
+            "f": 8,
+            "degree": 0
+          }
         }
       },
       "edges": [
@@ -311,6 +395,13 @@
         {
           "v1": "point-1",
           "v2": "point-2",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "point-2",
+          "v2": "point-2-1",
           "weight": "",
           "label": "",
           "temp": {}
@@ -348,6 +439,10 @@
       {
         "vertexId": "point-2",
         "fVal": 6
+      },
+      {
+        "vertexId": "point-2-1",
+        "fVal": 8
       }
     ]
   }

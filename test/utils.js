@@ -1,30 +1,27 @@
 const fs = require('fs').promises;
 
-let saveJSON = async (data, filePath) => {
+let saveFile = async (data, filePath, json=false) => {
   // Convert JSON data to a string
-  const jsonString = JSON.stringify(data, null, 2);
-  // Write the JSON data to the file
+  let string = json ? JSON.stringify(data, null, 2) : data
   try {
-    await fs.writeFile(filePath, jsonString, 'utf8');
+    await fs.writeFile(filePath, string, 'utf8');
     console.log('File has been saved successfully.');
   } catch (err) {
     console.error('Error writing file:', err);
   }
 };
 
-let readTextFile =  async (filePath) => {
+let readFile =  async (filePath,json = false) => {
   // Read the file asynchronously
   try {
     const data = await fs.readFile(filePath, 'utf8');
-    console.log('File contents:');
-    console.log(data);
-    return data
+    return  json ? JSON.parse(data) : data
   } catch (err) {
     console.error('Error reading file:', err);
   }
 };
 
-module.exports = {saveJSON,readTextFile}
+module.exports = {saveFile,readFile}
 
 // saveJSON(jsonData, "sample1.json");
 // console.log(readTextFile("sample.txt"))
