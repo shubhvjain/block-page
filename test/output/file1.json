@@ -9,167 +9,139 @@
   "data": {
     "main": {
       "blockId": "main",
+      "title": "Title of main",
       "text": " This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n\n",
       "source": {
         "raw": [
           ".[main] This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
         ],
-        "first": ".[main] This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]",
-        "second": ""
+        "first": ".[main] This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
       },
       "dataType": "default",
-      "value": {
-        "title": " This is the title of the document",
-        "noLines": 6,
-        "type": "default"
-      },
+      "value": {},
       "annotations": [
         {
           "raw": ".[main]",
           "text": "main",
           "blockId": "main",
           "processed": false,
-          "dataType": "default",
-          "found": true,
-          "type": "declaration"
+          "type": "declaration",
+          "title": "Title of main"
         },
         {
-          "type": "edge",
           "raw": "~[part,point 1]",
           "text": "part,point 1",
+          "blockId": "",
+          "processed": false,
+          "type": "edge",
           "v1": "*",
           "v2": "point-1",
-          "label": "part",
-          "found": true,
-          "processed": false
+          "label": "part"
         },
         {
-          "type": "edge",
           "raw": "~[part,point 2]",
           "text": "part,point 2",
+          "blockId": "",
+          "processed": false,
+          "type": "edge",
           "v1": "*",
           "v2": "point-2",
-          "label": "part",
-          "found": true,
-          "processed": false
+          "label": "part"
         }
       ],
       "process": [
-        "initialized",
-        "block id declared",
+        "declaration initialized",
         "edge-annotation: part,point 1 processed",
-        "edge-annotation: part,point 2 processed",
-        "datatype processed"
+        "edge-annotation: part,point 2 processed"
       ]
     },
     "point-1": {
       "blockId": "point-1",
+      "title": "Title of point-1",
       "text": " This is the title of the first point ",
       "source": {
         "raw": [
           ".[point 1] This is the title of the first point "
         ],
-        "first": ".[point 1] This is the title of the first point ",
-        "second": ""
+        "first": ".[point 1] This is the title of the first point "
       },
       "dataType": "default",
-      "value": {
-        "title": " This is the title of the first point ",
-        "noLines": 1,
-        "type": "default"
-      },
+      "value": {},
       "annotations": [
         {
           "raw": ".[point 1]",
           "text": "point 1",
           "blockId": "point-1",
           "processed": false,
-          "dataType": "default",
-          "found": true,
-          "type": "declaration"
+          "type": "declaration",
+          "title": "Title of point-1"
         }
       ],
       "process": [
-        "initialized",
-        "block id declared",
-        "datatype processed"
+        "declaration initialized"
       ]
     },
     "point-2": {
       "blockId": "point-2",
+      "title": "Title of point-2",
       "text": " this is the title fo the second point \n",
       "source": {
         "raw": [
           ".[point 2] this is the title fo the second point \n~[part,point 2-1]"
         ],
-        "first": ".[point 2] this is the title fo the second point \n~[part,point 2-1]",
-        "second": ""
+        "first": ".[point 2] this is the title fo the second point \n~[part,point 2-1]"
       },
       "dataType": "default",
-      "value": {
-        "title": " this is the title fo the second point ",
-        "noLines": 2,
-        "type": "default"
-      },
+      "value": {},
       "annotations": [
         {
           "raw": ".[point 2]",
           "text": "point 2",
           "blockId": "point-2",
           "processed": false,
-          "dataType": "default",
-          "found": true,
-          "type": "declaration"
+          "type": "declaration",
+          "title": "Title of point-2"
         },
         {
-          "type": "edge",
           "raw": "~[part,point 2-1]",
           "text": "part,point 2-1",
+          "blockId": "",
+          "processed": false,
+          "type": "edge",
           "v1": "*",
           "v2": "point-2-1",
-          "label": "part",
-          "found": true,
-          "processed": false
+          "label": "part"
         }
       ],
       "process": [
-        "initialized",
-        "block id declared",
-        "edge-annotation: part,point 2-1 processed",
-        "datatype processed"
+        "declaration initialized",
+        "edge-annotation: part,point 2-1 processed"
       ]
     },
     "point-2-1": {
       "blockId": "point-2-1",
+      "title": "Title of point-2-1",
       "text": " This is a sub point \n- list item 1\n- list item 2",
       "source": {
         "raw": [
           ".[point 2-1] This is a sub point \n- list item 1\n- list item 2"
         ],
-        "first": ".[point 2-1] This is a sub point \n- list item 1\n- list item 2",
-        "second": ""
+        "first": ".[point 2-1] This is a sub point \n- list item 1\n- list item 2"
       },
       "dataType": "default",
-      "value": {
-        "title": " This is a sub point ",
-        "noLines": 3,
-        "type": "default"
-      },
+      "value": {},
       "annotations": [
         {
           "raw": ".[point 2-1]",
           "text": "point 2-1",
           "blockId": "point-2-1",
           "processed": false,
-          "dataType": "default",
-          "found": true,
-          "type": "declaration"
+          "type": "declaration",
+          "title": "Title of point-2-1"
         }
       ],
       "process": [
-        "initialized",
-        "block id declared",
-        "datatype processed"
+        "declaration initialized"
       ]
     }
   },
@@ -273,177 +245,10 @@
         "defaultNewEdgeWeight": "",
         "addBlankVertex": true
       }
-    },
-    "dfsTree": {
-      "vertices": {
-        "main": {
-          "label": "main (d=1,f=2)",
-          "weight": "",
-          "temp": {
-            "color": "black",
-            "pi": null,
-            "d": 1,
-            "f": 2,
-            "degree": 0
-          }
-        },
-        "point-1": {
-          "label": "point-1 (d=3,f=4)",
-          "weight": "",
-          "temp": {
-            "color": "black",
-            "pi": null,
-            "d": 3,
-            "f": 4,
-            "degree": 0
-          }
-        },
-        "point-2": {
-          "label": "point-2 (d=5,f=6)",
-          "weight": "",
-          "temp": {
-            "color": "black",
-            "pi": null,
-            "d": 5,
-            "f": 6,
-            "degree": 0
-          }
-        },
-        "point-2-1": {
-          "label": "point-2-1 (d=7,f=8)",
-          "weight": "",
-          "temp": {
-            "color": "black",
-            "pi": null,
-            "d": 7,
-            "f": 8,
-            "degree": 0
-          }
-        }
-      },
-      "edges": [],
-      "metadata": {
-        "title": "DFS Forest",
-        "hasLoops": false,
-        "hasEdgeWeights": false,
-        "hasDirectedEdges": true,
-        "isSimple": true
-      },
-      "options": {
-        "defaultNewEdgeLabel": "",
-        "defaultNewVertexLabel": "",
-        "defaultNewVertexWeight": "",
-        "defaultNewEdgeWeight": "",
-        "addBlankVertex": true
-      }
-    },
-    "tsTree": {
-      "vertices": {
-        "main": {
-          "label": "main (d=1,f=2)",
-          "weight": "",
-          "temp": {
-            "color": "black",
-            "pi": null,
-            "d": 1,
-            "f": 2,
-            "degree": 0
-          }
-        },
-        "point-1": {
-          "label": "point-1 (d=3,f=4)",
-          "weight": "",
-          "temp": {
-            "color": "black",
-            "pi": null,
-            "d": 3,
-            "f": 4,
-            "degree": 0
-          }
-        },
-        "point-2": {
-          "label": "point-2 (d=5,f=6)",
-          "weight": "",
-          "temp": {
-            "color": "black",
-            "pi": null,
-            "d": 5,
-            "f": 6,
-            "degree": 0
-          }
-        },
-        "point-2-1": {
-          "label": "point-2-1 (d=7,f=8)",
-          "weight": "",
-          "temp": {
-            "color": "black",
-            "pi": null,
-            "d": 7,
-            "f": 8,
-            "degree": 0
-          }
-        }
-      },
-      "edges": [
-        {
-          "v1": "main",
-          "v2": "point-1",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        },
-        {
-          "v1": "point-1",
-          "v2": "point-2",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        },
-        {
-          "v1": "point-2",
-          "v2": "point-2-1",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        }
-      ],
-      "metadata": {
-        "title": "Topological sorting",
-        "hasLoops": false,
-        "hasEdgeWeights": false,
-        "hasDirectedEdges": true,
-        "isSimple": true
-      },
-      "options": {
-        "defaultNewEdgeLabel": "",
-        "defaultNewVertexLabel": "",
-        "defaultNewVertexWeight": "",
-        "defaultNewEdgeWeight": "",
-        "addBlankVertex": true
-      }
     }
   },
   "errors": [],
   "warnings": [],
   "metadata": {},
-  "extra": {
-    "blockOrder": [
-      {
-        "vertexId": "main",
-        "fVal": 2
-      },
-      {
-        "vertexId": "point-1",
-        "fVal": 4
-      },
-      {
-        "vertexId": "point-2",
-        "fVal": 6
-      },
-      {
-        "vertexId": "point-2-1",
-        "fVal": 8
-      }
-    ]
-  }
+  "extra": {}
 }

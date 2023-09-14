@@ -1,0 +1,5 @@
+.[b1] Block title 1
+Block 1
+
+.[b2] Block title 2
+Block 2

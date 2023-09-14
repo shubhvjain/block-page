@@ -1,0 +1,194 @@
+{
+  "valid": false,
+  "blocks": [
+    "b1",
+    "b2",
+    "b3"
+  ],
+  "data": {
+    "b1": {
+      "blockId": "b1",
+      "title": "Title of b1",
+      "text": " \nBlock 1",
+      "source": {
+        "raw": [
+          ".[b1] \nBlock 1"
+        ],
+        "first": ".[b1] \nBlock 1"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b1]",
+          "text": "b1",
+          "blockId": "b1",
+          "processed": false,
+          "type": "declaration",
+          "title": "Title of b1"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "b2": {
+      "blockId": "b2",
+      "title": "Title of b2",
+      "text": "\nBlock 2",
+      "source": {
+        "raw": [
+          ".[b2]\nBlock 2"
+        ],
+        "first": ".[b2]\nBlock 2"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b2]",
+          "text": "b2",
+          "blockId": "b2",
+          "processed": false,
+          "type": "declaration",
+          "title": "Title of b2"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "b3": {
+      "blockId": "b3",
+      "title": "Title of b3",
+      "text": " Error\nBlock 3\n>[b2]\n>[b4]\n>[b3]",
+      "source": {
+        "raw": [
+          ".[b3] Error\nBlock 3\n>[b2]\n>[b4]\n>[b3]"
+        ],
+        "first": ".[b3] Error\nBlock 3\n>[b2]\n>[b4]\n>[b3]"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b3]",
+          "text": "b3",
+          "blockId": "b3",
+          "processed": false,
+          "type": "declaration",
+          "title": "Title of b3"
+        },
+        {
+          "raw": ">[b2]",
+          "text": "b2",
+          "blockId": "b2",
+          "processed": false,
+          "type": "invocation"
+        },
+        {
+          "raw": ">[b4]",
+          "text": "b4",
+          "blockId": "b4",
+          "processed": false,
+          "type": "invocation"
+        },
+        {
+          "raw": ">[b3]",
+          "text": "b3",
+          "blockId": "b3",
+          "processed": false,
+          "type": "invocation"
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "invocation >[b2] initialized in dep graph",
+        "invocation >[b4] initialized in dep graph"
+      ]
+    }
+  },
+  "graphs": {
+    "deps": {
+      "vertices": {
+        "b1": {
+          "label": "b1",
+          "weight": "",
+          "temp": {}
+        },
+        "b2": {
+          "label": "b2",
+          "weight": "",
+          "temp": {}
+        },
+        "b3": {
+          "label": "b3",
+          "weight": "",
+          "temp": {}
+        },
+        "b4": {
+          "label": "b4",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [
+        {
+          "v1": "b3",
+          "v2": "b2",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b3",
+          "v2": "b4",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        }
+      ],
+      "metadata": {
+        "title": "Invocation block dependency graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    },
+    "knowledge": {
+      "vertices": {},
+      "edges": [],
+      "metadata": {
+        "title": "Knowledge graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    }
+  },
+  "errors": [
+    {
+      "text": "Invalid invocation : >[b3]. You cannot invoke the same block.",
+      "details": "Error occurred during processing blocks "
+    }
+  ],
+  "warnings": [],
+  "metadata": {},
+  "extra": {}
+}

@@ -1,0 +1,78 @@
+{
+  "valid": true,
+  "blocks": [
+    4471
+  ],
+  "data": {
+    "4471": {
+      "blockId": 4471,
+      "title": "",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": ""
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    }
+  },
+  "graphs": {
+    "deps": {
+      "vertices": {
+        "4471": {
+          "label": 4471,
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [],
+      "metadata": {
+        "title": "Invocation block dependency graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    },
+    "knowledge": {
+      "vertices": {},
+      "edges": [],
+      "metadata": {
+        "title": "Knowledge graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    }
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "text": "Blank block at position 1",
+      "blockIndex": 0
+    }
+  ],
+  "metadata": {},
+  "extra": {}
+}

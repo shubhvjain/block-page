@@ -1,0 +1,114 @@
+{
+  "valid": true,
+  "blocks": [
+    "b1",
+    "b2"
+  ],
+  "data": {
+    "b1": {
+      "blockId": "b1",
+      "title": "Title of b1",
+      "text": " Block title 1\nBlock 1",
+      "source": {
+        "raw": [
+          ".[b1] Block title 1\nBlock 1"
+        ],
+        "first": ".[b1] Block title 1\nBlock 1"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b1]",
+          "text": "b1",
+          "blockId": "b1",
+          "processed": false,
+          "type": "declaration",
+          "title": "Title of b1"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "b2": {
+      "blockId": "b2",
+      "title": "Title of b2",
+      "text": " Block title 2\nBlock 2",
+      "source": {
+        "raw": [
+          ".[b2] Block title 2\nBlock 2"
+        ],
+        "first": ".[b2] Block title 2\nBlock 2"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b2]",
+          "text": "b2",
+          "blockId": "b2",
+          "processed": false,
+          "type": "declaration",
+          "title": "Title of b2"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    }
+  },
+  "graphs": {
+    "deps": {
+      "vertices": {
+        "b1": {
+          "label": "b1",
+          "weight": "",
+          "temp": {}
+        },
+        "b2": {
+          "label": "b2",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [],
+      "metadata": {
+        "title": "Invocation block dependency graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    },
+    "knowledge": {
+      "vertices": {},
+      "edges": [],
+      "metadata": {
+        "title": "Knowledge graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "metadata": {},
+  "extra": {}
+}
