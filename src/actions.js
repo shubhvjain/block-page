@@ -506,5 +506,7 @@ const doAddNewBlock = (docObject,blockText)=>{
 
 module.exports = {
   getBlankDocObject,
-  doAddError, doAddWarning , extractAllAnnotations, doAddNewBlock
+  doAddError, 
+  doAddWarning, 
+  doAddNewBlock
 }
