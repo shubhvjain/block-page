@@ -1,32 +1,77 @@
 {
   "valid": true,
   "blocks": [
-    7537
+    "b1"
   ],
   "data": {
-    "7537": {
-      "blockId": 7537,
-      "title": "",
-      "text": "",
+    "b1": {
+      "blockId": "b1",
+      "title": "Title of b1",
+      "text": "\n\nBlock 1 part 1\n\n\n\nBlock 1 part 2\n",
       "source": {
         "raw": [
-          ""
+          ".[b1]\n/[action 1,part1]\nBlock 1 part 1",
+          "\n+[b1]\n/[action 2,part 1]\nBlock 1 part 2\n"
         ],
-        "first": ""
+        "first": ".[b1]\n/[action 1,part1]\nBlock 1 part 1\n\n+[b1]\n/[action 2,part 1]\nBlock 1 part 2\n"
       },
       "dataType": "default",
       "value": {},
-      "annotations": [],
+      "annotations": [
+        {
+          "raw": ".[b1]",
+          "text": "b1",
+          "blockId": "b1",
+          "processed": false,
+          "type": "declaration",
+          "title": "Title of b1"
+        },
+        {
+          "raw": "/[action 1,part1]",
+          "text": "action 1,part1",
+          "blockId": "",
+          "processed": false,
+          "type": "action",
+          "action": "action 1,part1",
+          "arguments": {
+            "text": "",
+            "d": "0"
+          }
+        },
+        {
+          "raw": "+[b1]",
+          "text": "b1",
+          "blockId": "b1",
+          "processed": false,
+          "type": "append"
+        },
+        {
+          "raw": "/[action 2,part 1]",
+          "text": "action 2,part 1",
+          "blockId": "",
+          "processed": false,
+          "type": "action",
+          "action": "action 2,part 1",
+          "arguments": {
+            "text": "",
+            "d": "0"
+          }
+        }
+      ],
       "process": [
-        "declaration initialized with random block id"
+        "declaration initialized",
+        "Action annotation /[action 1,part1] replaced",
+        "Append annotation processed",
+        "Action annotation /[action 1,part1] replaced",
+        "Action annotation /[action 2,part 1] replaced"
       ]
     }
   },
   "graphs": {
     "deps": {
       "vertices": {
-        "7537": {
-          "label": 7537,
+        "b1": {
+          "label": "b1",
           "weight": "",
           "temp": {}
         }
@@ -67,12 +112,7 @@
     }
   },
   "errors": [],
-  "warnings": [
-    {
-      "text": "Blank block at position 1",
-      "blockIndex": 0
-    }
-  ],
+  "warnings": [],
   "metadata": {},
   "extra": {}
 }

@@ -9,6 +9,8 @@
  * delete block 
  * add a new block and relate it to another block at the same time
  * validate documentObject
+ * search query :graph 
+ * text search
  */
 
 const graph = require("./graph.js");
@@ -356,10 +358,10 @@ const doAddNewBlock = (docObject,blockText)=>{
     if (blockFound) {
       // update the block object
       blockData = docObject.data[act.blockId];
-      let newText = block.replace(act.raw, "");
+      let newText = blockText.replace(act.raw, "");
       blockData.text = blockData.text + "\n" + newText;
-      blockData.source.first = blockData.source.first + "\n" + block;
-      blockData.source.raw.push(block);
+      blockData.source.first = blockData.source.first + "\n" + blockText;
+      blockData.source.raw.push(blockText);
       blockData.annotations = [
         ...blockData.annotations,
         ...ann.annotations,
@@ -468,14 +470,7 @@ const doAddNewBlock = (docObject,blockText)=>{
             blockContent.text = mainText;
             blockContent.process.push(`invocation ${inv.raw} processed`);
           });
-    
-          // let actAnn = docObject.data[blockId].annotations.filter((itm) => {return itm.type == "action"})
-          // actAnn.map((act) => {
-          //   let mainText = blockContent.text;
-          //   blockContent.text = mainText.replace(act.raw, "");
-          //   blockContent.process.push(`action ann: replaced ${act.raw}`);
-          // });
-    
+        
           // let dt = { ...dataType };
           // let dtu = { ...dataTypeUtils };
           // let dataValue = dt[blockContent.dataType](blockContent, dtu);
@@ -495,7 +490,15 @@ const doAddNewBlock = (docObject,blockText)=>{
   }
 
   // process actions annotations
-  // TODO
+  // TODO fix issue when append invocation are used. all actions are being replaced again.
+  let actAnn = docObject.data[blockData.blockId].annotations.filter((itm) => {return itm.type == "action"})
+  let blockContent = docObject.data[blockData.blockId];
+  actAnn.map((act) => {
+    let mainText = blockContent.text;
+    blockContent.text = mainText.replace(act.raw, "");
+    blockContent.process.push(`Action annotation ${act.raw} replaced`);
+  });
+
   // process the data type
   // TODO
   return docObject

@@ -1,0 +1,10 @@
+.[b1]
+Block 1 content
+
+.[b2] 
+Block 2 content
+/[text,some = test]
+
+.[b3]
+Block 3
+>[b2]
