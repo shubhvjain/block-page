@@ -5,9 +5,8 @@
  * get blank document [done]
  * add a new block in a document [done]
  * relate one block with another 
- * edit block : modify text, modify edges
- * delete block 
- * add a new block and relate it to another block at the same time
+ * edit block : modify text, modify edges [done]
+ * delete block [done]
  * validate documentObject
  * search query :graph 
  * text search
@@ -72,7 +71,7 @@ const getBlankAnnotationObject = (type)=>{
     raw: "", // the raw unprocessed string 
     text: "", // text extracted after sanitizing brackets and annotations  
     blockId: "", // block id of the block in which this annotation exists TODO see if this even required as a common key
-    processed: false, // indicates whether the annotation is processed or not 
+    // processed: false, // indicates whether the annotation is processed or not 
     type: type, // the type of annotation 
   }
 }
@@ -277,7 +276,7 @@ const getBlankBlockObject = () => {
     blockId: "",
     title:"",
     text: "", // this is the text after annotations are processed. this  will not include the 
-    source: { raw: [], first: ""},
+    source: { raw: [], first: "", titleExists:false, idExists:false},
     dataType: "default",
     value: {},
     annotations: [],
@@ -289,6 +288,7 @@ const getBlankBlockObject = () => {
 
 const doAddNewBlock = (docObject,blockText)=>{
   // step 1 :  extract all annotations from the block 
+  blockText = blockText.replace(/^\n/, '')
   let ann = extractAllAnnotations(blockText)
 
   // step 2 : generate a new block object 
@@ -317,8 +317,10 @@ const doAddNewBlock = (docObject,blockText)=>{
     // get the title
     let lines = blockText.split('\n');
     let blockTitle = lines.shift().replace(dec.raw, "");
+    let noBlockTitle = false
     if (blockTitle.trim().length==0){
       blockTitle = `Block ${dec.blockId}`
+      noBlockTitle = true
     }
     const newTextWithoutTitle = lines.join('\n');
     let newText =  newTextWithoutTitle
@@ -328,7 +330,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       blockId: dec.blockId,
       title: blockTitle,
       // data type should be processed at the end of processing all annotations
-      source: { raw: [blockText], first: newText}, // this has the raw text, unprocessed further while processing annotations
+      source: { raw: [blockText], first: newText, titleExists:!noBlockTitle, idExists:true}, // this has the raw text, unprocessed further while processing annotations
       annotations: ann.annotations,
       process: ["declaration initialized"],
     };
@@ -342,7 +344,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       blockId: randomBlockName,
       text: blockText,
       title:"Untitled",
-      source: { raw: [blockText], first: blockText},
+      source: { raw: [blockText], first: blockText, titleExists:false, idExists:false},
       annotations: ann.annotations,
       process: ["declaration initialized with random block id"],
     };
