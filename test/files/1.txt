@@ -1,5 +1,57 @@
+what this file tests ?
+- block declerations 
+- block title (exists  vs the default) 
+- invocation annotation on already existing block
+- append invocation (correct usage)
+- append invocation with actions invocation in both blocks 
+- invocation of one block to another is text only and other annotations in the block being invoked are not copied as well (b6,b7,b8)
+- graph annotation
+
 .[b1] Block title 1
-Block 1
+Block 1 
+this is some more text
+and more
 
 .[b2] Block title 2
 Block 2
+
+.[b3]
+Block 3
+>[b2]
+
+a random block that cannot be used in other invocation because it does not have  a name
+
+
+.[b4]
+/[action 1,part1]
+Block 1 part 1
+
+
++[b4]
+/[action 2,part 1]
+Block 1 part 2
+
+
+
+.[b6]
+Block 6 content
+
+.[b7] 
+Block 7 content
+/[text,some = test]
+
+.[b8]
+Block 8. when b7 content is copied the text must not contain the action invocation in it
+>[b7]
+
+
+.[b9]
+~[part,b10]
+~[part,b11]
+
+.[b10] block 10
+this is the 10th block
+
+.[b11] Block 11 ?
+this is the 11th block 
+

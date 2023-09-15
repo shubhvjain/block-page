@@ -8,8 +8,8 @@
   "data": {
     "b1": {
       "blockId": "b1",
-      "title": "Title of b1",
-      "text": "\nBlock 1 content",
+      "title": "Block b1",
+      "text": "Block 1 content",
       "source": {
         "raw": [
           ".[b1]\nBlock 1 content"
@@ -24,8 +24,7 @@
           "text": "b1",
           "blockId": "b1",
           "processed": false,
-          "type": "declaration",
-          "title": "Title of b1"
+          "type": "declaration"
         }
       ],
       "process": [
@@ -34,8 +33,8 @@
     },
     "b2": {
       "blockId": "b2",
-      "title": "Title of b2",
-      "text": " \nBlock 2 content\n",
+      "title": "Block b2",
+      "text": "Block 2 content\n",
       "source": {
         "raw": [
           ".[b2] \nBlock 2 content\n/[text,some = test]"
@@ -50,8 +49,7 @@
           "text": "b2",
           "blockId": "b2",
           "processed": false,
-          "type": "declaration",
-          "title": "Title of b2"
+          "type": "declaration"
         },
         {
           "raw": "/[text,some = test]",
@@ -73,8 +71,8 @@
     },
     "b3": {
       "blockId": "b3",
-      "title": "Title of b3",
-      "text": "\nBlock 3\n \nBlock 2 content\n",
+      "title": "Block b3",
+      "text": "Block 3\nBlock 2 content\n",
       "source": {
         "raw": [
           ".[b3]\nBlock 3\n>[b2]"
@@ -89,8 +87,7 @@
           "text": "b3",
           "blockId": "b3",
           "processed": false,
-          "type": "declaration",
-          "title": "Title of b3"
+          "type": "declaration"
         },
         {
           "raw": ">[b2]",

@@ -1,8 +1,20 @@
-.[b1]
-/[action 1,part1]
-Block 1 part 1
+Very simple text for testing 
+
+.[indep] I will try to delete this 
+
+.[indep 1] This has related  knowledge 
+~[part,dep 1]
+~[part,dep 2]
+
+.[dep 1] Depepdency 1
+
+.[dep 2] Dependecy 2
 
 
-+[b1]
-/[action 2,part 1]
-Block 1 part 2
+tricky :
+
+.[i1] 
+~[part,i2]
+~[part,i3]
+~[i4,part,i3] There will be an error deleting i2,i3 or i4
+

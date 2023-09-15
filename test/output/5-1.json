@@ -1,17 +1,14 @@
 {
   "valid": true,
   "blocks": [
-    2529,
-    "indep",
+    4622,
     "indep-1",
     "dep-1",
-    "dep-2",
-    "i1",
-    3278
+    "dep-2"
   ],
   "data": {
-    "2529": {
-      "blockId": 2529,
+    "4622": {
+      "blockId": 4622,
       "title": "Untitled",
       "text": "Very simple text for testing ",
       "source": {
@@ -25,48 +22,6 @@
       "annotations": [],
       "process": [
         "declaration initialized with random block id"
-      ]
-    },
-    "3278": {
-      "blockId": 3278,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": ""
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "indep": {
-      "blockId": "indep",
-      "title": " I will try to delete this ",
-      "text": "",
-      "source": {
-        "raw": [
-          ".[indep] I will try to delete this "
-        ],
-        "first": ".[indep] I will try to delete this "
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [
-        {
-          "raw": ".[indep]",
-          "text": "indep",
-          "blockId": "indep",
-          "processed": false,
-          "type": "declaration"
-        }
-      ],
-      "process": [
-        "declaration initialized"
       ]
     },
     "indep-1": {
@@ -147,9 +102,9 @@
       "text": "",
       "source": {
         "raw": [
-          ".[dep 2] Dependecy 2"
+          ".[dep 2] Dependecy 2\n"
         ],
-        "first": ".[dep 2] Dependecy 2"
+        "first": ".[dep 2] Dependecy 2\n"
       },
       "dataType": "default",
       "value": {},
@@ -165,81 +120,13 @@
       "process": [
         "declaration initialized"
       ]
-    },
-    "i1": {
-      "blockId": "i1",
-      "title": "Block i1",
-      "text": ".[i1] \n\n\n There will be an error deleting i2,i3 or i4",
-      "source": {
-        "raw": [
-          "\n.[i1] \n~[p,i2]\n~[p,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4"
-        ],
-        "first": "\n.[i1] \n~[p,i2]\n~[p,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4"
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [
-        {
-          "raw": ".[i1]",
-          "text": "i1",
-          "blockId": "i1",
-          "processed": false,
-          "type": "declaration"
-        },
-        {
-          "raw": "~[p,i2]",
-          "text": "p,i2",
-          "blockId": "",
-          "processed": false,
-          "type": "edge",
-          "v1": "*",
-          "v2": "i2",
-          "label": "p"
-        },
-        {
-          "raw": "~[p,i3]",
-          "text": "p,i3",
-          "blockId": "",
-          "processed": false,
-          "type": "edge",
-          "v1": "*",
-          "v2": "i3",
-          "label": "p"
-        },
-        {
-          "raw": "~[i4,part,i3]",
-          "text": "i4,part,i3",
-          "blockId": "",
-          "processed": false,
-          "type": "edge",
-          "v1": "i4",
-          "v2": "i3",
-          "label": "part"
-        }
-      ],
-      "process": [
-        "declaration initialized",
-        "edge-annotation: p,i2 processed",
-        "edge-annotation: p,i3 processed",
-        "edge-annotation: i4,part,i3 processed"
-      ]
     }
   },
   "graphs": {
     "deps": {
       "vertices": {
-        "2529": {
-          "label": 2529,
-          "weight": "",
-          "temp": {}
-        },
-        "3278": {
-          "label": 3278,
-          "weight": "",
-          "temp": {}
-        },
-        "indep": {
-          "label": "indep",
+        "4622": {
+          "label": 4622,
           "weight": "",
           "temp": {}
         },
@@ -255,11 +142,6 @@
         },
         "dep-2": {
           "label": "dep-2",
-          "weight": "",
-          "temp": {}
-        },
-        "i1": {
-          "label": "i1",
           "weight": "",
           "temp": {}
         }
@@ -296,26 +178,6 @@
           "label": "dep-2",
           "weight": "",
           "temp": {}
-        },
-        "i1": {
-          "label": "i1",
-          "weight": "",
-          "temp": {}
-        },
-        "i2": {
-          "label": "i2",
-          "weight": "",
-          "temp": {}
-        },
-        "i3": {
-          "label": "i3",
-          "weight": "",
-          "temp": {}
-        },
-        "i4": {
-          "label": "i4",
-          "weight": "",
-          "temp": {}
         }
       },
       "edges": [
@@ -329,27 +191,6 @@
         {
           "v1": "indep-1",
           "v2": "dep-2",
-          "weight": "",
-          "label": "part",
-          "temp": {}
-        },
-        {
-          "v1": "i1",
-          "v2": "i2",
-          "weight": "",
-          "label": "p",
-          "temp": {}
-        },
-        {
-          "v1": "i1",
-          "v2": "i3",
-          "weight": "",
-          "label": "p",
-          "temp": {}
-        },
-        {
-          "v1": "i4",
-          "v2": "i3",
           "weight": "",
           "label": "part",
           "temp": {}
@@ -372,12 +213,7 @@
     }
   },
   "errors": [],
-  "warnings": [
-    {
-      "text": "Blank block at position 7",
-      "blockIndex": 6
-    }
-  ],
+  "warnings": [],
   "metadata": {},
   "extra": {}
 }

@@ -1,0 +1,177 @@
+{
+  "valid": true,
+  "blocks": [
+    4622,
+    "indep",
+    "dep-1",
+    "dep-2"
+  ],
+  "data": {
+    "4622": {
+      "blockId": 4622,
+      "title": "Untitled",
+      "text": "Very simple text for testing ",
+      "source": {
+        "raw": [
+          "Very simple text for testing "
+        ],
+        "first": "Very simple text for testing "
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "indep": {
+      "blockId": "indep",
+      "title": " I will try to delete this ",
+      "text": "",
+      "source": {
+        "raw": [
+          ".[indep] I will try to delete this "
+        ],
+        "first": ".[indep] I will try to delete this "
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[indep]",
+          "text": "indep",
+          "blockId": "indep",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "dep-1": {
+      "blockId": "dep-1",
+      "title": " Depepdency 1",
+      "text": "",
+      "source": {
+        "raw": [
+          ".[dep 1] Depepdency 1"
+        ],
+        "first": ".[dep 1] Depepdency 1"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[dep 1]",
+          "text": "dep 1",
+          "blockId": "dep-1",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "dep-2": {
+      "blockId": "dep-2",
+      "title": " Dependecy 2",
+      "text": "",
+      "source": {
+        "raw": [
+          ".[dep 2] Dependecy 2\n"
+        ],
+        "first": ".[dep 2] Dependecy 2\n"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[dep 2]",
+          "text": "dep 2",
+          "blockId": "dep-2",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    }
+  },
+  "graphs": {
+    "deps": {
+      "vertices": {
+        "4622": {
+          "label": 4622,
+          "weight": "",
+          "temp": {}
+        },
+        "indep": {
+          "label": "indep",
+          "weight": "",
+          "temp": {}
+        },
+        "dep-1": {
+          "label": "dep-1",
+          "weight": "",
+          "temp": {}
+        },
+        "dep-2": {
+          "label": "dep-2",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [],
+      "metadata": {
+        "title": "Invocation block dependency graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    },
+    "knowledge": {
+      "vertices": {
+        "dep-1": {
+          "label": "dep-1",
+          "weight": "",
+          "temp": {}
+        },
+        "dep-2": {
+          "label": "dep-2",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [],
+      "metadata": {
+        "title": "Knowledge graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "metadata": {},
+  "extra": {}
+}

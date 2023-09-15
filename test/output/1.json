@@ -1,19 +1,99 @@
 {
   "valid": true,
   "blocks": [
+    8417,
     "b1",
-    "b2"
+    "b2",
+    "b3",
+    3585,
+    "b4",
+    2956,
+    "b6",
+    "b7",
+    "b8",
+    "b9",
+    "b10",
+    "b11",
+    7710
   ],
   "data": {
-    "b1": {
-      "blockId": "b1",
-      "title": "Title of b1",
-      "text": " Block title 1\nBlock 1",
+    "2956": {
+      "blockId": 2956,
+      "title": "Untitled",
+      "text": "",
       "source": {
         "raw": [
-          ".[b1] Block title 1\nBlock 1"
+          ""
         ],
-        "first": ".[b1] Block title 1\nBlock 1"
+        "first": ""
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "3585": {
+      "blockId": 3585,
+      "title": "Untitled",
+      "text": "a random block that cannot be used in other invocation because it does not have  a name",
+      "source": {
+        "raw": [
+          "a random block that cannot be used in other invocation because it does not have  a name"
+        ],
+        "first": "a random block that cannot be used in other invocation because it does not have  a name"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "7710": {
+      "blockId": 7710,
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": ""
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "8417": {
+      "blockId": 8417,
+      "title": "Untitled",
+      "text": "what this file tests ?\n- block declerations \n- block title (exists  vs the default) \n- invocation annotation on already existing block\n- append invocation (correct usage)\n- append invocation with actions invocation in both blocks \n- invocation of one block to another is text only and other annotations in the block being invoked are not copied as well (b6,b7,b8)\n- graph annotation",
+      "source": {
+        "raw": [
+          "what this file tests ?\n- block declerations \n- block title (exists  vs the default) \n- invocation annotation on already existing block\n- append invocation (correct usage)\n- append invocation with actions invocation in both blocks \n- invocation of one block to another is text only and other annotations in the block being invoked are not copied as well (b6,b7,b8)\n- graph annotation"
+        ],
+        "first": "what this file tests ?\n- block declerations \n- block title (exists  vs the default) \n- invocation annotation on already existing block\n- append invocation (correct usage)\n- append invocation with actions invocation in both blocks \n- invocation of one block to another is text only and other annotations in the block being invoked are not copied as well (b6,b7,b8)\n- graph annotation"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "b1": {
+      "blockId": "b1",
+      "title": " Block title 1",
+      "text": "Block 1 \nthis is some more text\nand more",
+      "source": {
+        "raw": [
+          ".[b1] Block title 1\nBlock 1 \nthis is some more text\nand more"
+        ],
+        "first": ".[b1] Block title 1\nBlock 1 \nthis is some more text\nand more"
       },
       "dataType": "default",
       "value": {},
@@ -23,8 +103,7 @@
           "text": "b1",
           "blockId": "b1",
           "processed": false,
-          "type": "declaration",
-          "title": "Title of b1"
+          "type": "declaration"
         }
       ],
       "process": [
@@ -33,8 +112,8 @@
     },
     "b2": {
       "blockId": "b2",
-      "title": "Title of b2",
-      "text": " Block title 2\nBlock 2",
+      "title": " Block title 2",
+      "text": "Block 2",
       "source": {
         "raw": [
           ".[b2] Block title 2\nBlock 2"
@@ -49,8 +128,311 @@
           "text": "b2",
           "blockId": "b2",
           "processed": false,
-          "type": "declaration",
-          "title": "Title of b2"
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "b3": {
+      "blockId": "b3",
+      "title": "Block b3",
+      "text": "Block 3\nBlock 2",
+      "source": {
+        "raw": [
+          ".[b3]\nBlock 3\n>[b2]"
+        ],
+        "first": ".[b3]\nBlock 3\n>[b2]"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b3]",
+          "text": "b3",
+          "blockId": "b3",
+          "processed": false,
+          "type": "declaration"
+        },
+        {
+          "raw": ">[b2]",
+          "text": "b2",
+          "blockId": "b2",
+          "processed": false,
+          "type": "invocation"
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "invocation >[b2] initialized in dep graph",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed"
+      ]
+    },
+    "b4": {
+      "blockId": "b4",
+      "title": "Block b4",
+      "text": ".[b4]\n\nBlock 1 part 1\n\n\n\nBlock 1 part 2",
+      "source": {
+        "raw": [
+          "\n.[b4]\n/[action 1,part1]\nBlock 1 part 1",
+          "\n+[b4]\n/[action 2,part 1]\nBlock 1 part 2"
+        ],
+        "first": "\n.[b4]\n/[action 1,part1]\nBlock 1 part 1\n\n+[b4]\n/[action 2,part 1]\nBlock 1 part 2"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b4]",
+          "text": "b4",
+          "blockId": "b4",
+          "processed": false,
+          "type": "declaration"
+        },
+        {
+          "raw": "/[action 1,part1]",
+          "text": "action 1,part1",
+          "blockId": "",
+          "processed": false,
+          "type": "action",
+          "action": "action 1,part1",
+          "arguments": {
+            "text": "",
+            "d": "0"
+          }
+        },
+        {
+          "raw": "+[b4]",
+          "text": "b4",
+          "blockId": "b4",
+          "processed": false,
+          "type": "append"
+        },
+        {
+          "raw": "/[action 2,part 1]",
+          "text": "action 2,part 1",
+          "blockId": "",
+          "processed": false,
+          "type": "action",
+          "action": "action 2,part 1",
+          "arguments": {
+            "text": "",
+            "d": "0"
+          }
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "Action annotation /[action 1,part1] replaced",
+        "Append annotation processed",
+        "Action annotation /[action 1,part1] replaced",
+        "Action annotation /[action 2,part 1] replaced"
+      ]
+    },
+    "b6": {
+      "blockId": "b6",
+      "title": "Block b6",
+      "text": "Block 6 content",
+      "source": {
+        "raw": [
+          ".[b6]\nBlock 6 content"
+        ],
+        "first": ".[b6]\nBlock 6 content"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b6]",
+          "text": "b6",
+          "blockId": "b6",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "b7": {
+      "blockId": "b7",
+      "title": "Block b7",
+      "text": "Block 7 content\n",
+      "source": {
+        "raw": [
+          ".[b7] \nBlock 7 content\n/[text,some = test]"
+        ],
+        "first": ".[b7] \nBlock 7 content\n/[text,some = test]"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b7]",
+          "text": "b7",
+          "blockId": "b7",
+          "processed": false,
+          "type": "declaration"
+        },
+        {
+          "raw": "/[text,some = test]",
+          "text": "text,some = test",
+          "blockId": "",
+          "processed": false,
+          "type": "action",
+          "action": "text,some = test",
+          "arguments": {
+            "text": "",
+            "d": "0"
+          }
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "Action annotation /[text,some = test] replaced"
+      ]
+    },
+    "b8": {
+      "blockId": "b8",
+      "title": "Block b8",
+      "text": "Block 8. when b7 content is copied the text must not contain the action invocation in it\nBlock 7 content\n",
+      "source": {
+        "raw": [
+          ".[b8]\nBlock 8. when b7 content is copied the text must not contain the action invocation in it\n>[b7]"
+        ],
+        "first": ".[b8]\nBlock 8. when b7 content is copied the text must not contain the action invocation in it\n>[b7]"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b8]",
+          "text": "b8",
+          "blockId": "b8",
+          "processed": false,
+          "type": "declaration"
+        },
+        {
+          "raw": ">[b7]",
+          "text": "b7",
+          "blockId": "b7",
+          "processed": false,
+          "type": "invocation"
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "invocation >[b7] initialized in dep graph",
+        "invocation >[b7] processed",
+        "invocation >[b7] processed",
+        "invocation >[b7] processed",
+        "invocation >[b7] processed",
+        "invocation >[b7] processed"
+      ]
+    },
+    "b9": {
+      "blockId": "b9",
+      "title": "Block b9",
+      "text": ".[b9]\n\n",
+      "source": {
+        "raw": [
+          "\n.[b9]\n~[part,b10]\n~[part,b11]"
+        ],
+        "first": "\n.[b9]\n~[part,b10]\n~[part,b11]"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b9]",
+          "text": "b9",
+          "blockId": "b9",
+          "processed": false,
+          "type": "declaration"
+        },
+        {
+          "raw": "~[part,b10]",
+          "text": "part,b10",
+          "blockId": "",
+          "processed": false,
+          "type": "edge",
+          "v1": "*",
+          "v2": "b10",
+          "label": "part"
+        },
+        {
+          "raw": "~[part,b11]",
+          "text": "part,b11",
+          "blockId": "",
+          "processed": false,
+          "type": "edge",
+          "v1": "*",
+          "v2": "b11",
+          "label": "part"
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "edge-annotation: part,b10 processed",
+        "edge-annotation: part,b11 processed"
+      ]
+    },
+    "b10": {
+      "blockId": "b10",
+      "title": " block 10",
+      "text": "this is the 10th block",
+      "source": {
+        "raw": [
+          ".[b10] block 10\nthis is the 10th block"
+        ],
+        "first": ".[b10] block 10\nthis is the 10th block"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b10]",
+          "text": "b10",
+          "blockId": "b10",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "b11": {
+      "blockId": "b11",
+      "title": " Block 11 ?",
+      "text": "this is the 11th block ",
+      "source": {
+        "raw": [
+          ".[b11] Block 11 ?\nthis is the 11th block "
+        ],
+        "first": ".[b11] Block 11 ?\nthis is the 11th block "
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[b11]",
+          "text": "b11",
+          "blockId": "b11",
+          "processed": false,
+          "type": "declaration"
         }
       ],
       "process": [
@@ -61,6 +443,26 @@
   "graphs": {
     "deps": {
       "vertices": {
+        "2956": {
+          "label": 2956,
+          "weight": "",
+          "temp": {}
+        },
+        "3585": {
+          "label": 3585,
+          "weight": "",
+          "temp": {}
+        },
+        "7710": {
+          "label": 7710,
+          "weight": "",
+          "temp": {}
+        },
+        "8417": {
+          "label": 8417,
+          "weight": "",
+          "temp": {}
+        },
         "b1": {
           "label": "b1",
           "weight": "",
@@ -70,9 +472,64 @@
           "label": "b2",
           "weight": "",
           "temp": {}
+        },
+        "b3": {
+          "label": "b3",
+          "weight": "",
+          "temp": {}
+        },
+        "b4": {
+          "label": "b4",
+          "weight": "",
+          "temp": {}
+        },
+        "b6": {
+          "label": "b6",
+          "weight": "",
+          "temp": {}
+        },
+        "b7": {
+          "label": "b7",
+          "weight": "",
+          "temp": {}
+        },
+        "b8": {
+          "label": "b8",
+          "weight": "",
+          "temp": {}
+        },
+        "b9": {
+          "label": "b9",
+          "weight": "",
+          "temp": {}
+        },
+        "b10": {
+          "label": "b10",
+          "weight": "",
+          "temp": {}
+        },
+        "b11": {
+          "label": "b11",
+          "weight": "",
+          "temp": {}
         }
       },
-      "edges": [],
+      "edges": [
+        {
+          "v1": "b3",
+          "v2": "b2",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b8",
+          "v2": "b7",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        }
+      ],
       "metadata": {
         "title": "Invocation block dependency graph",
         "hasLoops": false,
@@ -89,10 +546,498 @@
       }
     },
     "knowledge": {
-      "vertices": {},
-      "edges": [],
+      "vertices": {
+        "b9": {
+          "label": "b9",
+          "weight": "",
+          "temp": {}
+        },
+        "b10": {
+          "label": "b10",
+          "weight": "",
+          "temp": {}
+        },
+        "b11": {
+          "label": "b11",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [
+        {
+          "v1": "b9",
+          "v2": "b10",
+          "weight": "",
+          "label": "part",
+          "temp": {}
+        },
+        {
+          "v1": "b9",
+          "v2": "b11",
+          "weight": "",
+          "label": "part",
+          "temp": {}
+        }
+      ],
       "metadata": {
         "title": "Knowledge graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    },
+    "dfsTree": {
+      "vertices": {
+        "2956": {
+          "label": "2956 (d=1,f=2)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 1,
+            "f": 2,
+            "degree": 0
+          }
+        },
+        "3585": {
+          "label": "3585 (d=3,f=4)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 3,
+            "f": 4,
+            "degree": 0
+          }
+        },
+        "7710": {
+          "label": "7710 (d=5,f=6)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 5,
+            "f": 6,
+            "degree": 0
+          }
+        },
+        "8417": {
+          "label": "8417 (d=7,f=8)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 7,
+            "f": 8,
+            "degree": 0
+          }
+        },
+        "b1": {
+          "label": "b1 (d=9,f=10)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 9,
+            "f": 10,
+            "degree": 0
+          }
+        },
+        "b2": {
+          "label": "b2 (d=11,f=12)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 11,
+            "f": 12,
+            "degree": 0
+          }
+        },
+        "b3": {
+          "label": "b3 (d=13,f=14)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 13,
+            "f": 14,
+            "degree": 1
+          }
+        },
+        "b4": {
+          "label": "b4 (d=15,f=16)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 15,
+            "f": 16,
+            "degree": 0
+          }
+        },
+        "b6": {
+          "label": "b6 (d=17,f=18)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 17,
+            "f": 18,
+            "degree": 0
+          }
+        },
+        "b7": {
+          "label": "b7 (d=19,f=20)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 19,
+            "f": 20,
+            "degree": 0
+          }
+        },
+        "b8": {
+          "label": "b8 (d=21,f=22)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 21,
+            "f": 22,
+            "degree": 1
+          }
+        },
+        "b9": {
+          "label": "b9 (d=23,f=24)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 23,
+            "f": 24,
+            "degree": 0
+          }
+        },
+        "b10": {
+          "label": "b10 (d=25,f=26)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 25,
+            "f": 26,
+            "degree": 0
+          }
+        },
+        "b11": {
+          "label": "b11 (d=27,f=28)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 27,
+            "f": 28,
+            "degree": 0
+          }
+        }
+      },
+      "edges": [
+        {
+          "v1": "b3",
+          "v2": "b2",
+          "weight": "",
+          "label": "cross-edge",
+          "temp": {
+            "color": "violet"
+          }
+        },
+        {
+          "v1": "b8",
+          "v2": "b7",
+          "weight": "",
+          "label": "cross-edge",
+          "temp": {
+            "color": "violet"
+          }
+        }
+      ],
+      "metadata": {
+        "title": "DFS Forest",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    },
+    "tsTree": {
+      "vertices": {
+        "2956": {
+          "label": "2956 (d=1,f=2)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 1,
+            "f": 2,
+            "degree": 0
+          }
+        },
+        "3585": {
+          "label": "3585 (d=3,f=4)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 3,
+            "f": 4,
+            "degree": 0
+          }
+        },
+        "7710": {
+          "label": "7710 (d=5,f=6)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 5,
+            "f": 6,
+            "degree": 0
+          }
+        },
+        "8417": {
+          "label": "8417 (d=7,f=8)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 7,
+            "f": 8,
+            "degree": 0
+          }
+        },
+        "b1": {
+          "label": "b1 (d=9,f=10)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 9,
+            "f": 10,
+            "degree": 0
+          }
+        },
+        "b2": {
+          "label": "b2 (d=11,f=12)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 11,
+            "f": 12,
+            "degree": 0
+          }
+        },
+        "b3": {
+          "label": "b3 (d=13,f=14)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 13,
+            "f": 14,
+            "degree": 1
+          }
+        },
+        "b4": {
+          "label": "b4 (d=15,f=16)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 15,
+            "f": 16,
+            "degree": 0
+          }
+        },
+        "b6": {
+          "label": "b6 (d=17,f=18)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 17,
+            "f": 18,
+            "degree": 0
+          }
+        },
+        "b7": {
+          "label": "b7 (d=19,f=20)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 19,
+            "f": 20,
+            "degree": 0
+          }
+        },
+        "b8": {
+          "label": "b8 (d=21,f=22)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 21,
+            "f": 22,
+            "degree": 1
+          }
+        },
+        "b9": {
+          "label": "b9 (d=23,f=24)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 23,
+            "f": 24,
+            "degree": 0
+          }
+        },
+        "b10": {
+          "label": "b10 (d=25,f=26)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 25,
+            "f": 26,
+            "degree": 0
+          }
+        },
+        "b11": {
+          "label": "b11 (d=27,f=28)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 27,
+            "f": 28,
+            "degree": 0
+          }
+        }
+      },
+      "edges": [
+        {
+          "v1": "2956",
+          "v2": "3585",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "3585",
+          "v2": "7710",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "7710",
+          "v2": "8417",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "8417",
+          "v2": "b1",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b1",
+          "v2": "b2",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b2",
+          "v2": "b3",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b3",
+          "v2": "b4",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b4",
+          "v2": "b6",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b6",
+          "v2": "b7",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b7",
+          "v2": "b8",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b8",
+          "v2": "b9",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b9",
+          "v2": "b10",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b10",
+          "v2": "b11",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        }
+      ],
+      "metadata": {
+        "title": "Topological sorting",
         "hasLoops": false,
         "hasEdgeWeights": false,
         "hasDirectedEdges": true,
@@ -108,7 +1053,75 @@
     }
   },
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    {
+      "text": "Blank block at position 8",
+      "blockIndex": 7
+    },
+    {
+      "text": "Blank block at position 15",
+      "blockIndex": 14
+    }
+  ],
   "metadata": {},
-  "extra": {}
+  "extra": {
+    "blockOrder": [
+      {
+        "vertexId": "2956",
+        "fVal": 2
+      },
+      {
+        "vertexId": "3585",
+        "fVal": 4
+      },
+      {
+        "vertexId": "7710",
+        "fVal": 6
+      },
+      {
+        "vertexId": "8417",
+        "fVal": 8
+      },
+      {
+        "vertexId": "b1",
+        "fVal": 10
+      },
+      {
+        "vertexId": "b2",
+        "fVal": 12
+      },
+      {
+        "vertexId": "b3",
+        "fVal": 14
+      },
+      {
+        "vertexId": "b4",
+        "fVal": 16
+      },
+      {
+        "vertexId": "b6",
+        "fVal": 18
+      },
+      {
+        "vertexId": "b7",
+        "fVal": 20
+      },
+      {
+        "vertexId": "b8",
+        "fVal": 22
+      },
+      {
+        "vertexId": "b9",
+        "fVal": 24
+      },
+      {
+        "vertexId": "b10",
+        "fVal": 26
+      },
+      {
+        "vertexId": "b11",
+        "fVal": 28
+      }
+    ]
+  }
 }
