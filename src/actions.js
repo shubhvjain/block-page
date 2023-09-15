@@ -107,8 +107,6 @@ const annotations = {
         ann.text = theString;
         let part1 = theString.split(",");
         ann.blockId = removeSpace(part1[0]);
-        // TODO add the title as well 
-        ann["title"] = "Title of "+removeSpace(part1[0])
 
         return { error: false, message :"", annotations:  [ann]};
       } else {
@@ -278,7 +276,7 @@ const getBlankBlockObject = () => {
   let newBlockData = {
     blockId: "",
     title:"",
-    text: "", // this is the text after annotations are processed
+    text: "", // this is the text after annotations are processed. this  will not include the 
     source: { raw: [], first: ""},
     dataType: "default",
     value: {},
@@ -316,15 +314,21 @@ const doAddNewBlock = (docObject,blockText)=>{
     if (docObject.data[dec.blockId]) {
       throw new Error(`Re-declaration of ${dec.blockId} is invalid. Use append instead`);
     }
-
-    let newText = blockText.replace(dec.raw, "");
+    // get the title
+    let lines = blockText.split('\n');
+    let blockTitle = lines.shift().replace(dec.raw, "");
+    if (blockTitle.trim().length==0){
+      blockTitle = `Block ${dec.blockId}`
+    }
+    const newTextWithoutTitle = lines.join('\n');
+    let newText =  newTextWithoutTitle
     blockData = {
       ...newBlockData,
       text: newText,
       blockId: dec.blockId,
-      title: dec.title,
+      title: blockTitle,
       // data type should be processed at the end of processing all annotations
-      source: { raw: [blockText], first: blockText},
+      source: { raw: [blockText], first: blockText}, // this has the raw text, unprocessed further while processing annotations
       annotations: ann.annotations,
       process: ["declaration initialized"],
     };
@@ -337,6 +341,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       ...newBlockData,
       blockId: randomBlockName,
       text: blockText,
+      title:"Untitled",
       source: { raw: [blockText], first: blockText},
       annotations: ann.annotations,
       process: ["declaration initialized with random block id"],
@@ -358,7 +363,7 @@ const doAddNewBlock = (docObject,blockText)=>{
     if (blockFound) {
       // update the block object
       blockData = docObject.data[act.blockId];
-      let newText = blockText.replace(act.raw, "");
+      let newText = blockText.replace(act.raw, ""); // the first line in the append cannot have anything else including a title 
       blockData.text = blockData.text + "\n" + newText;
       blockData.source.first = blockData.source.first + "\n" + blockText;
       blockData.source.raw.push(blockText);
@@ -504,9 +509,21 @@ const doAddNewBlock = (docObject,blockText)=>{
   return docObject
 }
 
+const doDeleteBlock = (doc,blockId) => {
+  // changes to be made in : data , dep graph (all edges to and from ), knowledge graph (all edges to and from), blocks array 
+  // TODO  check if block exists 
+  doc.graphs.deps = graph.deleteVertex(doc.graphs.deps,blockId)
+  doc.graphs.knowledge = graph.deleteVertex(doc.graphs.knowledge,blockId)
+  let bIndex = doc.blocks.indexOf(blockId);
+  doc.blocks.splice(bIndex, 1);
+  delete doc.data[blockId]
+  return doc
+}
+
 module.exports = {
   getBlankDocObject,
   doAddError, 
   doAddWarning, 
-  doAddNewBlock
+  doAddNewBlock,
+  doDeleteBlock
 }

@@ -66,6 +66,34 @@ const addVertex = (graphData,options) =>{
 }
 
 
+const deleteVertex = (graphData, vertexId) => {
+  // options = {id}
+  if (!vertexId) {
+    throw new Error("No vertex id provided");
+  }
+  if (graphData.vertices[vertexId]) {
+    // will remove the vertex if it exists but will do nothing if it does not
+    // throw new Error("Vertex with this id does not exists in the graph.")
+    // gather all edges and delete them
+    const edge1Search = graphData.edges.filter((edge) => edge.v1 == vertexId);
+    for (const edge1 of edge1Search) {
+      graphData = deleteSpecificEdge(graphData, edge1.v1, edge1.v2);
+    }
+
+    const edge2Search = graphData.edges.filter((edge) => edge.v2 == vertexId);
+    for (const edge2 of edge2Search) {
+      graphData = deleteSpecificEdge(graphData, edge2.v1, edge2.v2);
+    }
+
+    // remove the vertex
+    delete graphData.vertices[vertexId];
+    return graphData;
+  } else {
+    return graphData;
+  }
+};
+
+
 const addEdge = (graphData,options)=>{
 
   if(!options.v1){throw new Error("Vertex 1 not provided")}
@@ -95,6 +123,18 @@ const addEdge = (graphData,options)=>{
 
 }
 
+const deleteSpecificEdge = (graphData,v1,v2) => {
+  // removes an edge from v1 to v2 (only, not the other way round)
+  const edgeSearch = graphData.edges.findIndex(edge=>edge.v1 == v1 && edge.v2 == v2 )
+  if(edgeSearch !== -1){graphData.edges.splice(edgeSearch,1)}
+  return graphData
+}
+
+const deleteEdge = (graphData,fromVertex,toVertex) => {
+  graphData = deleteSpecificEdge(graphData,fromVertex,toVertex)
+  graphData = deleteSpecificEdge(graphData,toVertex,fromVertex)
+  return graphData
+}
 
 const getVertexNeighbours = (graphData,vertexId)=>{
   if(!vertexId){throw new Error("No Vertex Id not provided")}
@@ -339,13 +379,15 @@ const TopologicalSort = (graphData)=>{
     tSortedGraph = addEdge(tSortedGraph,{v1:vertexOrder[i]['vertexId'] , v2: vertexOrder[i+1]['vertexId'] })
   }
   return  { vertexInOrder : vertexOrder, dfsTree : cycleCheck.dfsTree  , tsTree: tSortedGraph  }
-}
+};
 
 
 module.exports = {
   createGraph,
   addVertex,
+  deleteVertex,
   addEdge,
+  deleteEdge,
   getVertexNeighbours,
   getVertexDegree,
   getVertexKeyMap,
