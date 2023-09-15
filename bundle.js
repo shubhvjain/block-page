@@ -16,9 +16,8 @@ module.exports = {
  * get blank document [done]
  * add a new block in a document [done]
  * relate one block with another 
- * edit block : modify text, modify edges
- * delete block 
- * add a new block and relate it to another block at the same time
+ * edit block : modify text, modify edges [done]
+ * delete block [done]
  * validate documentObject
  * search query :graph 
  * text search
@@ -83,7 +82,7 @@ const getBlankAnnotationObject = (type)=>{
     raw: "", // the raw unprocessed string 
     text: "", // text extracted after sanitizing brackets and annotations  
     blockId: "", // block id of the block in which this annotation exists TODO see if this even required as a common key
-    processed: false, // indicates whether the annotation is processed or not 
+    // processed: false, // indicates whether the annotation is processed or not 
     type: type, // the type of annotation 
   }
 }
@@ -118,8 +117,6 @@ const annotations = {
         ann.text = theString;
         let part1 = theString.split(",");
         ann.blockId = removeSpace(part1[0]);
-        // TODO add the title as well 
-        ann["title"] = "Title of "+removeSpace(part1[0])
 
         return { error: false, message :"", annotations:  [ann]};
       } else {
@@ -289,8 +286,8 @@ const getBlankBlockObject = () => {
   let newBlockData = {
     blockId: "",
     title:"",
-    text: "", // this is the text after annotations are processed
-    source: { raw: [], first: ""},
+    text: "", // this is the text after annotations are processed. this  will not include the 
+    source: { raw: [], first: "", titleExists:false, idExists:false},
     dataType: "default",
     value: {},
     annotations: [],
@@ -302,6 +299,7 @@ const getBlankBlockObject = () => {
 
 const doAddNewBlock = (docObject,blockText)=>{
   // step 1 :  extract all annotations from the block 
+  blockText = blockText.replace(/^\n/, '')
   let ann = extractAllAnnotations(blockText)
 
   // step 2 : generate a new block object 
@@ -327,15 +325,23 @@ const doAddNewBlock = (docObject,blockText)=>{
     if (docObject.data[dec.blockId]) {
       throw new Error(`Re-declaration of ${dec.blockId} is invalid. Use append instead`);
     }
-
-    let newText = blockText.replace(dec.raw, "");
+    // get the title
+    let lines = blockText.split('\n');
+    let blockTitle = lines.shift().replace(dec.raw, "");
+    let noBlockTitle = false
+    if (blockTitle.trim().length==0){
+      blockTitle = `Block ${dec.blockId}`
+      noBlockTitle = true
+    }
+    const newTextWithoutTitle = lines.join('\n');
+    let newText =  newTextWithoutTitle
     blockData = {
       ...newBlockData,
       text: newText,
       blockId: dec.blockId,
-      title: dec.title,
+      title: blockTitle,
       // data type should be processed at the end of processing all annotations
-      source: { raw: [blockText], first: blockText},
+      source: { raw: [blockText], first: newText, titleExists:!noBlockTitle, idExists:true}, // this has the raw text, unprocessed further while processing annotations
       annotations: ann.annotations,
       process: ["declaration initialized"],
     };
@@ -348,7 +354,8 @@ const doAddNewBlock = (docObject,blockText)=>{
       ...newBlockData,
       blockId: randomBlockName,
       text: blockText,
-      source: { raw: [blockText], first: blockText},
+      title:"Untitled",
+      source: { raw: [blockText], first: blockText, titleExists:false, idExists:false},
       annotations: ann.annotations,
       process: ["declaration initialized with random block id"],
     };
@@ -369,7 +376,7 @@ const doAddNewBlock = (docObject,blockText)=>{
     if (blockFound) {
       // update the block object
       blockData = docObject.data[act.blockId];
-      let newText = blockText.replace(act.raw, "");
+      let newText = blockText.replace(act.raw, ""); // the first line in the append cannot have anything else including a title 
       blockData.text = blockData.text + "\n" + newText;
       blockData.source.first = blockData.source.first + "\n" + blockText;
       blockData.source.raw.push(blockText);
@@ -515,17 +522,61 @@ const doAddNewBlock = (docObject,blockText)=>{
   return docObject
 }
 
+const doDeleteBlock = (doc,blockId) => {
+  // changes to be made in : data , dep graph (all edges to and from ), knowledge graph (all edges to and from), blocks array 
+  // TODO  check if block exists 
+  doc.graphs.deps = graph.deleteVertex(doc.graphs.deps,blockId)
+  doc.graphs.knowledge = graph.deleteVertex(doc.graphs.knowledge,blockId)
+  let bIndex = doc.blocks.indexOf(blockId);
+  doc.blocks.splice(bIndex, 1);
+  delete doc.data[blockId]
+  return doc
+}
+
+const doEditBlock = (doc,blockId,changes)=>{
+  //  we can only change the title and text 
+  // TODO check if block exists
+  let blockIdR = removeSpace(blockId)
+  let block = {...doc.data[blockIdR]}
+  let oldData = { title : block.title, text : block.source.first}
+  // now check what needs to be changed
+  let newData = {
+    ... oldData,
+    ... changes
+  }
+  console.log(newData)
+  let newBlock = `.[${blockId}] ${newData.title}  \n  ${newData.text}`
+  doc =  doDeleteBlock(doc,blockIdR)
+  doc = doAddNewBlock(doc,newBlock)
+  return doc
+}
+
 module.exports = {
   getBlankDocObject,
-  doAddError, doAddWarning , extractAllAnnotations, doAddNewBlock
+  doAddError, 
+  doAddWarning, 
+  doAddNewBlock,
+  doDeleteBlock,
+  doEditBlock
 }
 },{"./graph.js":5}],3:[function(require,module,exports){
 // code to decode a document object to a text file
-const decode = (documentObject,options={})=>{
-  return "Text"
+const act = require("./actions")
+
+const decode = (doc,options={})=>{
+  // TODO check if the doc is valid
+  text = ""
+  doc.blocks.map(blockId=>{
+    let blockData = doc.data[blockId]
+    dId = blockData.source.idExists? `.[${blockId}]` : ""
+    dTitle = blockData.source.titleExists? `${blockData.title}` : ""
+    let block  = `${dId}${dTitle}\n${blockData.source.first}\n\n`
+    text += block
+  })
+  return text
 }
 module.exports = decode
-},{}],4:[function(require,module,exports){
+},{"./actions":2}],4:[function(require,module,exports){
 // code to encode a text file to document object
 
 const act = require('./actions.js')
@@ -630,6 +681,34 @@ const addVertex = (graphData,options) =>{
 }
 
 
+const deleteVertex = (graphData, vertexId) => {
+  // options = {id}
+  if (!vertexId) {
+    throw new Error("No vertex id provided");
+  }
+  if (graphData.vertices[vertexId]) {
+    // will remove the vertex if it exists but will do nothing if it does not
+    // throw new Error("Vertex with this id does not exists in the graph.")
+    // gather all edges and delete them
+    const edge1Search = graphData.edges.filter((edge) => edge.v1 == vertexId);
+    for (const edge1 of edge1Search) {
+      graphData = deleteSpecificEdge(graphData, edge1.v1, edge1.v2);
+    }
+
+    const edge2Search = graphData.edges.filter((edge) => edge.v2 == vertexId);
+    for (const edge2 of edge2Search) {
+      graphData = deleteSpecificEdge(graphData, edge2.v1, edge2.v2);
+    }
+
+    // remove the vertex
+    delete graphData.vertices[vertexId];
+    return graphData;
+  } else {
+    return graphData;
+  }
+};
+
+
 const addEdge = (graphData,options)=>{
 
   if(!options.v1){throw new Error("Vertex 1 not provided")}
@@ -659,6 +738,18 @@ const addEdge = (graphData,options)=>{
 
 }
 
+const deleteSpecificEdge = (graphData,v1,v2) => {
+  // removes an edge from v1 to v2 (only, not the other way round)
+  const edgeSearch = graphData.edges.findIndex(edge=>edge.v1 == v1 && edge.v2 == v2 )
+  if(edgeSearch !== -1){graphData.edges.splice(edgeSearch,1)}
+  return graphData
+}
+
+const deleteEdge = (graphData,fromVertex,toVertex) => {
+  graphData = deleteSpecificEdge(graphData,fromVertex,toVertex)
+  graphData = deleteSpecificEdge(graphData,toVertex,fromVertex)
+  return graphData
+}
 
 const getVertexNeighbours = (graphData,vertexId)=>{
   if(!vertexId){throw new Error("No Vertex Id not provided")}
@@ -903,13 +994,15 @@ const TopologicalSort = (graphData)=>{
     tSortedGraph = addEdge(tSortedGraph,{v1:vertexOrder[i]['vertexId'] , v2: vertexOrder[i+1]['vertexId'] })
   }
   return  { vertexInOrder : vertexOrder, dfsTree : cycleCheck.dfsTree  , tsTree: tSortedGraph  }
-}
+};
 
 
 module.exports = {
   createGraph,
   addVertex,
+  deleteVertex,
   addEdge,
+  deleteEdge,
   getVertexNeighbours,
   getVertexDegree,
   getVertexKeyMap,
