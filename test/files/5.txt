@@ -18,3 +18,12 @@ tricky :
 ~[part,i3]
 ~[i4,part,i3] There will be an error deleting i2,i3 or i4
 
+.[edit 1] Title stays same
+This is the text to be edited
+
+.[edit 2] Title changes
+This text will reamin the same
+
+.[edit 3] Title changes
+This text also changes 
+

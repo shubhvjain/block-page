@@ -15,7 +15,7 @@
         "raw": [
           ".[main] This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
         ],
-        "first": ".[main] This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
+        "first": "- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
       },
       "dataType": "default",
       "value": {},
@@ -62,7 +62,7 @@
         "raw": [
           ".[point 1] This is the title of the first point "
         ],
-        "first": ".[point 1] This is the title of the first point "
+        "first": ""
       },
       "dataType": "default",
       "value": {},
@@ -87,7 +87,7 @@
         "raw": [
           ".[point 2] this is the title fo the second point \n~[part,point 2-1]"
         ],
-        "first": ".[point 2] this is the title fo the second point \n~[part,point 2-1]"
+        "first": "~[part,point 2-1]"
       },
       "dataType": "default",
       "value": {},
@@ -123,7 +123,7 @@
         "raw": [
           ".[point 2-1] This is a sub point \n- list item 1\n- list item 2"
         ],
-        "first": ".[point 2-1] This is a sub point \n- list item 1\n- list item 2"
+        "first": "- list item 1\n- list item 2"
       },
       "dataType": "default",
       "value": {},

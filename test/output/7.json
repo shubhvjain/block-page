@@ -14,7 +14,7 @@
         "raw": [
           ".[b1]\nBlock 1 content"
         ],
-        "first": ".[b1]\nBlock 1 content"
+        "first": "Block 1 content"
       },
       "dataType": "default",
       "value": {},
@@ -39,7 +39,7 @@
         "raw": [
           ".[b2] \nBlock 2 content\n/[text,some = test]"
         ],
-        "first": ".[b2] \nBlock 2 content\n/[text,some = test]"
+        "first": "Block 2 content\n/[text,some = test]"
       },
       "dataType": "default",
       "value": {},
@@ -77,7 +77,7 @@
         "raw": [
           ".[b3]\nBlock 3\n>[b2]"
         ],
-        "first": ".[b3]\nBlock 3\n>[b2]"
+        "first": "Block 3\n>[b2]"
       },
       "dataType": "default",
       "value": {},

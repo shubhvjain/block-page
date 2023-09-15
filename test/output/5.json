@@ -1,17 +1,38 @@
 {
   "valid": true,
   "blocks": [
-    2529,
+    8281,
     "indep",
     "indep-1",
     "dep-1",
     "dep-2",
+    8340,
     "i1",
-    3278
+    "edit-1",
+    "edit-2",
+    "edit-3",
+    5146
   ],
   "data": {
-    "2529": {
-      "blockId": 2529,
+    "5146": {
+      "blockId": 5146,
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": ""
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "8281": {
+      "blockId": 8281,
       "title": "Untitled",
       "text": "Very simple text for testing ",
       "source": {
@@ -27,15 +48,15 @@
         "declaration initialized with random block id"
       ]
     },
-    "3278": {
-      "blockId": 3278,
+    "8340": {
+      "blockId": 8340,
       "title": "Untitled",
-      "text": "",
+      "text": "\ntricky :",
       "source": {
         "raw": [
-          ""
+          "\ntricky :"
         ],
-        "first": ""
+        "first": "\ntricky :"
       },
       "dataType": "default",
       "value": {},
@@ -52,7 +73,7 @@
         "raw": [
           ".[indep] I will try to delete this "
         ],
-        "first": ".[indep] I will try to delete this "
+        "first": ""
       },
       "dataType": "default",
       "value": {},
@@ -77,7 +98,7 @@
         "raw": [
           ".[indep 1] This has related  knowledge \n~[part,dep 1]\n~[part,dep 2]"
         ],
-        "first": ".[indep 1] This has related  knowledge \n~[part,dep 1]\n~[part,dep 2]"
+        "first": "~[part,dep 1]\n~[part,dep 2]"
       },
       "dataType": "default",
       "value": {},
@@ -124,7 +145,7 @@
         "raw": [
           ".[dep 1] Depepdency 1"
         ],
-        "first": ".[dep 1] Depepdency 1"
+        "first": ""
       },
       "dataType": "default",
       "value": {},
@@ -149,7 +170,7 @@
         "raw": [
           ".[dep 2] Dependecy 2"
         ],
-        "first": ".[dep 2] Dependecy 2"
+        "first": ""
       },
       "dataType": "default",
       "value": {},
@@ -169,12 +190,12 @@
     "i1": {
       "blockId": "i1",
       "title": "Block i1",
-      "text": ".[i1] \n\n\n There will be an error deleting i2,i3 or i4",
+      "text": "\n\n There will be an error deleting i2,i3 or i4",
       "source": {
         "raw": [
-          "\n.[i1] \n~[p,i2]\n~[p,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4"
+          ".[i1] \n~[part,i2]\n~[part,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4"
         ],
-        "first": "\n.[i1] \n~[p,i2]\n~[p,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4"
+        "first": "~[part,i2]\n~[part,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4"
       },
       "dataType": "default",
       "value": {},
@@ -187,24 +208,24 @@
           "type": "declaration"
         },
         {
-          "raw": "~[p,i2]",
-          "text": "p,i2",
+          "raw": "~[part,i2]",
+          "text": "part,i2",
           "blockId": "",
           "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "i2",
-          "label": "p"
+          "label": "part"
         },
         {
-          "raw": "~[p,i3]",
-          "text": "p,i3",
+          "raw": "~[part,i3]",
+          "text": "part,i3",
           "blockId": "",
           "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "i3",
-          "label": "p"
+          "label": "part"
         },
         {
           "raw": "~[i4,part,i3]",
@@ -219,22 +240,102 @@
       ],
       "process": [
         "declaration initialized",
-        "edge-annotation: p,i2 processed",
-        "edge-annotation: p,i3 processed",
+        "edge-annotation: part,i2 processed",
+        "edge-annotation: part,i3 processed",
         "edge-annotation: i4,part,i3 processed"
+      ]
+    },
+    "edit-1": {
+      "blockId": "edit-1",
+      "title": " Title stays same",
+      "text": "This is the text to be edited",
+      "source": {
+        "raw": [
+          ".[edit 1] Title stays same\nThis is the text to be edited"
+        ],
+        "first": "This is the text to be edited"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[edit 1]",
+          "text": "edit 1",
+          "blockId": "edit-1",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "edit-2": {
+      "blockId": "edit-2",
+      "title": " Title changes",
+      "text": "This text will reamin the same",
+      "source": {
+        "raw": [
+          ".[edit 2] Title changes\nThis text will reamin the same"
+        ],
+        "first": "This text will reamin the same"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[edit 2]",
+          "text": "edit 2",
+          "blockId": "edit-2",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "edit-3": {
+      "blockId": "edit-3",
+      "title": " Title changes",
+      "text": "This text also changes ",
+      "source": {
+        "raw": [
+          ".[edit 3] Title changes\nThis text also changes "
+        ],
+        "first": "This text also changes "
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[edit 3]",
+          "text": "edit 3",
+          "blockId": "edit-3",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
       ]
     }
   },
   "graphs": {
     "deps": {
       "vertices": {
-        "2529": {
-          "label": 2529,
+        "5146": {
+          "label": 5146,
           "weight": "",
           "temp": {}
         },
-        "3278": {
-          "label": 3278,
+        "8281": {
+          "label": 8281,
+          "weight": "",
+          "temp": {}
+        },
+        "8340": {
+          "label": 8340,
           "weight": "",
           "temp": {}
         },
@@ -260,6 +361,21 @@
         },
         "i1": {
           "label": "i1",
+          "weight": "",
+          "temp": {}
+        },
+        "edit-1": {
+          "label": "edit-1",
+          "weight": "",
+          "temp": {}
+        },
+        "edit-2": {
+          "label": "edit-2",
+          "weight": "",
+          "temp": {}
+        },
+        "edit-3": {
+          "label": "edit-3",
           "weight": "",
           "temp": {}
         }
@@ -337,14 +453,14 @@
           "v1": "i1",
           "v2": "i2",
           "weight": "",
-          "label": "p",
+          "label": "part",
           "temp": {}
         },
         {
           "v1": "i1",
           "v2": "i3",
           "weight": "",
-          "label": "p",
+          "label": "part",
           "temp": {}
         },
         {
@@ -374,8 +490,8 @@
   "errors": [],
   "warnings": [
     {
-      "text": "Blank block at position 7",
-      "blockIndex": 6
+      "text": "Blank block at position 11",
+      "blockIndex": 10
     }
   ],
   "metadata": {},

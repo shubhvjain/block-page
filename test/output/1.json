@@ -1,41 +1,24 @@
 {
   "valid": true,
   "blocks": [
-    8417,
+    7935,
     "b1",
     "b2",
     "b3",
-    3585,
+    1553,
     "b4",
-    2956,
+    3822,
     "b6",
     "b7",
     "b8",
     "b9",
     "b10",
     "b11",
-    7710
+    7721
   ],
   "data": {
-    "2956": {
-      "blockId": 2956,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": ""
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "3585": {
-      "blockId": 3585,
+    "1553": {
+      "blockId": 1553,
       "title": "Untitled",
       "text": "a random block that cannot be used in other invocation because it does not have  a name",
       "source": {
@@ -51,8 +34,8 @@
         "declaration initialized with random block id"
       ]
     },
-    "7710": {
-      "blockId": 7710,
+    "3822": {
+      "blockId": 3822,
       "title": "Untitled",
       "text": "",
       "source": {
@@ -68,8 +51,25 @@
         "declaration initialized with random block id"
       ]
     },
-    "8417": {
-      "blockId": 8417,
+    "7721": {
+      "blockId": 7721,
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": ""
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "7935": {
+      "blockId": 7935,
       "title": "Untitled",
       "text": "what this file tests ?\n- block declerations \n- block title (exists  vs the default) \n- invocation annotation on already existing block\n- append invocation (correct usage)\n- append invocation with actions invocation in both blocks \n- invocation of one block to another is text only and other annotations in the block being invoked are not copied as well (b6,b7,b8)\n- graph annotation",
       "source": {
@@ -93,7 +93,7 @@
         "raw": [
           ".[b1] Block title 1\nBlock 1 \nthis is some more text\nand more"
         ],
-        "first": ".[b1] Block title 1\nBlock 1 \nthis is some more text\nand more"
+        "first": "Block 1 \nthis is some more text\nand more"
       },
       "dataType": "default",
       "value": {},
@@ -118,7 +118,7 @@
         "raw": [
           ".[b2] Block title 2\nBlock 2"
         ],
-        "first": ".[b2] Block title 2\nBlock 2"
+        "first": "Block 2"
       },
       "dataType": "default",
       "value": {},
@@ -143,7 +143,7 @@
         "raw": [
           ".[b3]\nBlock 3\n>[b2]"
         ],
-        "first": ".[b3]\nBlock 3\n>[b2]"
+        "first": "Block 3\n>[b2]"
       },
       "dataType": "default",
       "value": {},
@@ -189,7 +189,7 @@
           "\n.[b4]\n/[action 1,part1]\nBlock 1 part 1",
           "\n+[b4]\n/[action 2,part 1]\nBlock 1 part 2"
         ],
-        "first": "\n.[b4]\n/[action 1,part1]\nBlock 1 part 1\n\n+[b4]\n/[action 2,part 1]\nBlock 1 part 2"
+        "first": ".[b4]\n/[action 1,part1]\nBlock 1 part 1\n\n+[b4]\n/[action 2,part 1]\nBlock 1 part 2"
       },
       "dataType": "default",
       "value": {},
@@ -249,7 +249,7 @@
         "raw": [
           ".[b6]\nBlock 6 content"
         ],
-        "first": ".[b6]\nBlock 6 content"
+        "first": "Block 6 content"
       },
       "dataType": "default",
       "value": {},
@@ -274,7 +274,7 @@
         "raw": [
           ".[b7] \nBlock 7 content\n/[text,some = test]"
         ],
-        "first": ".[b7] \nBlock 7 content\n/[text,some = test]"
+        "first": "Block 7 content\n/[text,some = test]"
       },
       "dataType": "default",
       "value": {},
@@ -312,7 +312,7 @@
         "raw": [
           ".[b8]\nBlock 8. when b7 content is copied the text must not contain the action invocation in it\n>[b7]"
         ],
-        "first": ".[b8]\nBlock 8. when b7 content is copied the text must not contain the action invocation in it\n>[b7]"
+        "first": "Block 8. when b7 content is copied the text must not contain the action invocation in it\n>[b7]"
       },
       "dataType": "default",
       "value": {},
@@ -350,7 +350,7 @@
         "raw": [
           "\n.[b9]\n~[part,b10]\n~[part,b11]"
         ],
-        "first": "\n.[b9]\n~[part,b10]\n~[part,b11]"
+        "first": ".[b9]\n~[part,b10]\n~[part,b11]"
       },
       "dataType": "default",
       "value": {},
@@ -397,7 +397,7 @@
         "raw": [
           ".[b10] block 10\nthis is the 10th block"
         ],
-        "first": ".[b10] block 10\nthis is the 10th block"
+        "first": "this is the 10th block"
       },
       "dataType": "default",
       "value": {},
@@ -422,7 +422,7 @@
         "raw": [
           ".[b11] Block 11 ?\nthis is the 11th block "
         ],
-        "first": ".[b11] Block 11 ?\nthis is the 11th block "
+        "first": "this is the 11th block "
       },
       "dataType": "default",
       "value": {},
@@ -443,23 +443,23 @@
   "graphs": {
     "deps": {
       "vertices": {
-        "2956": {
-          "label": 2956,
+        "1553": {
+          "label": 1553,
           "weight": "",
           "temp": {}
         },
-        "3585": {
-          "label": 3585,
+        "3822": {
+          "label": 3822,
           "weight": "",
           "temp": {}
         },
-        "7710": {
-          "label": 7710,
+        "7721": {
+          "label": 7721,
           "weight": "",
           "temp": {}
         },
-        "8417": {
-          "label": 8417,
+        "7935": {
+          "label": 7935,
           "weight": "",
           "temp": {}
         },
@@ -596,8 +596,8 @@
     },
     "dfsTree": {
       "vertices": {
-        "2956": {
-          "label": "2956 (d=1,f=2)",
+        "1553": {
+          "label": "1553 (d=1,f=2)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -607,8 +607,8 @@
             "degree": 0
           }
         },
-        "3585": {
-          "label": "3585 (d=3,f=4)",
+        "3822": {
+          "label": "3822 (d=3,f=4)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -618,8 +618,8 @@
             "degree": 0
           }
         },
-        "7710": {
-          "label": "7710 (d=5,f=6)",
+        "7721": {
+          "label": "7721 (d=5,f=6)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -629,8 +629,8 @@
             "degree": 0
           }
         },
-        "8417": {
-          "label": "8417 (d=7,f=8)",
+        "7935": {
+          "label": "7935 (d=7,f=8)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -788,8 +788,8 @@
     },
     "tsTree": {
       "vertices": {
-        "2956": {
-          "label": "2956 (d=1,f=2)",
+        "1553": {
+          "label": "1553 (d=1,f=2)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -799,8 +799,8 @@
             "degree": 0
           }
         },
-        "3585": {
-          "label": "3585 (d=3,f=4)",
+        "3822": {
+          "label": "3822 (d=3,f=4)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -810,8 +810,8 @@
             "degree": 0
           }
         },
-        "7710": {
-          "label": "7710 (d=5,f=6)",
+        "7721": {
+          "label": "7721 (d=5,f=6)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -821,8 +821,8 @@
             "degree": 0
           }
         },
-        "8417": {
-          "label": "8417 (d=7,f=8)",
+        "7935": {
+          "label": "7935 (d=7,f=8)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -945,28 +945,28 @@
       },
       "edges": [
         {
-          "v1": "2956",
-          "v2": "3585",
+          "v1": "1553",
+          "v2": "3822",
           "weight": "",
           "label": "",
           "temp": {}
         },
         {
-          "v1": "3585",
-          "v2": "7710",
+          "v1": "3822",
+          "v2": "7721",
           "weight": "",
           "label": "",
           "temp": {}
         },
         {
-          "v1": "7710",
-          "v2": "8417",
+          "v1": "7721",
+          "v2": "7935",
           "weight": "",
           "label": "",
           "temp": {}
         },
         {
-          "v1": "8417",
+          "v1": "7935",
           "v2": "b1",
           "weight": "",
           "label": "",
@@ -1067,19 +1067,19 @@
   "extra": {
     "blockOrder": [
       {
-        "vertexId": "2956",
+        "vertexId": "1553",
         "fVal": 2
       },
       {
-        "vertexId": "3585",
+        "vertexId": "3822",
         "fVal": 4
       },
       {
-        "vertexId": "7710",
+        "vertexId": "7721",
         "fVal": 6
       },
       {
-        "vertexId": "8417",
+        "vertexId": "7935",
         "fVal": 8
       },
       {

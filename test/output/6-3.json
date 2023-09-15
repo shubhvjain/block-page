@@ -69,13 +69,13 @@
     },
     "edit-3": {
       "blockId": "edit-3",
-      "title": " Title changes",
-      "text": "This text also changes \n",
+      "title": " New title  ",
+      "text": "  This is the new text",
       "source": {
         "raw": [
-          ".[edit 3] Title changes\nThis text also changes \n"
+          ".[edit 3] New title  \n  This is the new text"
         ],
-        "first": "This text also changes \n"
+        "first": "  This is the new text"
       },
       "dataType": "default",
       "value": {},
