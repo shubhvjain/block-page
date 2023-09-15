@@ -1,0 +1,16 @@
+
+what this file test ?
+- invoation to a block that does not exists yet 
+
+.[b1]
+Block 1
+
+.[b2]
+Block 2
+
+.[b3]
+Block 3
+>[b2]
+b4 does not exists yet. but this is still working. 
+>[b4]
+

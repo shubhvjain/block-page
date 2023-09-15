@@ -2,6 +2,7 @@
 const act = require("./actions")
 
 const decode = (doc,options={})=>{
+  // TODO check if the doc is valid
   text = ""
   doc.blocks.map(blockId=>{
     let blockData = doc.data[blockId]

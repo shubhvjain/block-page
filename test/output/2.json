@@ -1,8 +1,8 @@
 {
   "valid": false,
   "blocks": [
-    3306,
-    1287,
+    6191,
+    8331,
     "main",
     "part-1",
     "part-1-1",
@@ -11,58 +11,26 @@
     "indep-1",
     "dep-1",
     "dep-2",
-    5463,
+    5830,
     "code",
     "code1",
     "code-part-1",
     "code-part-2",
-    8954,
-    3475
+    8388,
+    2887
   ],
   "data": {
-    "1287": {
-      "blockId": 1287,
-      "title": "Untitled",
-      "text": "To test graph annotations",
-      "source": {
-        "raw": [
-          "To test graph annotations"
-        ],
-        "first": "To test graph annotations"
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "3306": {
-      "blockId": 3306,
-      "title": "Untitled",
-      "text": "what this file tests ?\n- working text to use it to modify the doc object using actions",
-      "source": {
-        "raw": [
-          "what this file tests ?\n- working text to use it to modify the doc object using actions"
-        ],
-        "first": "what this file tests ?\n- working text to use it to modify the doc object using actions"
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "3475": {
-      "blockId": 3475,
+    "2887": {
+      "blockId": 2887,
       "title": "Untitled",
       "text": "",
       "source": {
         "raw": [
           ""
         ],
-        "first": ""
+        "first": "",
+        "titleExists": false,
+        "idExists": false
       },
       "dataType": "default",
       "value": {},
@@ -71,15 +39,17 @@
         "declaration initialized with random block id"
       ]
     },
-    "5463": {
-      "blockId": 5463,
+    "5830": {
+      "blockId": 5830,
       "title": "Untitled",
       "text": "I also need to test invocation ",
       "source": {
         "raw": [
           "I also need to test invocation "
         ],
-        "first": "I also need to test invocation "
+        "first": "I also need to test invocation ",
+        "titleExists": false,
+        "idExists": false
       },
       "dataType": "default",
       "value": {},
@@ -88,15 +58,55 @@
         "declaration initialized with random block id"
       ]
     },
-    "8954": {
-      "blockId": 8954,
+    "6191": {
+      "blockId": 6191,
+      "title": "Untitled",
+      "text": "what this file tests ?\n- working text to use it to modify the doc object using actions",
+      "source": {
+        "raw": [
+          "what this file tests ?\n- working text to use it to modify the doc object using actions"
+        ],
+        "first": "what this file tests ?\n- working text to use it to modify the doc object using actions",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "8331": {
+      "blockId": 8331,
+      "title": "Untitled",
+      "text": "To test graph annotations",
+      "source": {
+        "raw": [
+          "To test graph annotations"
+        ],
+        "first": "To test graph annotations",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "8388": {
+      "blockId": 8388,
       "title": "Untitled",
       "text": "and append",
       "source": {
         "raw": [
           "and append"
         ],
-        "first": "and append"
+        "first": "and append",
+        "titleExists": false,
+        "idExists": false
       },
       "dataType": "default",
       "value": {},
@@ -113,7 +123,9 @@
         "raw": [
           ".[main] Central idea\nThis is the main idea of the block. Bla bla bla\n~[part,part 1]\n~[part,part 2]"
         ],
-        "first": "This is the main idea of the block. Bla bla bla\n~[part,part 1]\n~[part,part 2]"
+        "first": "This is the main idea of the block. Bla bla bla\n~[part,part 1]\n~[part,part 2]",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -122,14 +134,12 @@
           "raw": ".[main]",
           "text": "main",
           "blockId": "main",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[part,part 1]",
           "text": "part,part 1",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "part-1",
@@ -139,7 +149,6 @@
           "raw": "~[part,part 2]",
           "text": "part,part 2",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "part-2",
@@ -161,7 +170,9 @@
           ".[part 1] Can this be a question ?\n~[part,part 1-1]\n~[part,part 1-2]",
           "+[part 1] \nThis is some more text that i need to append to part 1"
         ],
-        "first": "~[part,part 1-1]\n~[part,part 1-2]\n+[part 1] \nThis is some more text that i need to append to part 1"
+        "first": "~[part,part 1-1]\n~[part,part 1-2]\n+[part 1] \nThis is some more text that i need to append to part 1",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -170,14 +181,12 @@
           "raw": ".[part 1]",
           "text": "part 1",
           "blockId": "part-1",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[part,part 1-1]",
           "text": "part,part 1-1",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "part-1-1",
@@ -187,7 +196,6 @@
           "raw": "~[part,part 1-2]",
           "text": "part,part 1-2",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "part-1-2",
@@ -197,7 +205,6 @@
           "raw": "+[part 1]",
           "text": "part 1",
           "blockId": "part-1",
-          "processed": false,
           "type": "append"
         }
       ],
@@ -216,7 +223,9 @@
         "raw": [
           ".[part 1-1] \nThis is some content"
         ],
-        "first": "This is some content"
+        "first": "This is some content",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -225,7 +234,6 @@
           "raw": ".[part 1-1]",
           "text": "part 1-1",
           "blockId": "part-1-1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -241,7 +249,9 @@
         "raw": [
           ".[part 1-2]\nThis is more content "
         ],
-        "first": "This is more content "
+        "first": "This is more content ",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -250,7 +260,6 @@
           "raw": ".[part 1-2]",
           "text": "part 1-2",
           "blockId": "part-1-2",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -266,7 +275,9 @@
         "raw": [
           ".[indep] I will try to delete this "
         ],
-        "first": ""
+        "first": "",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -275,7 +286,6 @@
           "raw": ".[indep]",
           "text": "indep",
           "blockId": "indep",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -291,7 +301,9 @@
         "raw": [
           ".[indep 1] This has related  knowledge \n~[part,dep 1]\n~[part,dep 2]"
         ],
-        "first": "~[part,dep 1]\n~[part,dep 2]"
+        "first": "~[part,dep 1]\n~[part,dep 2]",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -300,14 +312,12 @@
           "raw": ".[indep 1]",
           "text": "indep 1",
           "blockId": "indep-1",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[part,dep 1]",
           "text": "part,dep 1",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "dep-1",
@@ -317,7 +327,6 @@
           "raw": "~[part,dep 2]",
           "text": "part,dep 2",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "dep-2",
@@ -338,7 +347,9 @@
         "raw": [
           ".[dep 1] Depepdency 1"
         ],
-        "first": ""
+        "first": "",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -347,7 +358,6 @@
           "raw": ".[dep 1]",
           "text": "dep 1",
           "blockId": "dep-1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -363,7 +373,9 @@
         "raw": [
           ".[dep 2] Dependecy 2"
         ],
-        "first": ""
+        "first": "",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -372,7 +384,6 @@
           "raw": ".[dep 2]",
           "text": "dep 2",
           "blockId": "dep-2",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -388,7 +399,9 @@
         "raw": [
           ".[code]\n>[do this]\n>[do that]\n>[return data]\nNotice the block used here are not declared "
         ],
-        "first": ">[do this]\n>[do that]\n>[return data]\nNotice the block used here are not declared "
+        "first": ">[do this]\n>[do that]\n>[return data]\nNotice the block used here are not declared ",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -397,28 +410,24 @@
           "raw": ".[code]",
           "text": "code",
           "blockId": "code",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": ">[do this]",
           "text": "do this",
           "blockId": "do this",
-          "processed": false,
           "type": "invocation"
         },
         {
           "raw": ">[do that]",
           "text": "do that",
           "blockId": "do that",
-          "processed": false,
           "type": "invocation"
         },
         {
           "raw": ">[return data]",
           "text": "return data",
           "blockId": "return data",
-          "processed": false,
           "type": "invocation"
         }
       ],
@@ -437,7 +446,9 @@
         "raw": [
           ".[code1]\n>[code part 1]\n>[code part 2] "
         ],
-        "first": ">[code part 1]\n>[code part 2] "
+        "first": ">[code part 1]\n>[code part 2] ",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -446,21 +457,18 @@
           "raw": ".[code1]",
           "text": "code1",
           "blockId": "code1",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": ">[code part 1]",
           "text": "code part 1",
           "blockId": "code part 1",
-          "processed": false,
           "type": "invocation"
         },
         {
           "raw": ">[code part 2]",
           "text": "code part 2",
           "blockId": "code part 2",
-          "processed": false,
           "type": "invocation"
         }
       ],
@@ -478,7 +486,9 @@
         "raw": [
           ".[code part 1]\nsome code here"
         ],
-        "first": "some code here"
+        "first": "some code here",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -487,7 +497,6 @@
           "raw": ".[code part 1]",
           "text": "code part 1",
           "blockId": "code-part-1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -503,7 +512,9 @@
         "raw": [
           ".[code part 2]\nmore code here"
         ],
-        "first": "more code here"
+        "first": "more code here",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -512,7 +523,6 @@
           "raw": ".[code part 2]",
           "text": "code part 2",
           "blockId": "code-part-2",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -524,28 +534,28 @@
   "graphs": {
     "deps": {
       "vertices": {
-        "1287": {
-          "label": 1287,
+        "2887": {
+          "label": 2887,
           "weight": "",
           "temp": {}
         },
-        "3306": {
-          "label": 3306,
+        "5830": {
+          "label": 5830,
           "weight": "",
           "temp": {}
         },
-        "3475": {
-          "label": 3475,
+        "6191": {
+          "label": 6191,
           "weight": "",
           "temp": {}
         },
-        "5463": {
-          "label": 5463,
+        "8331": {
+          "label": 8331,
           "weight": "",
           "temp": {}
         },
-        "8954": {
-          "label": 8954,
+        "8388": {
+          "label": 8388,
           "weight": "",
           "temp": {}
         },

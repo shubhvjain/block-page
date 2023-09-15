@@ -1,21 +1,23 @@
 {
   "valid": false,
   "blocks": [
-    7179,
+    9432,
     "b1",
     "b2",
     "b3"
   ],
   "data": {
-    "7179": {
-      "blockId": 7179,
+    "9432": {
+      "blockId": 9432,
       "title": "Untitled",
       "text": "what is file test ?\n- incorrect usage of invocation annotation (same block)",
       "source": {
         "raw": [
           "what is file test ?\n- incorrect usage of invocation annotation (same block)"
         ],
-        "first": "what is file test ?\n- incorrect usage of invocation annotation (same block)"
+        "first": "what is file test ?\n- incorrect usage of invocation annotation (same block)",
+        "titleExists": false,
+        "idExists": false
       },
       "dataType": "default",
       "value": {},
@@ -32,7 +34,9 @@
         "raw": [
           ".[b1] \nBlock 1"
         ],
-        "first": "Block 1"
+        "first": "Block 1",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -41,7 +45,6 @@
           "raw": ".[b1]",
           "text": "b1",
           "blockId": "b1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -57,7 +60,9 @@
         "raw": [
           ".[b2]\nBlock 2"
         ],
-        "first": "Block 2"
+        "first": "Block 2",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -66,7 +71,6 @@
           "raw": ".[b2]",
           "text": "b2",
           "blockId": "b2",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -82,7 +86,9 @@
         "raw": [
           ".[b3] Error is just the title . \nBut there is an error here. You cannot invoke b3 in b3\nBlock 3\n>[b2]\n>[b4]\n>[b3]"
         ],
-        "first": "But there is an error here. You cannot invoke b3 in b3\nBlock 3\n>[b2]\n>[b4]\n>[b3]"
+        "first": "But there is an error here. You cannot invoke b3 in b3\nBlock 3\n>[b2]\n>[b4]\n>[b3]",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -91,28 +97,24 @@
           "raw": ".[b3]",
           "text": "b3",
           "blockId": "b3",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": ">[b2]",
           "text": "b2",
           "blockId": "b2",
-          "processed": false,
           "type": "invocation"
         },
         {
           "raw": ">[b4]",
           "text": "b4",
           "blockId": "b4",
-          "processed": false,
           "type": "invocation"
         },
         {
           "raw": ">[b3]",
           "text": "b3",
           "blockId": "b3",
-          "processed": false,
           "type": "invocation"
         }
       ],
@@ -126,8 +128,8 @@
   "graphs": {
     "deps": {
       "vertices": {
-        "7179": {
-          "label": 7179,
+        "9432": {
+          "label": 9432,
           "weight": "",
           "temp": {}
         },

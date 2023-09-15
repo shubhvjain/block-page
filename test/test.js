@@ -13,13 +13,13 @@ encodeAllTestFiles = async () => {
 };
 
 decodeAllGeneratedFiles = async () => {
-  testFiles = ["file1"];
+  testFiles = ["file1","1","2","3","4","5","6","7"];
   for (let index = 0; index < testFiles.length; index++) {
     const element = testFiles[index];
     file = await u.readFile("./output/" + element+".json",true);
-    console.log(file);
+    //console.log(file);
     obj = decode(file);
-    await u.saveFile(obj, "./files/" + element+"_decoded.txt");
+    await u.saveFile(obj, "./output/" + element+"_decoded.txt");
   }
 };
 

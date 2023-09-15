@@ -1,45 +1,30 @@
 {
   "valid": true,
   "blocks": [
-    8281,
+    2636,
     "indep",
     "indep-1",
     "dep-1",
     "dep-2",
-    8340,
+    6565,
     "i1",
     "edit-1",
     "edit-2",
     "edit-3",
-    5146
+    9771
   ],
   "data": {
-    "5146": {
-      "blockId": 5146,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": ""
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "8281": {
-      "blockId": 8281,
+    "2636": {
+      "blockId": 2636,
       "title": "Untitled",
       "text": "Very simple text for testing ",
       "source": {
         "raw": [
           "Very simple text for testing "
         ],
-        "first": "Very simple text for testing "
+        "first": "Very simple text for testing ",
+        "titleExists": false,
+        "idExists": false
       },
       "dataType": "default",
       "value": {},
@@ -48,15 +33,36 @@
         "declaration initialized with random block id"
       ]
     },
-    "8340": {
-      "blockId": 8340,
+    "6565": {
+      "blockId": 6565,
       "title": "Untitled",
-      "text": "\ntricky :",
+      "text": "tricky :",
       "source": {
         "raw": [
-          "\ntricky :"
+          "tricky :"
         ],
-        "first": "\ntricky :"
+        "first": "tricky :",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "9771": {
+      "blockId": 9771,
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": "",
+        "titleExists": false,
+        "idExists": false
       },
       "dataType": "default",
       "value": {},
@@ -73,7 +79,9 @@
         "raw": [
           ".[indep] I will try to delete this "
         ],
-        "first": ""
+        "first": "",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -82,7 +90,6 @@
           "raw": ".[indep]",
           "text": "indep",
           "blockId": "indep",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -98,7 +105,9 @@
         "raw": [
           ".[indep 1] This has related  knowledge \n~[part,dep 1]\n~[part,dep 2]"
         ],
-        "first": "~[part,dep 1]\n~[part,dep 2]"
+        "first": "~[part,dep 1]\n~[part,dep 2]",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -107,14 +116,12 @@
           "raw": ".[indep 1]",
           "text": "indep 1",
           "blockId": "indep-1",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[part,dep 1]",
           "text": "part,dep 1",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "dep-1",
@@ -124,7 +131,6 @@
           "raw": "~[part,dep 2]",
           "text": "part,dep 2",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "dep-2",
@@ -145,7 +151,9 @@
         "raw": [
           ".[dep 1] Depepdency 1"
         ],
-        "first": ""
+        "first": "",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -154,7 +162,6 @@
           "raw": ".[dep 1]",
           "text": "dep 1",
           "blockId": "dep-1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -170,7 +177,9 @@
         "raw": [
           ".[dep 2] Dependecy 2"
         ],
-        "first": ""
+        "first": "",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -179,7 +188,6 @@
           "raw": ".[dep 2]",
           "text": "dep 2",
           "blockId": "dep-2",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -195,7 +203,9 @@
         "raw": [
           ".[i1] \n~[part,i2]\n~[part,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4"
         ],
-        "first": "~[part,i2]\n~[part,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4"
+        "first": "~[part,i2]\n~[part,i3]\n~[i4,part,i3] There will be an error deleting i2,i3 or i4",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -204,14 +214,12 @@
           "raw": ".[i1]",
           "text": "i1",
           "blockId": "i1",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[part,i2]",
           "text": "part,i2",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "i2",
@@ -221,7 +229,6 @@
           "raw": "~[part,i3]",
           "text": "part,i3",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "i3",
@@ -231,7 +238,6 @@
           "raw": "~[i4,part,i3]",
           "text": "i4,part,i3",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "i4",
           "v2": "i3",
@@ -253,7 +259,9 @@
         "raw": [
           ".[edit 1] Title stays same\nThis is the text to be edited"
         ],
-        "first": "This is the text to be edited"
+        "first": "This is the text to be edited",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -262,7 +270,6 @@
           "raw": ".[edit 1]",
           "text": "edit 1",
           "blockId": "edit-1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -278,7 +285,9 @@
         "raw": [
           ".[edit 2] Title changes\nThis text will reamin the same"
         ],
-        "first": "This text will reamin the same"
+        "first": "This text will reamin the same",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -287,7 +296,6 @@
           "raw": ".[edit 2]",
           "text": "edit 2",
           "blockId": "edit-2",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -303,7 +311,9 @@
         "raw": [
           ".[edit 3] Title changes\nThis text also changes "
         ],
-        "first": "This text also changes "
+        "first": "This text also changes ",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -312,7 +322,6 @@
           "raw": ".[edit 3]",
           "text": "edit 3",
           "blockId": "edit-3",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -324,18 +333,18 @@
   "graphs": {
     "deps": {
       "vertices": {
-        "5146": {
-          "label": 5146,
+        "2636": {
+          "label": 2636,
           "weight": "",
           "temp": {}
         },
-        "8281": {
-          "label": 8281,
+        "6565": {
+          "label": 6565,
           "weight": "",
           "temp": {}
         },
-        "8340": {
-          "label": 8340,
+        "9771": {
+          "label": 9771,
           "weight": "",
           "temp": {}
         },

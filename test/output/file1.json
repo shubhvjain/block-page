@@ -15,7 +15,9 @@
         "raw": [
           ".[main] This is the title of the document\n- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
         ],
-        "first": "- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]"
+        "first": "- This is the content of the main block \n- style_color : red\n- tags : sample, title , quality \n~[part,point 1]\n~[part,point 2]",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -24,14 +26,12 @@
           "raw": ".[main]",
           "text": "main",
           "blockId": "main",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[part,point 1]",
           "text": "part,point 1",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "point-1",
@@ -41,7 +41,6 @@
           "raw": "~[part,point 2]",
           "text": "part,point 2",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "point-2",
@@ -62,7 +61,9 @@
         "raw": [
           ".[point 1] This is the title of the first point "
         ],
-        "first": ""
+        "first": "",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -71,7 +72,6 @@
           "raw": ".[point 1]",
           "text": "point 1",
           "blockId": "point-1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -87,7 +87,9 @@
         "raw": [
           ".[point 2] this is the title fo the second point \n~[part,point 2-1]"
         ],
-        "first": "~[part,point 2-1]"
+        "first": "~[part,point 2-1]",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -96,14 +98,12 @@
           "raw": ".[point 2]",
           "text": "point 2",
           "blockId": "point-2",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[part,point 2-1]",
           "text": "part,point 2-1",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "point-2-1",
@@ -123,7 +123,9 @@
         "raw": [
           ".[point 2-1] This is a sub point \n- list item 1\n- list item 2"
         ],
-        "first": "- list item 1\n- list item 2"
+        "first": "- list item 1\n- list item 2",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -132,7 +134,6 @@
           "raw": ".[point 2-1]",
           "text": "point 2-1",
           "blockId": "point-2-1",
-          "processed": false,
           "type": "declaration"
         }
       ],

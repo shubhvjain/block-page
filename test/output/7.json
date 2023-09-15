@@ -14,7 +14,9 @@
         "raw": [
           ".[b1]\nBlock 1 content"
         ],
-        "first": "Block 1 content"
+        "first": "Block 1 content",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -23,7 +25,6 @@
           "raw": ".[b1]",
           "text": "b1",
           "blockId": "b1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -39,7 +40,9 @@
         "raw": [
           ".[b2] \nBlock 2 content\n/[text,some = test]"
         ],
-        "first": "Block 2 content\n/[text,some = test]"
+        "first": "Block 2 content\n/[text,some = test]",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -48,14 +51,12 @@
           "raw": ".[b2]",
           "text": "b2",
           "blockId": "b2",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "/[text,some = test]",
           "text": "text,some = test",
           "blockId": "",
-          "processed": false,
           "type": "action",
           "action": "text,some = test",
           "arguments": {
@@ -77,7 +78,9 @@
         "raw": [
           ".[b3]\nBlock 3\n>[b2]"
         ],
-        "first": "Block 3\n>[b2]"
+        "first": "Block 3\n>[b2]",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -86,14 +89,12 @@
           "raw": ".[b3]",
           "text": "b3",
           "blockId": "b3",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": ">[b2]",
           "text": "b2",
           "blockId": "b2",
-          "processed": false,
           "type": "invocation"
         }
       ],

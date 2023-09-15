@@ -1,21 +1,23 @@
 {
   "valid": false,
   "blocks": [
-    1691,
+    3962,
     "b1",
     "b2",
     "b3"
   ],
   "data": {
-    "1691": {
-      "blockId": 1691,
+    "3962": {
+      "blockId": 3962,
       "title": "Untitled",
       "text": "what this file test ?\n- invoation to a block that does not exists yet ",
       "source": {
         "raw": [
           "what this file test ?\n- invoation to a block that does not exists yet "
         ],
-        "first": "what this file test ?\n- invoation to a block that does not exists yet "
+        "first": "what this file test ?\n- invoation to a block that does not exists yet ",
+        "titleExists": false,
+        "idExists": false
       },
       "dataType": "default",
       "value": {},
@@ -32,7 +34,9 @@
         "raw": [
           ".[b1] \nBlock 1"
         ],
-        "first": "Block 1"
+        "first": "Block 1",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -41,7 +45,6 @@
           "raw": ".[b1]",
           "text": "b1",
           "blockId": "b1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -57,7 +60,9 @@
         "raw": [
           ".[b2]\nBlock 2"
         ],
-        "first": "Block 2"
+        "first": "Block 2",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -66,7 +71,6 @@
           "raw": ".[b2]",
           "text": "b2",
           "blockId": "b2",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -82,7 +86,9 @@
         "raw": [
           ".[b3]\nBlock 3\n>[b2]\nb4 does not exists yet. but this is still working. \n>[b4]"
         ],
-        "first": "Block 3\n>[b2]\nb4 does not exists yet. but this is still working. \n>[b4]"
+        "first": "Block 3\n>[b2]\nb4 does not exists yet. but this is still working. \n>[b4]",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -91,21 +97,18 @@
           "raw": ".[b3]",
           "text": "b3",
           "blockId": "b3",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": ">[b2]",
           "text": "b2",
           "blockId": "b2",
-          "processed": false,
           "type": "invocation"
         },
         {
           "raw": ">[b4]",
           "text": "b4",
           "blockId": "b4",
-          "processed": false,
           "type": "invocation"
         }
       ],
@@ -119,8 +122,8 @@
   "graphs": {
     "deps": {
       "vertices": {
-        "1691": {
-          "label": 1691,
+        "3962": {
+          "label": 3962,
           "weight": "",
           "temp": {}
         },

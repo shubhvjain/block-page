@@ -14,7 +14,9 @@
         "raw": [
           ".[edit 1] Title stays same\nThis is the text to be edited"
         ],
-        "first": "This is the text to be edited"
+        "first": "This is the text to be edited",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -23,7 +25,6 @@
           "raw": ".[edit 1]",
           "text": "edit 1",
           "blockId": "edit-1",
-          "processed": false,
           "type": "declaration"
         }
       ],
@@ -39,7 +40,9 @@
         "raw": [
           ".[edit 2] Title changes\nThis text will reamin the same ~[haha,haha]"
         ],
-        "first": "This text will reamin the same ~[haha,haha]"
+        "first": "This text will reamin the same ~[haha,haha]",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -48,14 +51,12 @@
           "raw": ".[edit 2]",
           "text": "edit 2",
           "blockId": "edit-2",
-          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[haha,haha]",
           "text": "haha,haha",
           "blockId": "",
-          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "haha",
@@ -75,7 +76,9 @@
         "raw": [
           ".[edit 3] Title changes\nThis text also changes \n"
         ],
-        "first": "This text also changes \n"
+        "first": "This text also changes \n",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -84,7 +87,6 @@
           "raw": ".[edit 3]",
           "text": "edit 3",
           "blockId": "edit-3",
-          "processed": false,
           "type": "declaration"
         }
       ],
