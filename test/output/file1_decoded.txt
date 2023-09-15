@@ -1,0 +1,17 @@
+.[main] This is the title of the document
+- This is the content of the main block 
+- style_color : red
+- tags : sample, title , quality 
+~[part,point 1]
+~[part,point 2]
+
+.[point-1] This is the title of the first point 
+
+
+.[point-2] this is the title fo the second point 
+~[part,point 2-1]
+
+.[point-2-1] This is a sub point 
+- list item 1
+- list item 2
+

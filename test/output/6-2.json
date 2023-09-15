@@ -2,8 +2,8 @@
   "valid": true,
   "blocks": [
     "edit-1",
-    "edit-2",
-    "edit-3"
+    "edit-3",
+    "edit-2"
   ],
   "data": {
     "edit-1": {
@@ -14,9 +14,7 @@
         "raw": [
           ".[edit 1] Title stays same\nThis is the text to be edited"
         ],
-        "first": "This is the text to be edited",
-        "titleExists": true,
-        "idExists": true
+        "first": "This is the text to be edited"
       },
       "dataType": "default",
       "value": {},
@@ -25,47 +23,12 @@
           "raw": ".[edit 1]",
           "text": "edit 1",
           "blockId": "edit-1",
+          "processed": false,
           "type": "declaration"
         }
       ],
       "process": [
         "declaration initialized"
-      ]
-    },
-    "edit-2": {
-      "blockId": "edit-2",
-      "title": " Title changes",
-      "text": "This text will reamin the same ",
-      "source": {
-        "raw": [
-          ".[edit 2] Title changes\nThis text will reamin the same ~[haha,haha]"
-        ],
-        "first": "This text will reamin the same ~[haha,haha]",
-        "titleExists": true,
-        "idExists": true
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [
-        {
-          "raw": ".[edit 2]",
-          "text": "edit 2",
-          "blockId": "edit-2",
-          "type": "declaration"
-        },
-        {
-          "raw": "~[haha,haha]",
-          "text": "haha,haha",
-          "blockId": "",
-          "type": "edge",
-          "v1": "*",
-          "v2": "haha",
-          "label": "haha"
-        }
-      ],
-      "process": [
-        "declaration initialized",
-        "edge-annotation: haha,haha processed"
       ]
     },
     "edit-3": {
@@ -76,9 +39,7 @@
         "raw": [
           ".[edit 3] Title changes\nThis text also changes \n"
         ],
-        "first": "This text also changes \n",
-        "titleExists": true,
-        "idExists": true
+        "first": "This text also changes \n"
       },
       "dataType": "default",
       "value": {},
@@ -87,11 +48,48 @@
           "raw": ".[edit 3]",
           "text": "edit 3",
           "blockId": "edit-3",
+          "processed": false,
           "type": "declaration"
         }
       ],
       "process": [
         "declaration initialized"
+      ]
+    },
+    "edit-2": {
+      "blockId": "edit-2",
+      "title": " This is the new title  ",
+      "text": "  This text will reamin the same ",
+      "source": {
+        "raw": [
+          ".[edit 2] This is the new title  \n  This text will reamin the same ~[haha,haha]"
+        ],
+        "first": "  This text will reamin the same ~[haha,haha]"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[edit 2]",
+          "text": "edit 2",
+          "blockId": "edit-2",
+          "processed": false,
+          "type": "declaration"
+        },
+        {
+          "raw": "~[haha,haha]",
+          "text": "haha,haha",
+          "blockId": "",
+          "processed": false,
+          "type": "edge",
+          "v1": "*",
+          "v2": "haha",
+          "label": "haha"
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "edge-annotation: haha,haha processed"
       ]
     }
   },
@@ -103,13 +101,13 @@
           "weight": "",
           "temp": {}
         },
-        "edit-2": {
-          "label": "edit-2",
+        "edit-3": {
+          "label": "edit-3",
           "weight": "",
           "temp": {}
         },
-        "edit-3": {
-          "label": "edit-3",
+        "edit-2": {
+          "label": "edit-2",
           "weight": "",
           "temp": {}
         }
@@ -132,13 +130,13 @@
     },
     "knowledge": {
       "vertices": {
-        "edit-2": {
-          "label": "edit-2",
+        "haha": {
+          "label": "haha",
           "weight": "",
           "temp": {}
         },
-        "haha": {
-          "label": "haha",
+        "edit-2": {
+          "label": "edit-2",
           "weight": "",
           "temp": {}
         }

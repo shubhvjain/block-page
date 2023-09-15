@@ -5,9 +5,8 @@
  * get blank document [done]
  * add a new block in a document [done]
  * relate one block with another 
- * edit block : modify text, modify edges
- * delete block 
- * add a new block and relate it to another block at the same time
+ * edit block : modify text, modify edges [done]
+ * delete block [done]
  * validate documentObject
  * search query :graph 
  * text search
@@ -72,7 +71,7 @@ const getBlankAnnotationObject = (type)=>{
     raw: "", // the raw unprocessed string 
     text: "", // text extracted after sanitizing brackets and annotations  
     blockId: "", // block id of the block in which this annotation exists TODO see if this even required as a common key
-    processed: false, // indicates whether the annotation is processed or not 
+    // processed: false, // indicates whether the annotation is processed or not 
     type: type, // the type of annotation 
   }
 }
@@ -107,8 +106,6 @@ const annotations = {
         ann.text = theString;
         let part1 = theString.split(",");
         ann.blockId = removeSpace(part1[0]);
-        // TODO add the title as well 
-        ann["title"] = "Title of "+removeSpace(part1[0])
 
         return { error: false, message :"", annotations:  [ann]};
       } else {
@@ -278,8 +275,8 @@ const getBlankBlockObject = () => {
   let newBlockData = {
     blockId: "",
     title:"",
-    text: "", // this is the text after annotations are processed
-    source: { raw: [], first: ""},
+    text: "", // this is the text after annotations are processed. this  will not include the 
+    source: { raw: [], first: "", titleExists:false, idExists:false},
     dataType: "default",
     value: {},
     annotations: [],
@@ -291,6 +288,7 @@ const getBlankBlockObject = () => {
 
 const doAddNewBlock = (docObject,blockText)=>{
   // step 1 :  extract all annotations from the block 
+  blockText = blockText.replace(/^\n/, '')
   let ann = extractAllAnnotations(blockText)
 
   // step 2 : generate a new block object 
@@ -316,15 +314,23 @@ const doAddNewBlock = (docObject,blockText)=>{
     if (docObject.data[dec.blockId]) {
       throw new Error(`Re-declaration of ${dec.blockId} is invalid. Use append instead`);
     }
-
-    let newText = blockText.replace(dec.raw, "");
+    // get the title
+    let lines = blockText.split('\n');
+    let blockTitle = lines.shift().replace(dec.raw, "");
+    let noBlockTitle = false
+    if (blockTitle.trim().length==0){
+      blockTitle = `Block ${dec.blockId}`
+      noBlockTitle = true
+    }
+    const newTextWithoutTitle = lines.join('\n');
+    let newText =  newTextWithoutTitle
     blockData = {
       ...newBlockData,
       text: newText,
       blockId: dec.blockId,
-      title: dec.title,
+      title: blockTitle,
       // data type should be processed at the end of processing all annotations
-      source: { raw: [blockText], first: blockText},
+      source: { raw: [blockText], first: newText, titleExists:!noBlockTitle, idExists:true}, // this has the raw text, unprocessed further while processing annotations
       annotations: ann.annotations,
       process: ["declaration initialized"],
     };
@@ -337,7 +343,8 @@ const doAddNewBlock = (docObject,blockText)=>{
       ...newBlockData,
       blockId: randomBlockName,
       text: blockText,
-      source: { raw: [blockText], first: blockText},
+      title:"Untitled",
+      source: { raw: [blockText], first: blockText, titleExists:false, idExists:false},
       annotations: ann.annotations,
       process: ["declaration initialized with random block id"],
     };
@@ -358,7 +365,7 @@ const doAddNewBlock = (docObject,blockText)=>{
     if (blockFound) {
       // update the block object
       blockData = docObject.data[act.blockId];
-      let newText = blockText.replace(act.raw, "");
+      let newText = blockText.replace(act.raw, ""); // the first line in the append cannot have anything else including a title 
       blockData.text = blockData.text + "\n" + newText;
       blockData.source.first = blockData.source.first + "\n" + blockText;
       blockData.source.raw.push(blockText);
@@ -504,7 +511,40 @@ const doAddNewBlock = (docObject,blockText)=>{
   return docObject
 }
 
+const doDeleteBlock = (doc,blockId) => {
+  // changes to be made in : data , dep graph (all edges to and from ), knowledge graph (all edges to and from), blocks array 
+  // TODO  check if block exists 
+  doc.graphs.deps = graph.deleteVertex(doc.graphs.deps,blockId)
+  doc.graphs.knowledge = graph.deleteVertex(doc.graphs.knowledge,blockId)
+  let bIndex = doc.blocks.indexOf(blockId);
+  doc.blocks.splice(bIndex, 1);
+  delete doc.data[blockId]
+  return doc
+}
+
+const doEditBlock = (doc,blockId,changes)=>{
+  //  we can only change the title and text 
+  // TODO check if block exists
+  let blockIdR = removeSpace(blockId)
+  let block = {...doc.data[blockIdR]}
+  let oldData = { title : block.title, text : block.source.first}
+  // now check what needs to be changed
+  let newData = {
+    ... oldData,
+    ... changes
+  }
+  console.log(newData)
+  let newBlock = `.[${blockId}] ${newData.title}  \n  ${newData.text}`
+  doc =  doDeleteBlock(doc,blockIdR)
+  doc = doAddNewBlock(doc,newBlock)
+  return doc
+}
+
 module.exports = {
   getBlankDocObject,
-  doAddError, doAddWarning , extractAllAnnotations, doAddNewBlock
+  doAddError, 
+  doAddWarning, 
+  doAddNewBlock,
+  doDeleteBlock,
+  doEditBlock
 }

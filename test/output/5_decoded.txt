@@ -1,29 +1,36 @@
+
 Very simple text for testing 
 
 .[indep] I will try to delete this 
 
-.[indep 1] This has related  knowledge 
+
+.[indep-1] This has related  knowledge 
 ~[part,dep 1]
 ~[part,dep 2]
 
-.[dep 1] Depepdency 1
+.[dep-1] Depepdency 1
 
-.[dep 2] Dependecy 2
+
+.[dep-2] Dependecy 2
+
 
 
 tricky :
 
-.[i1] 
+.[i1]
 ~[part,i2]
 ~[part,i3]
 ~[i4,part,i3] There will be an error deleting i2,i3 or i4
 
-.[edit 1] Title stays same
+.[edit-1] Title stays same
 This is the text to be edited
 
-.[edit 2] Title changes
+.[edit-2] Title changes
 This text will reamin the same
 
-.[edit 3] Title changes
+.[edit-3] Title changes
 This text also changes 
+
+
+
 

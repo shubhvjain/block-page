@@ -1,5 +1,7 @@
+
 what this file tests ?
 - working text to use it to modify the doc object using actions
+
 
 To test graph annotations
 
@@ -8,25 +10,31 @@ This is the main idea of the block. Bla bla bla
 ~[part,part 1]
 ~[part,part 2]
 
-.[part 1] Can this be a question ?
+.[part-1] Can this be a question ?
 ~[part,part 1-1]
 ~[part,part 1-2]
++[part 1] 
+This is some more text that i need to append to part 1
 
-.[part 1-1] 
+.[part-1-1]
 This is some content
 
-.[part 1-2]
+.[part-1-2]
 This is more content 
 
 .[indep] I will try to delete this 
 
-.[indep 1] This has related  knowledge 
+
+.[indep-1] This has related  knowledge 
 ~[part,dep 1]
 ~[part,dep 2]
 
-.[dep 1] Depepdency 1
+.[dep-1] Depepdency 1
 
-.[dep 2] Dependecy 2
+
+.[dep-2] Dependecy 2
+
+
 
 I also need to test invocation 
 
@@ -40,14 +48,15 @@ Notice the block used here are not declared
 >[code part 1]
 >[code part 2] 
 
-.[code part 1]
+.[code-part-1]
 some code here
 
-.[code part 2]
+.[code-part-2]
 more code here
+
 
 and append
 
-+[part 1] 
-This is some more text that i need to append to part 1
+
+
 

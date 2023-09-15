@@ -1,20 +1,42 @@
 {
   "valid": false,
   "blocks": [
+    9432,
     "b1",
     "b2",
     "b3"
   ],
   "data": {
+    "9432": {
+      "blockId": 9432,
+      "title": "Untitled",
+      "text": "what is file test ?\n- incorrect usage of invocation annotation (same block)",
+      "source": {
+        "raw": [
+          "what is file test ?\n- incorrect usage of invocation annotation (same block)"
+        ],
+        "first": "what is file test ?\n- incorrect usage of invocation annotation (same block)",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
     "b1": {
       "blockId": "b1",
-      "title": "Title of b1",
-      "text": " \nBlock 1",
+      "title": "Block b1",
+      "text": "Block 1",
       "source": {
         "raw": [
           ".[b1] \nBlock 1"
         ],
-        "first": ".[b1] \nBlock 1"
+        "first": "Block 1",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -23,9 +45,7 @@
           "raw": ".[b1]",
           "text": "b1",
           "blockId": "b1",
-          "processed": false,
-          "type": "declaration",
-          "title": "Title of b1"
+          "type": "declaration"
         }
       ],
       "process": [
@@ -34,13 +54,15 @@
     },
     "b2": {
       "blockId": "b2",
-      "title": "Title of b2",
-      "text": "\nBlock 2",
+      "title": "Block b2",
+      "text": "Block 2",
       "source": {
         "raw": [
           ".[b2]\nBlock 2"
         ],
-        "first": ".[b2]\nBlock 2"
+        "first": "Block 2",
+        "titleExists": false,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -49,9 +71,7 @@
           "raw": ".[b2]",
           "text": "b2",
           "blockId": "b2",
-          "processed": false,
-          "type": "declaration",
-          "title": "Title of b2"
+          "type": "declaration"
         }
       ],
       "process": [
@@ -60,13 +80,15 @@
     },
     "b3": {
       "blockId": "b3",
-      "title": "Title of b3",
-      "text": " Error\nBlock 3\n>[b2]\n>[b4]\n>[b3]",
+      "title": " Error is just the title . ",
+      "text": "But there is an error here. You cannot invoke b3 in b3\nBlock 3\n>[b2]\n>[b4]\n>[b3]",
       "source": {
         "raw": [
-          ".[b3] Error\nBlock 3\n>[b2]\n>[b4]\n>[b3]"
+          ".[b3] Error is just the title . \nBut there is an error here. You cannot invoke b3 in b3\nBlock 3\n>[b2]\n>[b4]\n>[b3]"
         ],
-        "first": ".[b3] Error\nBlock 3\n>[b2]\n>[b4]\n>[b3]"
+        "first": "But there is an error here. You cannot invoke b3 in b3\nBlock 3\n>[b2]\n>[b4]\n>[b3]",
+        "titleExists": true,
+        "idExists": true
       },
       "dataType": "default",
       "value": {},
@@ -75,29 +97,24 @@
           "raw": ".[b3]",
           "text": "b3",
           "blockId": "b3",
-          "processed": false,
-          "type": "declaration",
-          "title": "Title of b3"
+          "type": "declaration"
         },
         {
           "raw": ">[b2]",
           "text": "b2",
           "blockId": "b2",
-          "processed": false,
           "type": "invocation"
         },
         {
           "raw": ">[b4]",
           "text": "b4",
           "blockId": "b4",
-          "processed": false,
           "type": "invocation"
         },
         {
           "raw": ">[b3]",
           "text": "b3",
           "blockId": "b3",
-          "processed": false,
           "type": "invocation"
         }
       ],
@@ -111,6 +128,11 @@
   "graphs": {
     "deps": {
       "vertices": {
+        "9432": {
+          "label": 9432,
+          "weight": "",
+          "temp": {}
+        },
         "b1": {
           "label": "b1",
           "weight": "",

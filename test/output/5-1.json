@@ -1,0 +1,219 @@
+{
+  "valid": true,
+  "blocks": [
+    4622,
+    "indep-1",
+    "dep-1",
+    "dep-2"
+  ],
+  "data": {
+    "4622": {
+      "blockId": 4622,
+      "title": "Untitled",
+      "text": "Very simple text for testing ",
+      "source": {
+        "raw": [
+          "Very simple text for testing "
+        ],
+        "first": "Very simple text for testing "
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "indep-1": {
+      "blockId": "indep-1",
+      "title": " This has related  knowledge ",
+      "text": "\n",
+      "source": {
+        "raw": [
+          ".[indep 1] This has related  knowledge \n~[part,dep 1]\n~[part,dep 2]"
+        ],
+        "first": ".[indep 1] This has related  knowledge \n~[part,dep 1]\n~[part,dep 2]"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[indep 1]",
+          "text": "indep 1",
+          "blockId": "indep-1",
+          "processed": false,
+          "type": "declaration"
+        },
+        {
+          "raw": "~[part,dep 1]",
+          "text": "part,dep 1",
+          "blockId": "",
+          "processed": false,
+          "type": "edge",
+          "v1": "*",
+          "v2": "dep-1",
+          "label": "part"
+        },
+        {
+          "raw": "~[part,dep 2]",
+          "text": "part,dep 2",
+          "blockId": "",
+          "processed": false,
+          "type": "edge",
+          "v1": "*",
+          "v2": "dep-2",
+          "label": "part"
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "edge-annotation: part,dep 1 processed",
+        "edge-annotation: part,dep 2 processed"
+      ]
+    },
+    "dep-1": {
+      "blockId": "dep-1",
+      "title": " Depepdency 1",
+      "text": "",
+      "source": {
+        "raw": [
+          ".[dep 1] Depepdency 1"
+        ],
+        "first": ".[dep 1] Depepdency 1"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[dep 1]",
+          "text": "dep 1",
+          "blockId": "dep-1",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "dep-2": {
+      "blockId": "dep-2",
+      "title": " Dependecy 2",
+      "text": "",
+      "source": {
+        "raw": [
+          ".[dep 2] Dependecy 2\n"
+        ],
+        "first": ".[dep 2] Dependecy 2\n"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[dep 2]",
+          "text": "dep 2",
+          "blockId": "dep-2",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    }
+  },
+  "graphs": {
+    "deps": {
+      "vertices": {
+        "4622": {
+          "label": 4622,
+          "weight": "",
+          "temp": {}
+        },
+        "indep-1": {
+          "label": "indep-1",
+          "weight": "",
+          "temp": {}
+        },
+        "dep-1": {
+          "label": "dep-1",
+          "weight": "",
+          "temp": {}
+        },
+        "dep-2": {
+          "label": "dep-2",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [],
+      "metadata": {
+        "title": "Invocation block dependency graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    },
+    "knowledge": {
+      "vertices": {
+        "indep-1": {
+          "label": "indep-1",
+          "weight": "",
+          "temp": {}
+        },
+        "dep-1": {
+          "label": "dep-1",
+          "weight": "",
+          "temp": {}
+        },
+        "dep-2": {
+          "label": "dep-2",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [
+        {
+          "v1": "indep-1",
+          "v2": "dep-1",
+          "weight": "",
+          "label": "part",
+          "temp": {}
+        },
+        {
+          "v1": "indep-1",
+          "v2": "dep-2",
+          "weight": "",
+          "label": "part",
+          "temp": {}
+        }
+      ],
+      "metadata": {
+        "title": "Knowledge graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "metadata": {},
+  "extra": {}
+}

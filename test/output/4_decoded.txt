@@ -1,7 +1,8 @@
+
 what is file test ?
 - incorrect usage of invocation annotation (same block)
 
-.[b1] 
+.[b1]
 Block 1
 
 .[b2]
@@ -13,3 +14,4 @@ Block 3
 >[b2]
 >[b4]
 >[b3]
+

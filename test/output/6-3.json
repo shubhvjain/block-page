@@ -14,9 +14,7 @@
         "raw": [
           ".[edit 1] Title stays same\nThis is the text to be edited"
         ],
-        "first": "This is the text to be edited",
-        "titleExists": true,
-        "idExists": true
+        "first": "This is the text to be edited"
       },
       "dataType": "default",
       "value": {},
@@ -25,6 +23,7 @@
           "raw": ".[edit 1]",
           "text": "edit 1",
           "blockId": "edit-1",
+          "processed": false,
           "type": "declaration"
         }
       ],
@@ -40,9 +39,7 @@
         "raw": [
           ".[edit 2] Title changes\nThis text will reamin the same ~[haha,haha]"
         ],
-        "first": "This text will reamin the same ~[haha,haha]",
-        "titleExists": true,
-        "idExists": true
+        "first": "This text will reamin the same ~[haha,haha]"
       },
       "dataType": "default",
       "value": {},
@@ -51,12 +48,14 @@
           "raw": ".[edit 2]",
           "text": "edit 2",
           "blockId": "edit-2",
+          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[haha,haha]",
           "text": "haha,haha",
           "blockId": "",
+          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "haha",
@@ -70,15 +69,13 @@
     },
     "edit-3": {
       "blockId": "edit-3",
-      "title": " Title changes",
-      "text": "This text also changes \n",
+      "title": " New title  ",
+      "text": "  This is the new text",
       "source": {
         "raw": [
-          ".[edit 3] Title changes\nThis text also changes \n"
+          ".[edit 3] New title  \n  This is the new text"
         ],
-        "first": "This text also changes \n",
-        "titleExists": true,
-        "idExists": true
+        "first": "  This is the new text"
       },
       "dataType": "default",
       "value": {},
@@ -87,6 +84,7 @@
           "raw": ".[edit 3]",
           "text": "edit 3",
           "blockId": "edit-3",
+          "processed": false,
           "type": "declaration"
         }
       ],

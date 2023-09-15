@@ -1,37 +1,11 @@
 {
   "valid": true,
   "blocks": [
-    "edit-1",
     "edit-2",
-    "edit-3"
+    "edit-3",
+    "edit-1"
   ],
   "data": {
-    "edit-1": {
-      "blockId": "edit-1",
-      "title": " Title stays same",
-      "text": "This is the text to be edited",
-      "source": {
-        "raw": [
-          ".[edit 1] Title stays same\nThis is the text to be edited"
-        ],
-        "first": "This is the text to be edited",
-        "titleExists": true,
-        "idExists": true
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [
-        {
-          "raw": ".[edit 1]",
-          "text": "edit 1",
-          "blockId": "edit-1",
-          "type": "declaration"
-        }
-      ],
-      "process": [
-        "declaration initialized"
-      ]
-    },
     "edit-2": {
       "blockId": "edit-2",
       "title": " Title changes",
@@ -40,9 +14,7 @@
         "raw": [
           ".[edit 2] Title changes\nThis text will reamin the same ~[haha,haha]"
         ],
-        "first": "This text will reamin the same ~[haha,haha]",
-        "titleExists": true,
-        "idExists": true
+        "first": "This text will reamin the same ~[haha,haha]"
       },
       "dataType": "default",
       "value": {},
@@ -51,12 +23,14 @@
           "raw": ".[edit 2]",
           "text": "edit 2",
           "blockId": "edit-2",
+          "processed": false,
           "type": "declaration"
         },
         {
           "raw": "~[haha,haha]",
           "text": "haha,haha",
           "blockId": "",
+          "processed": false,
           "type": "edge",
           "v1": "*",
           "v2": "haha",
@@ -76,9 +50,7 @@
         "raw": [
           ".[edit 3] Title changes\nThis text also changes \n"
         ],
-        "first": "This text also changes \n",
-        "titleExists": true,
-        "idExists": true
+        "first": "This text also changes \n"
       },
       "dataType": "default",
       "value": {},
@@ -87,6 +59,32 @@
           "raw": ".[edit 3]",
           "text": "edit 3",
           "blockId": "edit-3",
+          "processed": false,
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "edit-1": {
+      "blockId": "edit-1",
+      "title": "  Title stays same  ",
+      "text": "  This is the new text",
+      "source": {
+        "raw": [
+          ".[edit 1]  Title stays same  \n  This is the new text"
+        ],
+        "first": "  This is the new text"
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[edit 1]",
+          "text": "edit 1",
+          "blockId": "edit-1",
+          "processed": false,
           "type": "declaration"
         }
       ],
@@ -98,11 +96,6 @@
   "graphs": {
     "deps": {
       "vertices": {
-        "edit-1": {
-          "label": "edit-1",
-          "weight": "",
-          "temp": {}
-        },
         "edit-2": {
           "label": "edit-2",
           "weight": "",
@@ -110,6 +103,11 @@
         },
         "edit-3": {
           "label": "edit-3",
+          "weight": "",
+          "temp": {}
+        },
+        "edit-1": {
+          "label": "edit-1",
           "weight": "",
           "temp": {}
         }
