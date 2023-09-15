@@ -328,7 +328,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       blockId: dec.blockId,
       title: blockTitle,
       // data type should be processed at the end of processing all annotations
-      source: { raw: [blockText], first: blockText}, // this has the raw text, unprocessed further while processing annotations
+      source: { raw: [blockText], first: newText}, // this has the raw text, unprocessed further while processing annotations
       annotations: ann.annotations,
       process: ["declaration initialized"],
     };
@@ -520,10 +520,29 @@ const doDeleteBlock = (doc,blockId) => {
   return doc
 }
 
+const doEditBlock = (doc,blockId,changes)=>{
+  //  we can only change the title and text 
+  // TODO check if block exists
+  let blockIdR = removeSpace(blockId)
+  let block = {...doc.data[blockIdR]}
+  let oldData = { title : block.title, text : block.source.first}
+  // now check what needs to be changed
+  let newData = {
+    ... oldData,
+    ... changes
+  }
+  console.log(newData)
+  let newBlock = `.[${blockId}] ${newData.title}  \n  ${newData.text}`
+  doc =  doDeleteBlock(doc,blockIdR)
+  doc = doAddNewBlock(doc,newBlock)
+  return doc
+}
+
 module.exports = {
   getBlankDocObject,
   doAddError, 
   doAddWarning, 
   doAddNewBlock,
-  doDeleteBlock
+  doDeleteBlock,
+  doEditBlock
 }
