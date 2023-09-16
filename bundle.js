@@ -428,7 +428,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       // console.error(er);
     }
     // now add an edge between v1 -->  v2
-    docObject.graphs.knowledge = graph.addEdge(docObject.graphs.knowledge, { v1: v1, v2: v2, label: ed.label});
+    docObject.graphs.knowledge = graph.addEdge(docObject.graphs.knowledge, { v1: v1, v2: v2, label: ed.label, temp:{addedByBlock:blockData.blockId}});
     // replace the invocation text in the main text
     let newText = docObject["data"][blockData.blockId].text.replace(ed.raw,"");
     docObject["data"][blockData.blockId].text = newText;
@@ -529,7 +529,7 @@ const doDeleteBlock = (doc,blockId) => {
   doc.graphs.knowledge = graph.deleteVertex(doc.graphs.knowledge,blockId)
   let bIndex = doc.blocks.indexOf(blockId);
   doc.blocks.splice(bIndex, 1);
-  delete doc.data[blockId]
+  delete doc.data[blockId] // todo : more is required : first check if all annotations realted to this node are deleted as well because gragps can be defined in other blocks as well
   return doc
 }
 
@@ -544,10 +544,32 @@ const doEditBlock = (doc,blockId,changes)=>{
     ... oldData,
     ... changes
   }
-  console.log(newData)
+  // console.log(newData)
   let newBlock = `.[${blockId}] ${newData.title}  \n  ${newData.text}`
   doc =  doDeleteBlock(doc,blockIdR)
   doc = doAddNewBlock(doc,newBlock)
+  return doc
+}
+
+const doDeleteKGEdge = (doc,fromBlockId,toBlockId)=>{
+  // todo add validations
+  let edgeObj = {...doc.graphs.knowledge.edges.find(itm=>{ return itm.v1 == fromBlockId && itm.v2 == toBlockId })}
+  if(edgeObj){
+    blockIdToEdit = edgeObj.temp.addedByBlock
+    let blockContent = doc.data[blockIdToEdit] 
+    // console.log(blockContent)
+    let v1F = fromBlockId == blockIdToEdit ? "*" : fromBlockId
+    let v2F = toBlockId == blockIdToEdit ? "*" : toBlockId
+    annotationIndex = blockContent.annotations.findIndex(itm=>{return (itm["type"] == "edge" && itm["v1"]== v1F ) && itm["v2"]==v2F  })
+    rawAnnotationText = blockContent.annotations[annotationIndex].raw
+    blockContent.source.first = blockContent.source.first.replace(rawAnnotationText,"")
+    // remove from the annotation array
+    blockContent.annotations.splice(annotationIndex,1)
+    blockContent.process.push(`Edge ${rawAnnotationText} removed`)
+    // remove edge from the know graph
+    doc.graphs.knowledge = graph.deleteEdge(doc.graphs.knowledge,fromBlockId,toBlockId)
+    return doc
+  }
   return doc
 }
 
@@ -557,7 +579,8 @@ module.exports = {
   doAddWarning, 
   doAddNewBlock,
   doDeleteBlock,
-  doEditBlock
+  doEditBlock,
+  doDeleteKGEdge
 }
 },{"./graph.js":5}],3:[function(require,module,exports){
 // code to decode a document object to a text file
