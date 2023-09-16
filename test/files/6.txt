@@ -6,3 +6,19 @@ This text will reamin the same ~[haha,haha]
 
 .[edit 3] Title changes
 This text also changes 
+
+.[b1] 
+~[part,b2]
+~[part,b3]
+
+.[b2]
+~[b4,part,b5]
+
+.[b3]
+sample
+
+.[b4]
+sample
+
+.[b5]
+sample

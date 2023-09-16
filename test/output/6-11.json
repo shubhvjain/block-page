@@ -153,7 +153,7 @@
         "raw": [
           ".[b2]\n~[b4,part,b5]"
         ],
-        "first": "~[b4,part,b5]",
+        "first": "",
         "titleExists": false,
         "idExists": true
       },
@@ -165,20 +165,12 @@
           "text": "b2",
           "blockId": "b2",
           "type": "declaration"
-        },
-        {
-          "raw": "~[b4,part,b5]",
-          "text": "b4,part,b5",
-          "blockId": "",
-          "type": "edge",
-          "v1": "b4",
-          "v2": "b5",
-          "label": "part"
         }
       ],
       "process": [
         "declaration initialized",
-        "edge-annotation: b4,part,b5 processed"
+        "edge-annotation: b4,part,b5 processed",
+        "Edge ~[b4,part,b5] removed"
       ]
     },
     "b3": {
@@ -384,15 +376,6 @@
           "label": "part",
           "temp": {
             "addedByBlock": "b1"
-          }
-        },
-        {
-          "v1": "b4",
-          "v2": "b5",
-          "weight": "",
-          "label": "part",
-          "temp": {
-            "addedByBlock": "b2"
           }
         }
       ],

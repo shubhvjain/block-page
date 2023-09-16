@@ -107,7 +107,7 @@
         "raw": [
           ".[b1] \n~[part,b2]\n~[part,b3]"
         ],
-        "first": "~[part,b2]\n~[part,b3]",
+        "first": "\n~[part,b3]",
         "titleExists": false,
         "idExists": true
       },
@@ -119,15 +119,6 @@
           "text": "b1",
           "blockId": "b1",
           "type": "declaration"
-        },
-        {
-          "raw": "~[part,b2]",
-          "text": "part,b2",
-          "blockId": "",
-          "type": "edge",
-          "v1": "*",
-          "v2": "b2",
-          "label": "part"
         },
         {
           "raw": "~[part,b3]",
@@ -142,7 +133,8 @@
       "process": [
         "declaration initialized",
         "edge-annotation: part,b2 processed",
-        "edge-annotation: part,b3 processed"
+        "edge-annotation: part,b3 processed",
+        "Edge ~[part,b2] removed"
       ]
     },
     "b2": {
@@ -366,15 +358,6 @@
           "label": "haha",
           "temp": {
             "addedByBlock": "edit-2"
-          }
-        },
-        {
-          "v1": "b1",
-          "v2": "b2",
-          "weight": "",
-          "label": "part",
-          "temp": {
-            "addedByBlock": "b1"
           }
         },
         {
