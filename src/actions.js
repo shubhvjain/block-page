@@ -52,6 +52,8 @@ const randomInteger = (min = 0, max = 100) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
+const currentTimeStampUNIX = ()=>{ return Math.floor(Date.now() / 1000)}
+
 //// actions on the doc object 
 // these methods will have a common naming convention : doAction(doc, ...additional params), modifies the doc, returns the doc
 
@@ -281,6 +283,7 @@ const getBlankBlockObject = () => {
     value: {},
     annotations: [],
     process: [],
+    update:""
   }; 
   // some annotations, after processing will be removed from the text of the block. this is stored in the `text` key of the object 
   return newBlockData
@@ -333,6 +336,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       source: { raw: [blockText], first: newText, titleExists:!noBlockTitle, idExists:true}, // this has the raw text, unprocessed further while processing annotations
       annotations: ann.annotations,
       process: ["declaration initialized"],
+      update: currentTimeStampUNIX()
     };
     docObject.blocks.push(dec.blockId);
     docObject.data[dec.blockId] = blockData;
@@ -347,6 +351,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       source: { raw: [blockText], first: blockText, titleExists:false, idExists:false},
       annotations: ann.annotations,
       process: ["declaration initialized with random block id"],
+      update: currentTimeStampUNIX()
     };
     docObject.blocks.push(randomBlockName);
     docObject.data[randomBlockName] = blockData;
@@ -374,6 +379,7 @@ const doAddNewBlock = (docObject,blockText)=>{
         ...ann.annotations,
       ];
       blockData.process.push("Append annotation processed");
+      blockData.update = currentTimeStampUNIX()
     } else {
       throw new Error(
         `the append annotation on block ${act.blockId} is not valid at this block does not exist.`
@@ -395,6 +401,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       // adding an edge from the current block to the invocated block. this indicates that the current block is dependent on invocated block
       docObject.graphs.deps = graph.addEdge(docObject.graphs.deps, {v1: blockData.blockId,v2: inv.blockId,})
       docObject.data[blockData.blockId].process.push(`invocation ${inv.raw} initialized in dep graph`)
+      docObject.data[blockData.blockId].update= currentTimeStampUNIX()
     });
   }
   
@@ -422,6 +429,7 @@ const doAddNewBlock = (docObject,blockText)=>{
     let newText = docObject["data"][blockData.blockId].text.replace(ed.raw,"");
     docObject["data"][blockData.blockId].text = newText;
     docObject["data"][blockData.blockId].process.push(`edge-annotation: ${ed.text} processed`);
+    docObject["data"][blockData.blockId].update= currentTimeStampUNIX();
   })
 
   // check node dependencies 
@@ -476,6 +484,7 @@ const doAddNewBlock = (docObject,blockText)=>{
             mainText = mainText.replaceAll(inv.raw, targetText);
             blockContent.text = mainText;
             blockContent.process.push(`invocation ${inv.raw} processed`);
+            blockContent.update = currentTimeStampUNIX();
           });
         
           // let dt = { ...dataType };
@@ -504,6 +513,7 @@ const doAddNewBlock = (docObject,blockText)=>{
     let mainText = blockContent.text;
     blockContent.text = mainText.replace(act.raw, "");
     blockContent.process.push(`Action annotation ${act.raw} replaced`);
+    blockContent.update = currentTimeStampUNIX();
   });
 
   // process the data type
@@ -555,6 +565,7 @@ const doDeleteKGEdge = (doc,fromBlockId,toBlockId)=>{
     // remove from the annotation array
     blockContent.annotations.splice(annotationIndex,1)
     blockContent.process.push(`Edge ${rawAnnotationText} removed`)
+    blockContent.update = currentTimeStampUNIX();
     // remove edge from the know graph
     doc.graphs.knowledge = graph.deleteEdge(doc.graphs.knowledge,fromBlockId,toBlockId)
     return doc
