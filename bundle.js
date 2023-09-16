@@ -2,13 +2,15 @@
 const encode = require("./src/encode")
 const decode = require("./src/decode")
 const action = require("./src/actions")
+const graph = require("./src/graph")
 
 module.exports = {
   encode : encode,
   decode : decode,
-  action : action
+  action : action,
+  graph : graph 
 }
-},{"./src/actions":2,"./src/decode":3,"./src/encode":4}],2:[function(require,module,exports){
+},{"./src/actions":2,"./src/decode":3,"./src/encode":4,"./src/graph":5}],2:[function(require,module,exports){
 // code to perform actions on a document object and  maintain its validity
 
 /**
