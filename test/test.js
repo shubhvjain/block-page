@@ -106,9 +106,10 @@ const main = async ()=>{
   allFiles = ["file1","1","2","3","4","5","6","7"]
   // encodeAllTestFiles(allFiles);
   // decodeAllGeneratedFiles(allFiles);
-  f1 = ["6"]
+  f1 = ["7"]
   encodeAllTestFiles(f1);
-  tests3.map(t=>{testDeleteEdge(t)})
+  decodeAllGeneratedFiles(f1);
+  //tests3.map(t=>{testDeleteEdge(t)})
 
 }
 

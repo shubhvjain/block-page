@@ -3,7 +3,8 @@
   "blocks": [
     "b1",
     "b2",
-    "b3"
+    "b3",
+    "f1"
   ],
   "data": {
     "b1": {
@@ -101,7 +102,75 @@
       "process": [
         "declaration initialized",
         "invocation >[b2] initialized in dep graph",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
+        "invocation >[b2] processed",
         "invocation >[b2] processed"
+      ]
+    },
+    "f1": {
+      "blockId": "f1",
+      "title": "Block f1",
+      "text": "sample\n\nsample1\n\n\n\nsample2",
+      "source": {
+        "raw": [
+          ".[f1] \nsample",
+          "+[f1]\nsample1\n/[sample:234]\n~[part,f4]",
+          "+[f1]\nsample2"
+        ],
+        "first": "sample\nsample1\n/[sample:234]\n~[part,f4]\nsample2",
+        "titleExists": false,
+        "idExists": true
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[f1]",
+          "text": "f1",
+          "blockId": "f1",
+          "type": "declaration"
+        },
+        {
+          "raw": "+[f1]",
+          "text": "f1",
+          "blockId": "f1",
+          "type": "append"
+        },
+        {
+          "raw": "~[part,f4]",
+          "text": "part,f4",
+          "blockId": "",
+          "type": "edge",
+          "v1": "*",
+          "v2": "f4",
+          "label": "part"
+        },
+        {
+          "raw": "/[sample:234]",
+          "text": "sample:234",
+          "blockId": "",
+          "type": "action",
+          "action": "sample",
+          "arguments": {
+            "text": "234",
+            "d": "0"
+          }
+        },
+        {
+          "raw": "+[f1]",
+          "text": "f1",
+          "blockId": "f1",
+          "type": "append"
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "Append annotation processed",
+        "edge-annotation: part,f4 processed",
+        "Action annotation /[sample:234] replaced",
+        "Append annotation processed",
+        "Action annotation /[sample:234] replaced"
       ]
     }
   },
@@ -120,6 +189,11 @@
         },
         "b3": {
           "label": "b3",
+          "weight": "",
+          "temp": {}
+        },
+        "f1": {
+          "label": "f1",
           "weight": "",
           "temp": {}
         }
@@ -149,8 +223,29 @@
       }
     },
     "knowledge": {
-      "vertices": {},
-      "edges": [],
+      "vertices": {
+        "f1": {
+          "label": "f1",
+          "weight": "",
+          "temp": {}
+        },
+        "f4": {
+          "label": "f4",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [
+        {
+          "v1": "f1",
+          "v2": "f4",
+          "weight": "",
+          "label": "part",
+          "temp": {
+            "addedByBlock": "f1"
+          }
+        }
+      ],
       "metadata": {
         "title": "Knowledge graph",
         "hasLoops": false,
@@ -199,6 +294,17 @@
             "d": 5,
             "f": 6,
             "degree": 1
+          }
+        },
+        "f1": {
+          "label": "f1 (d=7,f=8)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 7,
+            "f": 8,
+            "degree": 0
           }
         }
       },
@@ -262,6 +368,17 @@
             "f": 6,
             "degree": 1
           }
+        },
+        "f1": {
+          "label": "f1 (d=7,f=8)",
+          "weight": "",
+          "temp": {
+            "color": "black",
+            "pi": null,
+            "d": 7,
+            "f": 8,
+            "degree": 0
+          }
         }
       },
       "edges": [
@@ -275,6 +392,13 @@
         {
           "v1": "b2",
           "v2": "b3",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b3",
+          "v2": "f1",
           "weight": "",
           "label": "",
           "temp": {}
@@ -312,6 +436,10 @@
       {
         "vertexId": "b3",
         "fVal": 6
+      },
+      {
+        "vertexId": "f1",
+        "fVal": 8
       }
     ]
   }

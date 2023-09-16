@@ -8,3 +8,15 @@ Block 2 content
 .[b3]
 Block 3
 >[b2]
+
+
+.[f1] 
+sample
+
++[f1]
+sample1
+/[sample:234]
+~[part,f4]
+
++[f1]
+sample2

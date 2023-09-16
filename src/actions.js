@@ -338,7 +338,7 @@ const doAddNewBlock = (docObject,blockText)=>{
     docObject.data[dec.blockId] = blockData;
   } else if (ann.stats.append == 0) {
     // define a new block 
-    let randomBlockName = randomInteger(1000, 9999);
+    let randomBlockName = "block-"+randomInteger(1000, 9999);
     blockData = {
       ...newBlockData,
       blockId: randomBlockName,
@@ -367,7 +367,7 @@ const doAddNewBlock = (docObject,blockText)=>{
       blockData = docObject.data[act.blockId];
       let newText = blockText.replace(act.raw, ""); // the first line in the append cannot have anything else including a title 
       blockData.text = blockData.text + "\n" + newText;
-      blockData.source.first = blockData.source.first + "\n" + blockText;
+      blockData.source.first = blockData.source.first +  newText;
       blockData.source.raw.push(blockText);
       blockData.annotations = [
         ...blockData.annotations,

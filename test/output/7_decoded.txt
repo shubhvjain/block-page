@@ -9,3 +9,10 @@ Block 2 content
 Block 3
 >[b2]
 
+.[f1]
+sample
+sample1
+/[sample:234]
+~[part,f4]
+sample2
+
