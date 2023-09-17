@@ -11,6 +11,6 @@ const decode = (doc,options={})=>{
     let block  = `${dId}${dTitle}\n${blockData.source.first}\n\n`
     text += block
   })
-  return text
+  return text.replace(/\s*$/, '')
 }
 module.exports = decode

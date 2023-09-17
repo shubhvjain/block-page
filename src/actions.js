@@ -299,7 +299,7 @@ const doAddNewBlock = (docObject,blockText)=>{
 
   // check if both declaration and  append annotations exists
   if(ann.stats.declaration > 0 && ann.stats.append > 0 ){
-    docObject = act.doAddError(docObject,{
+    docObject = doAddError(docObject,{
       text: `Annotation error`,
       details: " A single block cannot have both declaration and append annotation ",
       blockText
