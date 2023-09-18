@@ -13,6 +13,7 @@
  */
 
 const graph = require("./graph.js");
+const datatype = require("./datatype.js")
 
 const getBlankDocObject = () => {
   let docObject = {
@@ -51,6 +52,11 @@ const removeSpace = (text) => {
 const randomInteger = (min = 0, max = 100) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+const replaceNewlinesAtEnd = (inputString)=>{
+  const regex = /\n+$/;
+  return inputString.replace(regex, '\n');
+}
 
 //// actions on the doc object 
 // these methods will have a common naming convention : doAction(doc, ...additional params), modifies the doc, returns the doc
@@ -366,8 +372,8 @@ const doAddNewBlock = (docObject,blockText)=>{
       // update the block object
       blockData = docObject.data[act.blockId];
       let newText = blockText.replace(act.raw, ""); // the first line in the append cannot have anything else including a title 
-      blockData.text = blockData.text + "\n" + newText;
-      blockData.source.first = blockData.source.first +  newText;
+      blockData.text = replaceNewlinesAtEnd(blockData.text) + newText;
+      blockData.source.first = replaceNewlinesAtEnd(blockData.source.first) +  newText;
       blockData.source.raw.push(blockText);
       blockData.annotations = [
         ...blockData.annotations,
@@ -508,6 +514,10 @@ const doAddNewBlock = (docObject,blockText)=>{
 
   // process the data type
   // TODO
+  dataParsed = datatype.parseData(blockContent.text)
+  //console.log(blockContent)
+  //console.log(dataParsed)
+  blockContent.value = dataParsed
   return docObject
 }
 

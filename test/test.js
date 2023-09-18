@@ -1,6 +1,7 @@
 const { decode,encode } = require("block-page");
 const u = require("./utils");
 const a  = require("../src/actions")
+const d = require("../src/datatype")
 
 encodeAllTestFiles = async (testFiles) => {
   // testFiles = ["file1","1","2","3","4","5","6","7"];
@@ -103,14 +104,27 @@ tests3 = [
 const main = async ()=>{
   // tests1.map(t=>{testDelete(t)})
   // tests2.map(t=>{testEdit(t)})
-  allFiles = ["file1","1","2","3","4","5","6","7"]
+  // allFiles = ["file1","1","2","3","4","5","6","7"]
   // encodeAllTestFiles(allFiles);
   // decodeAllGeneratedFiles(allFiles);
-  f1 = ["7"]
+  f1 = ["3"]
   encodeAllTestFiles(f1);
-  decodeAllGeneratedFiles(f1);
+  // decodeAllGeneratedFiles(f1);
   //tests3.map(t=>{testDeleteEdge(t)})
 
 }
 
+let testDataType = ()=>{
+  let samples = [
+    `- item 1 : some value\n- item 2 : more value\nThis line is not included`,
+    `some text\n- this is not item 1\m- this is a regular list`,
+    `- item 1: val\n- invalid.value : because it has a dot in the key(not really!!)\n not really dot will be replaced with dash`,
+    `- type : book\n- title : Awesome book\n- author : by SVJ\n- url : http://www.something.com/haha`
+  ]
+  samples.map(s=>{
+    console.log(d.parseData(s))
+  })
+}
+
+// testDataType()
 main()
