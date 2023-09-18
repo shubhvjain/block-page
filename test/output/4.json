@@ -1,14 +1,14 @@
 {
   "valid": false,
   "blocks": [
-    9432,
+    "block-4973",
     "b1",
     "b2",
     "b3"
   ],
   "data": {
-    "9432": {
-      "blockId": 9432,
+    "block-4973": {
+      "blockId": "block-4973",
       "title": "Untitled",
       "text": "what is file test ?\n- incorrect usage of invocation annotation (same block)",
       "source": {
@@ -128,8 +128,8 @@
   "graphs": {
     "deps": {
       "vertices": {
-        "9432": {
-          "label": 9432,
+        "block-4973": {
+          "label": "block-4973",
           "weight": "",
           "temp": {}
         },

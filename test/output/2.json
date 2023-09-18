@@ -1,8 +1,8 @@
 {
   "valid": false,
   "blocks": [
-    6191,
-    8331,
+    "block-4847",
+    "block-4188",
     "main",
     "part-1",
     "part-1-1",
@@ -11,55 +11,17 @@
     "indep-1",
     "dep-1",
     "dep-2",
-    5830,
+    "block-5701",
     "code",
     "code1",
     "code-part-1",
     "code-part-2",
-    8388,
-    2887
+    "block-9994",
+    "block-7805"
   ],
   "data": {
-    "2887": {
-      "blockId": 2887,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": "",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "5830": {
-      "blockId": 5830,
-      "title": "Untitled",
-      "text": "I also need to test invocation ",
-      "source": {
-        "raw": [
-          "I also need to test invocation "
-        ],
-        "first": "I also need to test invocation ",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "6191": {
-      "blockId": 6191,
+    "block-4847": {
+      "blockId": "block-4847",
       "title": "Untitled",
       "text": "what this file tests ?\n- working text to use it to modify the doc object using actions",
       "source": {
@@ -77,8 +39,8 @@
         "declaration initialized with random block id"
       ]
     },
-    "8331": {
-      "blockId": 8331,
+    "block-4188": {
+      "blockId": "block-4188",
       "title": "Untitled",
       "text": "To test graph annotations",
       "source": {
@@ -86,25 +48,6 @@
           "To test graph annotations"
         ],
         "first": "To test graph annotations",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "8388": {
-      "blockId": 8388,
-      "title": "Untitled",
-      "text": "and append",
-      "source": {
-        "raw": [
-          "and append"
-        ],
-        "first": "and append",
         "titleExists": false,
         "idExists": false
       },
@@ -164,13 +107,13 @@
     "part-1": {
       "blockId": "part-1",
       "title": " Can this be a question ?",
-      "text": "\n\n \nThis is some more text that i need to append to part 1",
+      "text": "\n \nThis is some more text that i need to append to part 1",
       "source": {
         "raw": [
           ".[part 1] Can this be a question ?\n~[part,part 1-1]\n~[part,part 1-2]",
           "+[part 1] \nThis is some more text that i need to append to part 1"
         ],
-        "first": "~[part,part 1-1]\n~[part,part 1-2]\n+[part 1] \nThis is some more text that i need to append to part 1",
+        "first": "~[part,part 1-1]\n~[part,part 1-2] \nThis is some more text that i need to append to part 1",
         "titleExists": true,
         "idExists": true
       },
@@ -391,6 +334,25 @@
         "declaration initialized"
       ]
     },
+    "block-5701": {
+      "blockId": "block-5701",
+      "title": "Untitled",
+      "text": "I also need to test invocation ",
+      "source": {
+        "raw": [
+          "I also need to test invocation "
+        ],
+        "first": "I also need to test invocation ",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
     "code": {
       "blockId": "code",
       "title": "Block code",
@@ -529,33 +491,56 @@
       "process": [
         "declaration initialized"
       ]
+    },
+    "block-9994": {
+      "blockId": "block-9994",
+      "title": "Untitled",
+      "text": "and append",
+      "source": {
+        "raw": [
+          "and append"
+        ],
+        "first": "and append",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "block-7805": {
+      "blockId": "block-7805",
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": "",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
     }
   },
   "graphs": {
     "deps": {
       "vertices": {
-        "2887": {
-          "label": 2887,
+        "block-4847": {
+          "label": "block-4847",
           "weight": "",
           "temp": {}
         },
-        "5830": {
-          "label": 5830,
-          "weight": "",
-          "temp": {}
-        },
-        "6191": {
-          "label": 6191,
-          "weight": "",
-          "temp": {}
-        },
-        "8331": {
-          "label": 8331,
-          "weight": "",
-          "temp": {}
-        },
-        "8388": {
-          "label": 8388,
+        "block-4188": {
+          "label": "block-4188",
           "weight": "",
           "temp": {}
         },
@@ -596,6 +581,11 @@
         },
         "dep-2": {
           "label": "dep-2",
+          "weight": "",
+          "temp": {}
+        },
+        "block-5701": {
+          "label": "block-5701",
           "weight": "",
           "temp": {}
         },
@@ -641,6 +631,16 @@
         },
         "code-part-2": {
           "label": "code-part-2",
+          "weight": "",
+          "temp": {}
+        },
+        "block-9994": {
+          "label": "block-9994",
+          "weight": "",
+          "temp": {}
+        },
+        "block-7805": {
+          "label": "block-7805",
           "weight": "",
           "temp": {}
         }
@@ -746,42 +746,54 @@
           "v2": "part-1",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "main"
+          }
         },
         {
           "v1": "main",
           "v2": "part-2",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "main"
+          }
         },
         {
           "v1": "part-1",
           "v2": "part-1-1",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "part-1"
+          }
         },
         {
           "v1": "part-1",
           "v2": "part-1-2",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "part-1"
+          }
         },
         {
           "v1": "indep-1",
           "v2": "dep-1",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "indep-1"
+          }
         },
         {
           "v1": "indep-1",
           "v2": "dep-2",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "indep-1"
+          }
         }
       ],
       "metadata": {

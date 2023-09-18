@@ -1,21 +1,22 @@
 {
-  "valid": false,
+  "valid": true,
   "blocks": [
-    3962,
-    "b1",
-    "b2",
-    "b3"
+    "block-8946",
+    "book-1",
+    "book-2",
+    "block-8377",
+    "sample"
   ],
   "data": {
-    "3962": {
-      "blockId": 3962,
+    "block-8946": {
+      "blockId": "block-8946",
       "title": "Untitled",
-      "text": "what this file test ?\n- invoation to a block that does not exists yet ",
+      "text": "List of books :",
       "source": {
         "raw": [
-          "what this file test ?\n- invoation to a block that does not exists yet "
+          "List of books :"
         ],
-        "first": "what this file test ?\n- invoation to a block that does not exists yet ",
+        "first": "List of books :",
         "titleExists": false,
         "idExists": false
       },
@@ -26,144 +27,163 @@
         "declaration initialized with random block id"
       ]
     },
-    "b1": {
-      "blockId": "b1",
-      "title": "Block b1",
-      "text": "Block 1",
+    "book-1": {
+      "blockId": "book-1",
+      "title": "Block book-1",
+      "text": "- title : Book of magic 1\n- author : Magician 1\n- tags : a,b,c\n\n- url : this is here\n- this : that\n- ping : pong",
       "source": {
         "raw": [
-          ".[b1] \nBlock 1"
+          ".[book 1]\n- title : Book of magic 1\n- author : Magician 1\n- tags : a,b,c\n~[recommends,book 2]",
+          "+[book 1]\n- url : this is here\n- this : that\n- ping : pong"
         ],
-        "first": "Block 1",
+        "first": "- title : Book of magic 1\n- author : Magician 1\n- tags : a,b,c\n~[recommends,book 2]\n- url : this is here\n- this : that\n- ping : pong",
         "titleExists": false,
         "idExists": true
       },
       "dataType": "default",
-      "value": {},
-      "annotations": [
-        {
-          "raw": ".[b1]",
-          "text": "b1",
-          "blockId": "b1",
-          "type": "declaration"
-        }
-      ],
-      "process": [
-        "declaration initialized"
-      ]
-    },
-    "b2": {
-      "blockId": "b2",
-      "title": "Block b2",
-      "text": "Block 2",
-      "source": {
-        "raw": [
-          ".[b2]\nBlock 2"
-        ],
-        "first": "Block 2",
-        "titleExists": false,
-        "idExists": true
+      "value": {
+        "title": "Book of magic 1",
+        "author": "Magician 1",
+        "tags": "a,b,c",
+        "url": "this is here",
+        "this": "that",
+        "ping": "pong"
       },
-      "dataType": "default",
-      "value": {},
       "annotations": [
         {
-          "raw": ".[b2]",
-          "text": "b2",
-          "blockId": "b2",
-          "type": "declaration"
-        }
-      ],
-      "process": [
-        "declaration initialized"
-      ]
-    },
-    "b3": {
-      "blockId": "b3",
-      "title": "Block b3",
-      "text": "Block 3\n>[b2]\nb4 does not exists yet. but this is still working. \n>[b4]",
-      "source": {
-        "raw": [
-          ".[b3]\nBlock 3\n>[b2]\nb4 does not exists yet. but this is still working. \n>[b4]"
-        ],
-        "first": "Block 3\n>[b2]\nb4 does not exists yet. but this is still working. \n>[b4]",
-        "titleExists": false,
-        "idExists": true
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [
-        {
-          "raw": ".[b3]",
-          "text": "b3",
-          "blockId": "b3",
+          "raw": ".[book 1]",
+          "text": "book 1",
+          "blockId": "book-1",
           "type": "declaration"
         },
         {
-          "raw": ">[b2]",
-          "text": "b2",
-          "blockId": "b2",
-          "type": "invocation"
+          "raw": "~[recommends,book 2]",
+          "text": "recommends,book 2",
+          "blockId": "",
+          "type": "edge",
+          "v1": "*",
+          "v2": "book-2",
+          "label": "recommends"
         },
         {
-          "raw": ">[b4]",
-          "text": "b4",
-          "blockId": "b4",
-          "type": "invocation"
+          "raw": "+[book 1]",
+          "text": "book 1",
+          "blockId": "book-1",
+          "type": "append"
         }
       ],
       "process": [
         "declaration initialized",
-        "invocation >[b2] initialized in dep graph",
-        "invocation >[b4] initialized in dep graph"
+        "edge-annotation: recommends,book 2 processed",
+        "Append annotation processed"
+      ]
+    },
+    "book-2": {
+      "blockId": "book-2",
+      "title": "Block book-2",
+      "text": "- title : Elements of magic\n- author : Magician 2\n- tags : 3,4,5",
+      "source": {
+        "raw": [
+          ".[book 2]\n- title : Elements of magic\n- author : Magician 2\n- tags : 3,4,5"
+        ],
+        "first": "- title : Elements of magic\n- author : Magician 2\n- tags : 3,4,5",
+        "titleExists": false,
+        "idExists": true
+      },
+      "dataType": "default",
+      "value": {
+        "title": "Elements of magic",
+        "author": "Magician 2",
+        "tags": "3,4,5"
+      },
+      "annotations": [
+        {
+          "raw": ".[book 2]",
+          "text": "book 2",
+          "blockId": "book-2",
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "block-8377": {
+      "blockId": "block-8377",
+      "title": "Untitled",
+      "text": "This is more",
+      "source": {
+        "raw": [
+          "This is more"
+        ],
+        "first": "This is more",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "sample": {
+      "blockId": "sample",
+      "title": "Block sample",
+      "text": "- this is not an object\n- just some list",
+      "source": {
+        "raw": [
+          ".[sample]\n- this is not an object\n- just some list"
+        ],
+        "first": "- this is not an object\n- just some list",
+        "titleExists": false,
+        "idExists": true
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[sample]",
+          "text": "sample",
+          "blockId": "sample",
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
       ]
     }
   },
   "graphs": {
     "deps": {
       "vertices": {
-        "3962": {
-          "label": 3962,
+        "block-8946": {
+          "label": "block-8946",
           "weight": "",
           "temp": {}
         },
-        "b1": {
-          "label": "b1",
+        "book-1": {
+          "label": "book-1",
           "weight": "",
           "temp": {}
         },
-        "b2": {
-          "label": "b2",
+        "book-2": {
+          "label": "book-2",
           "weight": "",
           "temp": {}
         },
-        "b3": {
-          "label": "b3",
+        "block-8377": {
+          "label": "block-8377",
           "weight": "",
           "temp": {}
         },
-        "b4": {
-          "label": "b4",
+        "sample": {
+          "label": "sample",
           "weight": "",
           "temp": {}
         }
       },
-      "edges": [
-        {
-          "v1": "b3",
-          "v2": "b2",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        },
-        {
-          "v1": "b3",
-          "v2": "b4",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        }
-      ],
+      "edges": [],
       "metadata": {
         "title": "Invocation block dependency graph",
         "hasLoops": false,
@@ -180,8 +200,29 @@
       }
     },
     "knowledge": {
-      "vertices": {},
-      "edges": [],
+      "vertices": {
+        "book-1": {
+          "label": "book-1",
+          "weight": "",
+          "temp": {}
+        },
+        "book-2": {
+          "label": "book-2",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [
+        {
+          "v1": "book-1",
+          "v2": "book-2",
+          "weight": "",
+          "label": "recommends",
+          "temp": {
+            "addedByBlock": "book-1"
+          }
+        }
+      ],
       "metadata": {
         "title": "Knowledge graph",
         "hasLoops": false,
@@ -198,11 +239,7 @@
       }
     }
   },
-  "errors": [
-    {
-      "text": "Invocation annotations can not be processed. Missing blocks : b4"
-    }
-  ],
+  "errors": [],
   "warnings": [],
   "metadata": {},
   "extra": {}

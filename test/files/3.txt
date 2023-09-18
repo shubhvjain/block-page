@@ -1,14 +1,25 @@
-what this file test ?
-- invoation to a block that does not exists yet 
+List of books :
 
-.[b1] 
-Block 1
+.[book 1]
+- title : Book of magic 1
+- author : Magician 1
+- tags : a,b,c
+~[recommends,book 2]
 
-.[b2]
-Block 2
+.[book 2]
+- title : Elements of magic
+- author : Magician 2
+- tags : 3,4,5
 
-.[b3]
-Block 3
->[b2]
-b4 does not exists yet. but this is still working. 
->[b4]
+
+This is more
+
+.[sample]
+- this is not an object
+- just some list
+
+
++[book 1]
+- url : this is here
+- this : that
+- ping : pong

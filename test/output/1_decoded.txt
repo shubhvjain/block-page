@@ -26,7 +26,6 @@ a random block that cannot be used in other invocation because it does not have 
 .[b4]
 /[action 1,part1]
 Block 1 part 1
-+[b4]
 /[action 2,part 1]
 Block 1 part 2
 
@@ -58,8 +57,4 @@ Block 8. when b7 content is copied the text must not contain the action invocati
 this is the 10th block
 
 .[b11] Block 11 ?
-this is the 11th block 
-
-
-
-
+this is the 11th block

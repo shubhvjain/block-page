@@ -111,7 +111,7 @@
     "f1": {
       "blockId": "f1",
       "title": "Block f1",
-      "text": "sample\n\nsample1\n\n\n\nsample2",
+      "text": "sample\nsample1\n\nsample2",
       "source": {
         "raw": [
           ".[f1] \nsample",

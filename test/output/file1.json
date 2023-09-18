@@ -211,21 +211,27 @@
           "v2": "point-1",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "main"
+          }
         },
         {
           "v1": "main",
           "v2": "point-2",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "main"
+          }
         },
         {
           "v1": "point-2",
           "v2": "point-2-1",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "point-2"
+          }
         }
       ],
       "metadata": {

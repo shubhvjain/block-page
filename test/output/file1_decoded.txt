@@ -14,4 +14,3 @@
 .[point-2-1] This is a sub point 
 - list item 1
 - list item 2
-

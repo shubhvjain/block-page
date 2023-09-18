@@ -29,8 +29,4 @@ This is the text to be edited
 This text will reamin the same
 
 .[edit-3] Title changes
-This text also changes 
-
-
-
-
+This text also changes

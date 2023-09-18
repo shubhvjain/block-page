@@ -1,26 +1,26 @@
 {
   "valid": true,
   "blocks": [
-    1496,
+    "block-2195",
     "b1",
     "b2",
     "b3",
-    8714,
+    "block-5180",
     "b4",
     "b6",
     "b7",
     "b8",
-    7649,
-    5915,
-    7600,
+    "block-5055",
+    "block-2979",
+    "block-6290",
     "b9",
     "b10",
     "b11",
-    1837
+    "block-4850"
   ],
   "data": {
-    "1496": {
-      "blockId": 1496,
+    "block-2195": {
+      "blockId": "block-2195",
       "title": "Untitled",
       "text": "what this file tests ?\n- block declerations \n- block title (exists  vs the default) \n- invocation annotation on already existing block\n- append invocation (correct usage)\n- append invocation with actions invocation in both blocks \n- invocation of one block to another is text only and other annotations in the block being invoked are not copied as well (b6,b7,b8)\n- graph annotation",
       "source": {
@@ -28,101 +28,6 @@
           "what this file tests ?\n- block declerations \n- block title (exists  vs the default) \n- invocation annotation on already existing block\n- append invocation (correct usage)\n- append invocation with actions invocation in both blocks \n- invocation of one block to another is text only and other annotations in the block being invoked are not copied as well (b6,b7,b8)\n- graph annotation"
         ],
         "first": "what this file tests ?\n- block declerations \n- block title (exists  vs the default) \n- invocation annotation on already existing block\n- append invocation (correct usage)\n- append invocation with actions invocation in both blocks \n- invocation of one block to another is text only and other annotations in the block being invoked are not copied as well (b6,b7,b8)\n- graph annotation",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "1837": {
-      "blockId": 1837,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": "",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "5915": {
-      "blockId": 5915,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": "",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "7600": {
-      "blockId": 7600,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": "",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "7649": {
-      "blockId": 7649,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": "",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "8714": {
-      "blockId": 8714,
-      "title": "Untitled",
-      "text": "a random block that cannot be used in other invocation because it does not have  a name",
-      "source": {
-        "raw": [
-          "a random block that cannot be used in other invocation because it does not have  a name"
-        ],
-        "first": "a random block that cannot be used in other invocation because it does not have  a name",
         "titleExists": false,
         "idExists": false
       },
@@ -232,16 +137,35 @@
         "invocation >[b2] processed"
       ]
     },
+    "block-5180": {
+      "blockId": "block-5180",
+      "title": "Untitled",
+      "text": "a random block that cannot be used in other invocation because it does not have  a name",
+      "source": {
+        "raw": [
+          "a random block that cannot be used in other invocation because it does not have  a name"
+        ],
+        "first": "a random block that cannot be used in other invocation because it does not have  a name",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
     "b4": {
       "blockId": "b4",
       "title": "Block b4",
-      "text": "\nBlock 1 part 1\n\n\nBlock 1 part 2",
+      "text": "\nBlock 1 part 1\n\nBlock 1 part 2",
       "source": {
         "raw": [
           ".[b4]\n/[action 1,part1]\nBlock 1 part 1",
           "+[b4]\n/[action 2,part 1]\nBlock 1 part 2"
         ],
-        "first": "/[action 1,part1]\nBlock 1 part 1\n+[b4]\n/[action 2,part 1]\nBlock 1 part 2",
+        "first": "/[action 1,part1]\nBlock 1 part 1\n/[action 2,part 1]\nBlock 1 part 2",
         "titleExists": false,
         "idExists": true
       },
@@ -396,6 +320,63 @@
         "invocation >[b7] processed"
       ]
     },
+    "block-5055": {
+      "blockId": "block-5055",
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": "",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "block-2979": {
+      "blockId": "block-2979",
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": "",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
+    "block-6290": {
+      "blockId": "block-6290",
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": "",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
+    },
     "b9": {
       "blockId": "b9",
       "title": "Block b9",
@@ -493,38 +474,32 @@
       "process": [
         "declaration initialized"
       ]
+    },
+    "block-4850": {
+      "blockId": "block-4850",
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": "",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
     }
   },
   "graphs": {
     "deps": {
       "vertices": {
-        "1496": {
-          "label": 1496,
-          "weight": "",
-          "temp": {}
-        },
-        "1837": {
-          "label": 1837,
-          "weight": "",
-          "temp": {}
-        },
-        "5915": {
-          "label": 5915,
-          "weight": "",
-          "temp": {}
-        },
-        "7600": {
-          "label": 7600,
-          "weight": "",
-          "temp": {}
-        },
-        "7649": {
-          "label": 7649,
-          "weight": "",
-          "temp": {}
-        },
-        "8714": {
-          "label": 8714,
+        "block-2195": {
+          "label": "block-2195",
           "weight": "",
           "temp": {}
         },
@@ -540,6 +515,11 @@
         },
         "b3": {
           "label": "b3",
+          "weight": "",
+          "temp": {}
+        },
+        "block-5180": {
+          "label": "block-5180",
           "weight": "",
           "temp": {}
         },
@@ -563,6 +543,21 @@
           "weight": "",
           "temp": {}
         },
+        "block-5055": {
+          "label": "block-5055",
+          "weight": "",
+          "temp": {}
+        },
+        "block-2979": {
+          "label": "block-2979",
+          "weight": "",
+          "temp": {}
+        },
+        "block-6290": {
+          "label": "block-6290",
+          "weight": "",
+          "temp": {}
+        },
         "b9": {
           "label": "b9",
           "weight": "",
@@ -575,6 +570,11 @@
         },
         "b11": {
           "label": "b11",
+          "weight": "",
+          "temp": {}
+        },
+        "block-4850": {
+          "label": "block-4850",
           "weight": "",
           "temp": {}
         }
@@ -634,14 +634,18 @@
           "v2": "b10",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "b9"
+          }
         },
         {
           "v1": "b9",
           "v2": "b11",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "b9"
+          }
         }
       ],
       "metadata": {
@@ -661,8 +665,8 @@
     },
     "dfsTree": {
       "vertices": {
-        "1496": {
-          "label": "1496 (d=1,f=2)",
+        "block-2195": {
+          "label": "block-2195 (d=1,f=2)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -672,8 +676,8 @@
             "degree": 0
           }
         },
-        "1837": {
-          "label": "1837 (d=3,f=4)",
+        "b1": {
+          "label": "b1 (d=3,f=4)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -683,8 +687,8 @@
             "degree": 0
           }
         },
-        "5915": {
-          "label": "5915 (d=5,f=6)",
+        "b2": {
+          "label": "b2 (d=5,f=6)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -694,19 +698,19 @@
             "degree": 0
           }
         },
-        "7600": {
-          "label": "7600 (d=7,f=8)",
+        "b3": {
+          "label": "b3 (d=7,f=8)",
           "weight": "",
           "temp": {
             "color": "black",
             "pi": null,
             "d": 7,
             "f": 8,
-            "degree": 0
+            "degree": 1
           }
         },
-        "7649": {
-          "label": "7649 (d=9,f=10)",
+        "block-5180": {
+          "label": "block-5180 (d=9,f=10)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -716,8 +720,8 @@
             "degree": 0
           }
         },
-        "8714": {
-          "label": "8714 (d=11,f=12)",
+        "b4": {
+          "label": "b4 (d=11,f=12)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -727,8 +731,8 @@
             "degree": 0
           }
         },
-        "b1": {
-          "label": "b1 (d=13,f=14)",
+        "b6": {
+          "label": "b6 (d=13,f=14)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -738,8 +742,8 @@
             "degree": 0
           }
         },
-        "b2": {
-          "label": "b2 (d=15,f=16)",
+        "b7": {
+          "label": "b7 (d=15,f=16)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -749,8 +753,8 @@
             "degree": 0
           }
         },
-        "b3": {
-          "label": "b3 (d=17,f=18)",
+        "b8": {
+          "label": "b8 (d=17,f=18)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -760,8 +764,8 @@
             "degree": 1
           }
         },
-        "b4": {
-          "label": "b4 (d=19,f=20)",
+        "block-5055": {
+          "label": "block-5055 (d=19,f=20)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -771,8 +775,8 @@
             "degree": 0
           }
         },
-        "b6": {
-          "label": "b6 (d=21,f=22)",
+        "block-2979": {
+          "label": "block-2979 (d=21,f=22)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -782,8 +786,8 @@
             "degree": 0
           }
         },
-        "b7": {
-          "label": "b7 (d=23,f=24)",
+        "block-6290": {
+          "label": "block-6290 (d=23,f=24)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -793,19 +797,19 @@
             "degree": 0
           }
         },
-        "b8": {
-          "label": "b8 (d=25,f=26)",
+        "b9": {
+          "label": "b9 (d=25,f=26)",
           "weight": "",
           "temp": {
             "color": "black",
             "pi": null,
             "d": 25,
             "f": 26,
-            "degree": 1
+            "degree": 0
           }
         },
-        "b9": {
-          "label": "b9 (d=27,f=28)",
+        "b10": {
+          "label": "b10 (d=27,f=28)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -815,8 +819,8 @@
             "degree": 0
           }
         },
-        "b10": {
-          "label": "b10 (d=29,f=30)",
+        "b11": {
+          "label": "b11 (d=29,f=30)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -826,8 +830,8 @@
             "degree": 0
           }
         },
-        "b11": {
-          "label": "b11 (d=31,f=32)",
+        "block-4850": {
+          "label": "block-4850 (d=31,f=32)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -875,8 +879,8 @@
     },
     "tsTree": {
       "vertices": {
-        "1496": {
-          "label": "1496 (d=1,f=2)",
+        "block-2195": {
+          "label": "block-2195 (d=1,f=2)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -886,8 +890,8 @@
             "degree": 0
           }
         },
-        "1837": {
-          "label": "1837 (d=3,f=4)",
+        "b1": {
+          "label": "b1 (d=3,f=4)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -897,8 +901,8 @@
             "degree": 0
           }
         },
-        "5915": {
-          "label": "5915 (d=5,f=6)",
+        "b2": {
+          "label": "b2 (d=5,f=6)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -908,19 +912,19 @@
             "degree": 0
           }
         },
-        "7600": {
-          "label": "7600 (d=7,f=8)",
+        "b3": {
+          "label": "b3 (d=7,f=8)",
           "weight": "",
           "temp": {
             "color": "black",
             "pi": null,
             "d": 7,
             "f": 8,
-            "degree": 0
+            "degree": 1
           }
         },
-        "7649": {
-          "label": "7649 (d=9,f=10)",
+        "block-5180": {
+          "label": "block-5180 (d=9,f=10)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -930,8 +934,8 @@
             "degree": 0
           }
         },
-        "8714": {
-          "label": "8714 (d=11,f=12)",
+        "b4": {
+          "label": "b4 (d=11,f=12)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -941,8 +945,8 @@
             "degree": 0
           }
         },
-        "b1": {
-          "label": "b1 (d=13,f=14)",
+        "b6": {
+          "label": "b6 (d=13,f=14)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -952,8 +956,8 @@
             "degree": 0
           }
         },
-        "b2": {
-          "label": "b2 (d=15,f=16)",
+        "b7": {
+          "label": "b7 (d=15,f=16)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -963,8 +967,8 @@
             "degree": 0
           }
         },
-        "b3": {
-          "label": "b3 (d=17,f=18)",
+        "b8": {
+          "label": "b8 (d=17,f=18)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -974,8 +978,8 @@
             "degree": 1
           }
         },
-        "b4": {
-          "label": "b4 (d=19,f=20)",
+        "block-5055": {
+          "label": "block-5055 (d=19,f=20)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -985,8 +989,8 @@
             "degree": 0
           }
         },
-        "b6": {
-          "label": "b6 (d=21,f=22)",
+        "block-2979": {
+          "label": "block-2979 (d=21,f=22)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -996,8 +1000,8 @@
             "degree": 0
           }
         },
-        "b7": {
-          "label": "b7 (d=23,f=24)",
+        "block-6290": {
+          "label": "block-6290 (d=23,f=24)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -1007,19 +1011,19 @@
             "degree": 0
           }
         },
-        "b8": {
-          "label": "b8 (d=25,f=26)",
+        "b9": {
+          "label": "b9 (d=25,f=26)",
           "weight": "",
           "temp": {
             "color": "black",
             "pi": null,
             "d": 25,
             "f": 26,
-            "degree": 1
+            "degree": 0
           }
         },
-        "b9": {
-          "label": "b9 (d=27,f=28)",
+        "b10": {
+          "label": "b10 (d=27,f=28)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -1029,8 +1033,8 @@
             "degree": 0
           }
         },
-        "b10": {
-          "label": "b10 (d=29,f=30)",
+        "b11": {
+          "label": "b11 (d=29,f=30)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -1040,8 +1044,8 @@
             "degree": 0
           }
         },
-        "b11": {
-          "label": "b11 (d=31,f=32)",
+        "block-4850": {
+          "label": "block-4850 (d=31,f=32)",
           "weight": "",
           "temp": {
             "color": "black",
@@ -1054,42 +1058,7 @@
       },
       "edges": [
         {
-          "v1": "1496",
-          "v2": "1837",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        },
-        {
-          "v1": "1837",
-          "v2": "5915",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        },
-        {
-          "v1": "5915",
-          "v2": "7600",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        },
-        {
-          "v1": "7600",
-          "v2": "7649",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        },
-        {
-          "v1": "7649",
-          "v2": "8714",
-          "weight": "",
-          "label": "",
-          "temp": {}
-        },
-        {
-          "v1": "8714",
+          "v1": "block-2195",
           "v2": "b1",
           "weight": "",
           "label": "",
@@ -1111,6 +1080,13 @@
         },
         {
           "v1": "b3",
+          "v2": "block-5180",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "block-5180",
           "v2": "b4",
           "weight": "",
           "label": "",
@@ -1139,6 +1115,27 @@
         },
         {
           "v1": "b8",
+          "v2": "block-5055",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "block-5055",
+          "v2": "block-2979",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "block-2979",
+          "v2": "block-6290",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "block-6290",
           "v2": "b9",
           "weight": "",
           "label": "",
@@ -1154,6 +1151,13 @@
         {
           "v1": "b10",
           "v2": "b11",
+          "weight": "",
+          "label": "",
+          "temp": {}
+        },
+        {
+          "v1": "b11",
+          "v2": "block-4850",
           "weight": "",
           "label": "",
           "temp": {}
@@ -1198,67 +1202,67 @@
   "extra": {
     "blockOrder": [
       {
-        "vertexId": "1496",
+        "vertexId": "block-2195",
         "fVal": 2
       },
       {
-        "vertexId": "1837",
+        "vertexId": "b1",
         "fVal": 4
       },
       {
-        "vertexId": "5915",
+        "vertexId": "b2",
         "fVal": 6
       },
       {
-        "vertexId": "7600",
+        "vertexId": "b3",
         "fVal": 8
       },
       {
-        "vertexId": "7649",
+        "vertexId": "block-5180",
         "fVal": 10
       },
       {
-        "vertexId": "8714",
+        "vertexId": "b4",
         "fVal": 12
       },
       {
-        "vertexId": "b1",
+        "vertexId": "b6",
         "fVal": 14
       },
       {
-        "vertexId": "b2",
+        "vertexId": "b7",
         "fVal": 16
       },
       {
-        "vertexId": "b3",
+        "vertexId": "b8",
         "fVal": 18
       },
       {
-        "vertexId": "b4",
+        "vertexId": "block-5055",
         "fVal": 20
       },
       {
-        "vertexId": "b6",
+        "vertexId": "block-2979",
         "fVal": 22
       },
       {
-        "vertexId": "b7",
+        "vertexId": "block-6290",
         "fVal": 24
       },
       {
-        "vertexId": "b8",
+        "vertexId": "b9",
         "fVal": 26
       },
       {
-        "vertexId": "b9",
+        "vertexId": "b10",
         "fVal": 28
       },
       {
-        "vertexId": "b10",
+        "vertexId": "b11",
         "fVal": 30
       },
       {
-        "vertexId": "b11",
+        "vertexId": "block-4850",
         "fVal": 32
       }
     ]

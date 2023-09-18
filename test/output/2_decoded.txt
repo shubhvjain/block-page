@@ -56,7 +56,3 @@ more code here
 
 
 and append
-
-
-
-

@@ -1,21 +1,21 @@
 {
   "valid": true,
   "blocks": [
-    2636,
+    "block-3924",
     "indep",
     "indep-1",
     "dep-1",
     "dep-2",
-    6565,
+    "block-1189",
     "i1",
     "edit-1",
     "edit-2",
     "edit-3",
-    9771
+    "block-3079"
   ],
   "data": {
-    "2636": {
-      "blockId": 2636,
+    "block-3924": {
+      "blockId": "block-3924",
       "title": "Untitled",
       "text": "Very simple text for testing ",
       "source": {
@@ -23,44 +23,6 @@
           "Very simple text for testing "
         ],
         "first": "Very simple text for testing ",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "6565": {
-      "blockId": 6565,
-      "title": "Untitled",
-      "text": "tricky :",
-      "source": {
-        "raw": [
-          "tricky :"
-        ],
-        "first": "tricky :",
-        "titleExists": false,
-        "idExists": false
-      },
-      "dataType": "default",
-      "value": {},
-      "annotations": [],
-      "process": [
-        "declaration initialized with random block id"
-      ]
-    },
-    "9771": {
-      "blockId": 9771,
-      "title": "Untitled",
-      "text": "",
-      "source": {
-        "raw": [
-          ""
-        ],
-        "first": "",
         "titleExists": false,
         "idExists": false
       },
@@ -193,6 +155,25 @@
       ],
       "process": [
         "declaration initialized"
+      ]
+    },
+    "block-1189": {
+      "blockId": "block-1189",
+      "title": "Untitled",
+      "text": "tricky :",
+      "source": {
+        "raw": [
+          "tricky :"
+        ],
+        "first": "tricky :",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
       ]
     },
     "i1": {
@@ -328,23 +309,32 @@
       "process": [
         "declaration initialized"
       ]
+    },
+    "block-3079": {
+      "blockId": "block-3079",
+      "title": "Untitled",
+      "text": "",
+      "source": {
+        "raw": [
+          ""
+        ],
+        "first": "",
+        "titleExists": false,
+        "idExists": false
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [],
+      "process": [
+        "declaration initialized with random block id"
+      ]
     }
   },
   "graphs": {
     "deps": {
       "vertices": {
-        "2636": {
-          "label": 2636,
-          "weight": "",
-          "temp": {}
-        },
-        "6565": {
-          "label": 6565,
-          "weight": "",
-          "temp": {}
-        },
-        "9771": {
-          "label": 9771,
+        "block-3924": {
+          "label": "block-3924",
           "weight": "",
           "temp": {}
         },
@@ -368,6 +358,11 @@
           "weight": "",
           "temp": {}
         },
+        "block-1189": {
+          "label": "block-1189",
+          "weight": "",
+          "temp": {}
+        },
         "i1": {
           "label": "i1",
           "weight": "",
@@ -385,6 +380,11 @@
         },
         "edit-3": {
           "label": "edit-3",
+          "weight": "",
+          "temp": {}
+        },
+        "block-3079": {
+          "label": "block-3079",
           "weight": "",
           "temp": {}
         }
@@ -449,35 +449,45 @@
           "v2": "dep-1",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "indep-1"
+          }
         },
         {
           "v1": "indep-1",
           "v2": "dep-2",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "indep-1"
+          }
         },
         {
           "v1": "i1",
           "v2": "i2",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "i1"
+          }
         },
         {
           "v1": "i1",
           "v2": "i3",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "i1"
+          }
         },
         {
           "v1": "i4",
           "v2": "i3",
           "weight": "",
           "label": "part",
-          "temp": {}
+          "temp": {
+            "addedByBlock": "i1"
+          }
         }
       ],
       "metadata": {
