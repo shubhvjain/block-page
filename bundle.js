@@ -10,7 +10,7 @@ module.exports = {
   action : action,
   graph : graph 
 }
-},{"./src/actions":2,"./src/decode":3,"./src/encode":4,"./src/graph":5}],2:[function(require,module,exports){
+},{"./src/actions":2,"./src/decode":4,"./src/encode":5,"./src/graph":6}],2:[function(require,module,exports){
 // code to perform actions on a document object and  maintain its validity
 
 /**
@@ -26,6 +26,7 @@ module.exports = {
  */
 
 const graph = require("./graph.js");
+const datatype = require("./datatype.js")
 
 const getBlankDocObject = () => {
   let docObject = {
@@ -64,6 +65,11 @@ const removeSpace = (text) => {
 const randomInteger = (min = 0, max = 100) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+const replaceNewlinesAtEnd = (inputString)=>{
+  const regex = /\n+$/;
+  return inputString.replace(regex, '\n');
+}
 
 //// actions on the doc object 
 // these methods will have a common naming convention : doAction(doc, ...additional params), modifies the doc, returns the doc
@@ -379,8 +385,8 @@ const doAddNewBlock = (docObject,blockText)=>{
       // update the block object
       blockData = docObject.data[act.blockId];
       let newText = blockText.replace(act.raw, ""); // the first line in the append cannot have anything else including a title 
-      blockData.text = blockData.text + "\n" + newText;
-      blockData.source.first = blockData.source.first +  newText;
+      blockData.text = replaceNewlinesAtEnd(blockData.text) + newText;
+      blockData.source.first = replaceNewlinesAtEnd(blockData.source.first) +  newText;
       blockData.source.raw.push(blockText);
       blockData.annotations = [
         ...blockData.annotations,
@@ -521,6 +527,10 @@ const doAddNewBlock = (docObject,blockText)=>{
 
   // process the data type
   // TODO
+  dataParsed = datatype.parseData(blockContent.text)
+  //console.log(blockContent)
+  //console.log(dataParsed)
+  blockContent.value = dataParsed
   return docObject
 }
 
@@ -584,7 +594,66 @@ module.exports = {
   doEditBlock,
   doDeleteKGEdge
 }
-},{"./graph.js":5}],3:[function(require,module,exports){
+},{"./datatype.js":3,"./graph.js":6}],3:[function(require,module,exports){
+
+
+const extractLines = (inputString)=>{
+  const regex = /^- [^:]+ : [^\n]+/gm;
+  // const regex = /^- [^:]+ [^.\n]* : [^\n]+/gm;
+  const matches = inputString.match(regex);
+  if (matches) {
+    return matches;
+  } else {
+    return [];
+  }
+}
+
+const parseData = (text)=>{
+  console.log(text)
+  let lines = extractLines(text)
+  console.log(lines)
+  let obj = {}
+  lines.map(line=>{
+    let parts = line.split(":")
+    let first  = parts.shift()
+    first = first.replace("-","").replace(".","").trim()
+    let rest = parts.join("")
+    obj[first] = rest.trim()
+  })
+  return obj
+}
+
+
+// not in use :  
+
+const parseData1 = (text)=>{
+  let status = {valid:true,error:""}
+  const regex = /^\t*-\s/g;
+  let lines = text.split("\n")
+  let list = []
+  let currentIndex = 0
+  for (let index = 0; index < lines.length; index++) {
+    const line = lines[index];
+    // console.log(line)
+    const match = line.match(regex);
+    console.log(match)
+    if(match){
+      // find out the level of indent 
+      
+    }else{
+      status.valid = false
+      status.error = `Invalid list item at line ${index+1}`
+      break;
+    }
+  }
+  if(status.valid){
+    status['list'] = list
+  }
+  return status
+}
+
+module.exports = { parseData}
+},{}],4:[function(require,module,exports){
 // code to decode a document object to a text file
 const act = require("./actions")
 
@@ -601,7 +670,7 @@ const decode = (doc,options={})=>{
   return text.replace(/\s*$/, '')
 }
 module.exports = decode
-},{"./actions":2}],4:[function(require,module,exports){
+},{"./actions":2}],5:[function(require,module,exports){
 // code to encode a text file to document object
 
 const act = require('./actions.js')
@@ -637,7 +706,7 @@ const encode = (document, options = {}) => {
 
 module.exports = encode;
 
-},{"./actions.js":2}],5:[function(require,module,exports){
+},{"./actions.js":2}],6:[function(require,module,exports){
 /*** 
 the Graph program. Version 1.2.2 . 
 Full source code is available at https://github.com/shubhvjain/graphs

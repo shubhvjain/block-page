@@ -1,13 +1,12 @@
 {
   "name": "block-page",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Non linear text processing system",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-frontend": "browserify index.js --standalone blockPage > bundle.js ; uglifyjs bundle.js > bundle.min.js ",
-    "build-docs":"marked -i docs/index.md -o docs/index.html"
-    
+    "build-docs": "marked -i docs/index.md -o docs/index.html"
   },
   "repository": {
     "type": "git",
