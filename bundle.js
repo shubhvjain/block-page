@@ -609,9 +609,9 @@ const extractLines = (inputString)=>{
 }
 
 const parseData = (text)=>{
-  console.log(text)
+  //console.log(text)
   let lines = extractLines(text)
-  console.log(lines)
+  //console.log(lines)
   let obj = {}
   lines.map(line=>{
     let parts = line.split(":")

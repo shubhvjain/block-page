@@ -1,6 +1,6 @@
 {
   "name": "block-page",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Non linear text processing system",
   "main": "index.js",
   "scripts": {
