@@ -94,6 +94,36 @@ const deleteVertex = (graphData, vertexId) => {
 };
 
 
+const deleteVertex1 = (graphData, vertexId) => {
+  // options = {id}
+  if (!vertexId) {
+    throw new Error("No vertex id provided");
+  }
+  if (graphData.vertices[vertexId]) {
+    // will remove the vertex if it exists but will do nothing if it does not
+    // throw new Error("Vertex with this id does not exists in the graph.")
+    // gather all edges and delete them
+    let edgeList = []
+    const edge1Search = graphData.edges.filter((edge) => edge.v1 == vertexId);
+    for (const edge1 of edge1Search) {
+      edgeList.push(edge1)
+      graphData = deleteSpecificEdge(graphData, edge1.v1, edge1.v2);
+    }
+
+    const edge2Search = graphData.edges.filter((edge) => edge.v2 == vertexId);
+    for (const edge2 of edge2Search) {
+      edgeList.push(edge2)
+      graphData = deleteSpecificEdge(graphData, edge2.v1, edge2.v2);
+    }
+
+    // remove the vertex
+    delete graphData.vertices[vertexId];
+    return {"graphData":{...graphData},edgeList};
+  } else {
+    return {"graphData":{...graphData},edgeList:[]};
+  }
+};
+
 const addEdge = (graphData,options)=>{
 
   if(!options.v1){throw new Error("Vertex 1 not provided")}
@@ -386,6 +416,7 @@ module.exports = {
   createGraph,
   addVertex,
   deleteVertex,
+  deleteVertex1,
   addEdge,
   deleteEdge,
   getVertexNeighbours,

@@ -543,9 +543,20 @@ const doEditBlock = (doc,blockId,changes)=>{
     ... oldData,
     ... changes
   }
-  // console.log(newData)
   let newBlock = `.[${blockId}] ${newData.title}  \n  ${newData.text}`
-  doc =  doDeleteBlock(doc,blockIdR)
+  // delete the block , preserving the edges to be added later on if required 
+  doc.graphs.deps = graph.deleteVertex(doc.graphs.deps,blockId) // check this as well : i guess this is fine because a new dep graph is generated anyways on new node insert
+  updatedKg = graph.deleteVertex1(doc.graphs.knowledge,blockId)
+  // although the same block is added again, the knowledge graph is inconsistent as all edges related to this block were delete when this node removed from the graph
+  // the knowledge graph has to be updated 
+  // add back all the edges that were not generated from the current block 
+  doc.graphs.knowledge = updatedKg["graphData"]
+  doc.graphs.knowledge = graph.addVertex(doc.graphs.knowledge,{"id":blockId})
+  edgeToAddBack =   updatedKg.edgeList.filter(itm=>{ return itm.temp.addedByBlock !=  blockId})   // bacuse they were not added by this block
+  edgeToAddBack.map(itm=>{ doc.graphs.knowledge = graph.addEdge(doc.graphs.knowledge,itm) })
+  let bIndex = doc.blocks.indexOf(blockId);
+  doc.blocks.splice(bIndex, 1);
+  delete doc.data[blockId] 
   doc = doAddNewBlock(doc,newBlock)
   return doc
 }
