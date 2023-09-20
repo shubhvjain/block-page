@@ -1,0 +1,220 @@
+{
+  "valid": true,
+  "blocks": [
+    "main",
+    "two",
+    "one"
+  ],
+  "data": {
+    "main": {
+      "blockId": "main",
+      "title": " main idea ",
+      "text": "This is the main \n\n\n",
+      "source": {
+        "raw": [
+          ".[main] main idea \nThis is the main \n~[part,one]\n~[part,two]\n~[one,part,two]"
+        ],
+        "first": "This is the main \n~[part,one]\n~[part,two]\n~[one,part,two]",
+        "titleExists": true,
+        "idExists": true
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[main]",
+          "text": "main",
+          "blockId": "main",
+          "type": "declaration"
+        },
+        {
+          "raw": "~[part,one]",
+          "text": "part,one",
+          "blockId": "",
+          "type": "edge",
+          "v1": "*",
+          "v2": "one",
+          "label": "part"
+        },
+        {
+          "raw": "~[part,two]",
+          "text": "part,two",
+          "blockId": "",
+          "type": "edge",
+          "v1": "*",
+          "v2": "two",
+          "label": "part"
+        },
+        {
+          "raw": "~[one,part,two]",
+          "text": "one,part,two",
+          "blockId": "",
+          "type": "edge",
+          "v1": "one",
+          "v2": "two",
+          "label": "part"
+        }
+      ],
+      "process": [
+        "declaration initialized",
+        "edge-annotation: part,one processed",
+        "edge-annotation: part,two processed",
+        "edge-annotation: one,part,two processed"
+      ]
+    },
+    "two": {
+      "blockId": "two",
+      "title": " Two",
+      "text": "two",
+      "source": {
+        "raw": [
+          ".[two] Two\ntwo"
+        ],
+        "first": "two",
+        "titleExists": true,
+        "idExists": true
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[two]",
+          "text": "two",
+          "blockId": "two",
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    },
+    "one": {
+      "blockId": "one",
+      "title": " This is the new text  ",
+      "text": "  Sample",
+      "source": {
+        "raw": [
+          ".[one] This is the new text  \n  Sample"
+        ],
+        "first": "  Sample",
+        "titleExists": true,
+        "idExists": true
+      },
+      "dataType": "default",
+      "value": {},
+      "annotations": [
+        {
+          "raw": ".[one]",
+          "text": "one",
+          "blockId": "one",
+          "type": "declaration"
+        }
+      ],
+      "process": [
+        "declaration initialized"
+      ]
+    }
+  },
+  "graphs": {
+    "deps": {
+      "vertices": {
+        "main": {
+          "label": "main",
+          "weight": "",
+          "temp": {}
+        },
+        "two": {
+          "label": "two",
+          "weight": "",
+          "temp": {}
+        },
+        "one": {
+          "label": "one",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [],
+      "metadata": {
+        "title": "Invocation block dependency graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    },
+    "knowledge": {
+      "vertices": {
+        "main": {
+          "label": "main",
+          "weight": "",
+          "temp": {}
+        },
+        "two": {
+          "label": "two",
+          "weight": "",
+          "temp": {}
+        },
+        "one": {
+          "label": "one",
+          "weight": "",
+          "temp": {}
+        }
+      },
+      "edges": [
+        {
+          "v1": "main",
+          "v2": "two",
+          "weight": "",
+          "label": "part",
+          "temp": {
+            "addedByBlock": "main"
+          }
+        },
+        {
+          "v1": "one",
+          "v2": "two",
+          "weight": "",
+          "label": "part",
+          "temp": {
+            "addedByBlock": "main"
+          }
+        },
+        {
+          "v1": "main",
+          "v2": "one",
+          "weight": "",
+          "label": "part",
+          "temp": {
+            "addedByBlock": "main"
+          }
+        }
+      ],
+      "metadata": {
+        "title": "Knowledge graph",
+        "hasLoops": false,
+        "hasEdgeWeights": false,
+        "hasDirectedEdges": true,
+        "isSimple": true
+      },
+      "options": {
+        "defaultNewEdgeLabel": "",
+        "defaultNewVertexLabel": "",
+        "defaultNewVertexWeight": "",
+        "defaultNewEdgeWeight": "",
+        "addBlankVertex": true
+      }
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "metadata": {},
+  "extra": {}
+}

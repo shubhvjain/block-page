@@ -101,14 +101,23 @@ tests3 = [
   }
 ]
 
+tests4 = [
+  {
+    "fileName":"./output/8.json",
+    "blockToEdit":"one",
+    "outputFile":"./output/8-1.json",
+    "change":{"title":"This is the new text"}
+  },
+]
+
 const main = async ()=>{
   // tests1.map(t=>{testDelete(t)})
-  // tests2.map(t=>{testEdit(t)})
+  tests4.map(t=>{testEdit(t)})
   // allFiles = ["file1","1","2","3","4","5","6","7"]
   // encodeAllTestFiles(allFiles);
   // decodeAllGeneratedFiles(allFiles);
-  f1 = ["3"]
-  encodeAllTestFiles(f1);
+  //f1 = ["8"]
+  //encodeAllTestFiles(f1);
   // decodeAllGeneratedFiles(f1);
   //tests3.map(t=>{testDeleteEdge(t)})
 

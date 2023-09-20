@@ -1,0 +1,12 @@
+.[main] main idea 
+This is the main 
+~[part,one]
+~[part,two]
+~[one,part,two]
+
+
+.[one] One
+Sample
+
+.[two] Two
+two
