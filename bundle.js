@@ -556,9 +556,20 @@ const doEditBlock = (doc,blockId,changes)=>{
     ... oldData,
     ... changes
   }
-  // console.log(newData)
   let newBlock = `.[${blockId}] ${newData.title}  \n  ${newData.text}`
-  doc =  doDeleteBlock(doc,blockIdR)
+  // delete the block , preserving the edges to be added later on if required 
+  doc.graphs.deps = graph.deleteVertex(doc.graphs.deps,blockId) // check this as well : i guess this is fine because a new dep graph is generated anyways on new node insert
+  updatedKg = graph.deleteVertex1(doc.graphs.knowledge,blockId)
+  // although the same block is added again, the knowledge graph is inconsistent as all edges related to this block were delete when this node removed from the graph
+  // the knowledge graph has to be updated 
+  // add back all the edges that were not generated from the current block 
+  doc.graphs.knowledge = updatedKg["graphData"]
+  doc.graphs.knowledge = graph.addVertex(doc.graphs.knowledge,{"id":blockId})
+  edgeToAddBack =   updatedKg.edgeList.filter(itm=>{ return itm.temp.addedByBlock !=  blockId})   // bacuse they were not added by this block
+  edgeToAddBack.map(itm=>{ doc.graphs.knowledge = graph.addEdge(doc.graphs.knowledge,itm) })
+  let bIndex = doc.blocks.indexOf(blockId);
+  doc.blocks.splice(bIndex, 1);
+  delete doc.data[blockId] 
   doc = doAddNewBlock(doc,newBlock)
   return doc
 }
@@ -802,6 +813,36 @@ const deleteVertex = (graphData, vertexId) => {
   }
 };
 
+
+const deleteVertex1 = (graphData, vertexId) => {
+  // options = {id}
+  if (!vertexId) {
+    throw new Error("No vertex id provided");
+  }
+  if (graphData.vertices[vertexId]) {
+    // will remove the vertex if it exists but will do nothing if it does not
+    // throw new Error("Vertex with this id does not exists in the graph.")
+    // gather all edges and delete them
+    let edgeList = []
+    const edge1Search = graphData.edges.filter((edge) => edge.v1 == vertexId);
+    for (const edge1 of edge1Search) {
+      edgeList.push(edge1)
+      graphData = deleteSpecificEdge(graphData, edge1.v1, edge1.v2);
+    }
+
+    const edge2Search = graphData.edges.filter((edge) => edge.v2 == vertexId);
+    for (const edge2 of edge2Search) {
+      edgeList.push(edge2)
+      graphData = deleteSpecificEdge(graphData, edge2.v1, edge2.v2);
+    }
+
+    // remove the vertex
+    delete graphData.vertices[vertexId];
+    return {"graphData":{...graphData},edgeList};
+  } else {
+    return {"graphData":{...graphData},edgeList:[]};
+  }
+};
 
 const addEdge = (graphData,options)=>{
 
@@ -1095,6 +1136,7 @@ module.exports = {
   createGraph,
   addVertex,
   deleteVertex,
+  deleteVertex1,
   addEdge,
   deleteEdge,
   getVertexNeighbours,
